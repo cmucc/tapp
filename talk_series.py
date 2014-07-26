@@ -141,7 +141,7 @@ def render(data):
   output += '<rect x="0" y="0" width="1224" height="792" fill="'+pal['bg']+'" />\n'
 
   # Series Name
-  output += '<text x="436" y="396" fill="'+pal['em']+'" font-family="Open Sans" font-weight="bold" font-size="32" text-anchor="end" letter-spacing="-0.5">'
+  output += '<text x="436" y="396" fill="'+pal['em']+'" font-family="\'Open Sans Condensed\', sans-serif" font-weight="700" font-size="40" text-anchor="end">'
   output += data['name'] + ' Talk Series'
   output += '</text>\n'
 
@@ -162,21 +162,21 @@ def render(data):
 
   # Lay out schedule
   SCHEDULE_X = 492
-  SCHEDULE_Y = 36
+  SCHEDULE_Y = 72
   SCHEDULE_WIDTH = 648
-  SCHEDULE_HEIGHT = 720
-  LINE_HEIGHT = 36
+  SCHEDULE_HEIGHT = 576
+  LINE_HEIGHT = 32
   heights = disperse_heights(SCHEDULE_Y, SCHEDULE_HEIGHT, len(data['talks']), LINE_HEIGHT)
   dates = disperse_dates(startDate, len(data['talks']))
   for idx in range(0, len(heights)):
     output += '<g>'
     # Date
-    output += '<rect x="%d" y="%d" width="84" height="%d" fill="%s" />' %(SCHEDULE_X, heights[idx], LINE_HEIGHT, pal['cat'][data['talks'][idx]['cat']])
-    output += '<text x="%d" y="%d" fill="%s" font-family="\'Open Sans\', sans-serif" font-size="22" text-anchor="middle" letter-spacing="-1">' %(SCHEDULE_X+42, heights[idx]+26, pal['blk'])
+    output += '<rect x="%d" y="%d" width="72" height="%d" fill="%s" />' %(SCHEDULE_X, heights[idx], LINE_HEIGHT, pal['cat'][data['talks'][idx]['cat']])
+    output += '<text x="%d" y="%d" fill="%s" font-family="\'Open Sans\', sans-serif" font-size="16" font-weight="600" text-anchor="middle">' %(SCHEDULE_X+36, heights[idx]+22, pal['blk'])
     output += dates[idx].strftime("%b %d").upper()
     output += '</text>'
     # Title
-    output += '<text x="%d" y="%d" fill="%s" font-family="\'Open Sans\', sans-serif" font-size="28" text-anchor="start" font-weight="bold" letter-spacing="-0.5">' %(SCHEDULE_X+98, heights[idx]+28, pal['cat'][data['talks'][idx]['cat']])
+    output += '<text x="%d" y="%d" fill="%s" font-family="\'Open Sans Condensed\', sans-serif" font-weight="700" font-size="28" text-anchor="start">' %(SCHEDULE_X+98, heights[idx]+28, pal['cat'][data['talks'][idx]['cat']])
     output += data['talks'][idx]['title']
     output += '</text>'
     output += '</g>'
