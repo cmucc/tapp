@@ -139,6 +139,7 @@ def render(data):
   output += '  <style type="text/css">\n'
   output += '    .series-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: 40px; font-weight: 700; }\n'
   output += '    .when-and-where { font-family: \'Open Sans\', sans-serif; font-size: 18px; }\n'
+  output += '    .website { font-family: \'Open Sans\', sans-serif; font-size: 24px; }\n'
   output += '    .talk-date { font-family: \'Open Sans\', sans-serif; font-size: 16px; font-weight: 600; }\n'
   output += '    .talk-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: 28px; font-weight: 700; }\n'
   output += '  </style>\n'
@@ -168,6 +169,11 @@ def render(data):
   # Time
   output += '<text x="396" y="480" fill="'+pal['reg']+'" class="when-and-where" text-anchor="end">'
   output += time_range_str(startTime.time(), endTime.time())
+  output += '</text>\n'
+
+  # Website
+  output += '<text x="%d" y="%d" fill="%s" class="website" text-anchor="start">' %(MARGIN, DOCUMENT_HEIGHT - MARGIN, pal['em'])
+  output += data['url']
   output += '</text>\n'
 
   # Lay out schedule
