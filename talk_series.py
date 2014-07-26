@@ -117,8 +117,8 @@ def validate(data):
 # Converts the data into an SVG
 def render(data):
   # Color palette
-  pal = { 'bg':  '#3a3a3c',
-          'em':  '#ffec82',
+  pal = { 'bg':  '#3f3a3c',
+          'em':  '#ffea7f',
           'reg': '#a5afa4',
           'blk': '#1f1f1f',
           'cat': ['#a5afa4', '#fec24d', '#f598ab', '#70ceec', '#a5ce43'] }
