@@ -130,7 +130,7 @@ def render(data):
 
   # Preamble
   output = '<?xml version="1.0"?>\n'
-  output += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1224 792">\n'
+  output += '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1224 792">\n'
 
   # Font definitions
   output += '<defs>\n'
@@ -150,6 +150,14 @@ def render(data):
   DOCUMENT_HEIGHT = 792
   MARGIN = 72
   output += '<rect x="0" y="0" width="%d" height="%d" fill="%s" />\n' %(DOCUMENT_WIDTH, DOCUMENT_HEIGHT, pal['bg'])
+
+  #CMUCC Logo
+  LOGO_WIDTH = 475
+  LOGO_HEIGHT = 100
+  LOGO_MARGIN = 20
+  LOGO_SCALE = 0.7
+  LOGO_FILE = '2013logo_light.svg'
+  output += '<image x="%d" y="%d" width="%d" height="%d" xlink:href="%s"/>\n' %(436-((LOGO_WIDTH-LOGO_MARGIN)*LOGO_SCALE), 360-(LOGO_HEIGHT*LOGO_SCALE), (LOGO_WIDTH*LOGO_SCALE), (LOGO_HEIGHT*LOGO_SCALE), LOGO_FILE)
 
   # Series Name
   output += '<text x="436" y="396" fill="'+pal['em']+'" class="series-title" text-anchor="end">'
