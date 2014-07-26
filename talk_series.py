@@ -142,6 +142,7 @@ def render(data):
   output += '    .website { font-family: \'Open Sans\', sans-serif; font-size: 24px; }\n'
   output += '    .talk-date { font-family: \'Open Sans\', sans-serif; font-size: 16px; font-weight: 600; }\n'
   output += '    .talk-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: 32px; font-weight: 700; }\n'
+  output += '    .sponsored-by { font-family: \'Open Sans\', sans-serif; font-size: 18px; }\n'
   output += '  </style>\n'
   output += '</defs>\n'
 
@@ -180,9 +181,17 @@ def render(data):
   output += '</text>\n'
 
   # Website
-  output += '<text x="%d" y="%d" fill="%s" class="website" text-anchor="start">' %(MARGIN, DOCUMENT_HEIGHT - MARGIN, pal['em'])
+  output += '<text x="%d" y="%d" fill="%s" class="website" text-anchor="end">' %(396, DOCUMENT_HEIGHT - MARGIN - 144, pal['em'])
   output += data['url']
   output += '</text>\n'
+
+  # Sponsor
+  SPONSOR_WIDTH = 144
+  SPONSOR_HEIGHT = 108
+  output += '<text x="%d" y="%d" fill="%s" class="sponsored-by" text-anchor="end">' %(396 - SPONSOR_WIDTH, DOCUMENT_HEIGHT - MARGIN - data['sponsor_height_offset'], pal['reg'])
+  output += 'Sponsored by'
+  output += '</text>\n'
+  output += '<image x="%d" y="%d" width="%d" height="%d" xlink:href="%s" />\n' %(396 - SPONSOR_WIDTH, DOCUMENT_HEIGHT - MARGIN - SPONSOR_HEIGHT, SPONSOR_WIDTH, SPONSOR_HEIGHT, data['sponsor_logo'])
 
   # Lay out schedule
   SCHEDULE_X = 492

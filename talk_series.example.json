@@ -21,5 +21,7 @@
     { "title" : "Supercharging Your Terminal", "cat" : 4 },
     { "title" : "Virtual Private Servers", "cat" : 4 }
   ],
-  "url" : "http://www.cmucc.org/talks"
+  "url" : "http://www.cmucc.org/talks",
+  "sponsor_logo" : "2013logo_light.svg",
+  "sponsor_height_offset" : 48
 }
