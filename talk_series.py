@@ -164,7 +164,7 @@ def render(data):
   SCHEDULE_X = 492
   SCHEDULE_Y = 72
   SCHEDULE_WIDTH = 648
-  SCHEDULE_HEIGHT = 576
+  SCHEDULE_HEIGHT = 648
   LINE_HEIGHT = 32
   heights = disperse_heights(SCHEDULE_Y, SCHEDULE_HEIGHT, len(data['talks']), LINE_HEIGHT)
   dates = disperse_dates(startDate, len(data['talks']))
