@@ -128,6 +128,7 @@ def render(data):
   startTime = datetime.datetime.strptime(data['start_time'], '%H:%M')
   endTime = datetime.datetime.strptime(data['end_time'], '%H:%M')
 
+  # Preamble
   output = '<?xml version="1.0"?>\n'
   output += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1224 792">\n'
 
@@ -135,36 +136,45 @@ def render(data):
   output += '<defs>\n'
   output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);</style>\n'
   output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);</style>\n'
+  output += '  <style type="text/css">\n'
+  output += '    .series-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: 40px; font-weight: 700; }\n'
+  output += '    .when-and-where { font-family: \'Open Sans\', sans-serif; font-size: 18px; }\n'
+  output += '    .talk-date { font-family: \'Open Sans\', sans-serif; font-size: 16px; font-weight: 600; }\n'
+  output += '    .talk-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: 28px; font-weight: 700; }\n'
+  output += '  </style>\n'
   output += '</defs>\n'
 
   # Background
-  output += '<rect x="0" y="0" width="1224" height="792" fill="'+pal['bg']+'" />\n'
+  DOCUMENT_WIDTH = 1224
+  DOCUMENT_HEIGHT = 792
+  MARGIN = 72
+  output += '<rect x="0" y="0" width="%d" height="%d" fill="%s" />\n' %(DOCUMENT_WIDTH, DOCUMENT_HEIGHT, pal['bg'])
 
   # Series Name
-  output += '<text x="436" y="396" fill="'+pal['em']+'" font-family="\'Open Sans Condensed\', sans-serif" font-weight="700" font-size="40" text-anchor="end">'
+  output += '<text x="436" y="396" fill="'+pal['em']+'" class="series-title" text-anchor="end">'
   output += data['name'] + ' Talk Series'
   output += '</text>\n'
 
   # Day of Week
-  output += '<text x="396" y="432" fill="'+pal['reg']+'" font-family="\'Open Sans\', sans-serif" font-size="18" text-anchor="end">'
+  output += '<text x="396" y="432" fill="'+pal['reg']+'" class="when-and-where" text-anchor="end">'
   output += startDate.strftime('%A') + 's'
   output += '</text>\n'
 
   # Location
-  output += '<text x="396" y="456" fill="'+pal['reg']+'" font-family="\'Open Sans\', sans-serif" font-size="18" text-anchor="end">'
+  output += '<text x="396" y="456" fill="'+pal['reg']+'" class="when-and-where" text-anchor="end">'
   output += data['location']
   output += '</text>\n'
 
   # Time
-  output += '<text x="396" y="480" fill="'+pal['reg']+'" font-family="\'Open Sans\', sans-serif" font-size="18" text-anchor="end">'
+  output += '<text x="396" y="480" fill="'+pal['reg']+'" class="when-and-where" text-anchor="end">'
   output += time_range_str(startTime.time(), endTime.time())
   output += '</text>\n'
 
   # Lay out schedule
   SCHEDULE_X = 492
-  SCHEDULE_Y = 72
+  SCHEDULE_Y = MARGIN
   SCHEDULE_WIDTH = 648
-  SCHEDULE_HEIGHT = 648
+  SCHEDULE_HEIGHT = DOCUMENT_HEIGHT - (MARGIN * 2)
   LINE_HEIGHT = 32
   heights = disperse_heights(SCHEDULE_Y, SCHEDULE_HEIGHT, len(data['talks']), LINE_HEIGHT)
   dates = disperse_dates(startDate, len(data['talks']))
@@ -172,11 +182,11 @@ def render(data):
     output += '<g>'
     # Date
     output += '<rect x="%d" y="%d" width="72" height="%d" fill="%s" />' %(SCHEDULE_X, heights[idx], LINE_HEIGHT, pal['cat'][data['talks'][idx]['cat']])
-    output += '<text x="%d" y="%d" fill="%s" font-family="\'Open Sans\', sans-serif" font-size="16" font-weight="600" text-anchor="middle">' %(SCHEDULE_X+36, heights[idx]+22, pal['blk'])
+    output += '<text x="%d" y="%d" fill="%s" class="talk-date" text-anchor="middle">' %(SCHEDULE_X+36, heights[idx]+22, pal['blk'])
     output += dates[idx].strftime("%b %d").upper()
     output += '</text>'
     # Title
-    output += '<text x="%d" y="%d" fill="%s" font-family="\'Open Sans Condensed\', sans-serif" font-weight="700" font-size="28" text-anchor="start">' %(SCHEDULE_X+98, heights[idx]+28, pal['cat'][data['talks'][idx]['cat']])
+    output += '<text x="%d" y="%d" fill="%s" class="talk-title" text-anchor="start">' %(SCHEDULE_X+98, heights[idx]+28, pal['cat'][data['talks'][idx]['cat']])
     output += data['talks'][idx]['title']
     output += '</text>'
     output += '</g>'
