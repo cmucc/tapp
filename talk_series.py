@@ -141,7 +141,7 @@ def render(data):
   output += '    .when-and-where { font-family: \'Open Sans\', sans-serif; font-size: 18px; }\n'
   output += '    .website { font-family: \'Open Sans\', sans-serif; font-size: 24px; }\n'
   output += '    .talk-date { font-family: \'Open Sans\', sans-serif; font-size: 16px; font-weight: 600; }\n'
-  output += '    .talk-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: 28px; font-weight: 700; }\n'
+  output += '    .talk-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: 32px; font-weight: 700; }\n'
   output += '  </style>\n'
   output += '</defs>\n'
 
