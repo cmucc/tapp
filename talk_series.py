@@ -131,6 +131,12 @@ def render(data):
   output = '<?xml version="1.0"?>\n'
   output += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1224 792">\n'
 
+  # Font definitions
+  output += '<defs>\n'
+  output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);</style>\n'
+  output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);</style>\n'
+  output += '</defs>\n'
+
   # Background
   output += '<rect x="0" y="0" width="1224" height="792" fill="'+pal['bg']+'" />\n'
 
