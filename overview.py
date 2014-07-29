@@ -64,6 +64,10 @@ def validate(data):
 def render(data):
   output = ''
 
+  DOCUMENT_WIDTH = 612
+  DOCUMENT_HEIGHT = 792
+  MARGIN = 36
+
   # Color palette
   pal = {
     'red' : '#9c1b20',
@@ -76,6 +80,12 @@ def render(data):
   output += '<svg xmlns="http://www.w3.org/2000/svg" '
   output += 'xmlns:xlink="http://www.w3.org/1999/xlink" '
   output += 'viewBox="0 0 612 792">\n'
+
+  # Header
+  output += '<g>\n'
+  output += '<rect x="%d" y="%d" width="%d" height="%d" fill="%s" />\n' \
+    %(MARGIN, MARGIN, DOCUMENT_WIDTH-(MARGIN*2), 108, pal['red'])
+  output += '</g>\n'
 
   output += '</svg>'
   return output
