@@ -1,0 +1,16 @@
+{
+  "meetings" : [
+    {
+      "type" : "Machine Room",
+      "location" : "Cyert B6",
+      "day" : "Saturday",
+      "time" : "17:00"
+    },
+    {
+      "type" : "Admin Mtg",
+      "location" : "Porter A19C",
+      "day" : "Tuesday",
+      "time" : "17:30"
+    }
+  ]
+}
