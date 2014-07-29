@@ -19,7 +19,7 @@ def main(argv):
 
   for opt, arg in opts:
     if opt == '-h':
-      print 'test.py -i <inputfilename> -o <outputfilename>'
+      print 'talk_series.py -i <inputfilename> -o <outputfilename>'
       sys.exit()
     elif opt in ('-i','--infile'):
       inFileName = arg
