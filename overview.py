@@ -100,6 +100,8 @@ def render(data):
   output += '<text x="%d" y="%d" class="subtitle">' %(MARGIN+12, MARGIN+108-12)
   output += 'The Carnegie Mellon University Computer Club'
   output += '</text>\n'
+  output += '<rect x="%d" y="%d" width="%d" height="%d" fill="%s" />\n' \
+    %(DOCUMENT_WIDTH-MARGIN-12-144, MARGIN+12, 144, 108-(12*2), pal['gray'])
   output += '</g>\n'
 
   output += '</svg>'
