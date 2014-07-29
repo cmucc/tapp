@@ -94,6 +94,12 @@ def render(data):
   output += '<g>\n'
   output += '<rect x="%d" y="%d" width="%d" height="%d" fill="%s" />\n' \
     %(MARGIN, MARGIN, DOCUMENT_WIDTH-(MARGIN*2), 108, pal['red'])
+  LOGO_FILE = '2013logo_light.svg'
+  output += '<image x="%d" y="%d" width="%d" height="%d" xlink:href="%s" />\n' \
+    %(MARGIN+12, MARGIN+12, 332.5, 70, LOGO_FILE)
+  output += '<text x="%d" y="%d" class="subtitle">' %(MARGIN+12, MARGIN+108-12)
+  output += 'The Carnegie Mellon University Computer Club'
+  output += '</text>\n'
   output += '</g>\n'
 
   output += '</svg>'
