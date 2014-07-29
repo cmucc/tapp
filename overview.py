@@ -81,6 +81,15 @@ def render(data):
   output += 'xmlns:xlink="http://www.w3.org/1999/xlink" '
   output += 'viewBox="0 0 612 792">\n'
 
+  # Font definitions and styles
+  output += '<defs>\n'
+  output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600);</style>\n'
+  output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);</style>\n'
+  output += '  <style type="text/css">\n'
+  output += '    .subtitle { font-family: \'Open Sans\', sans-serif; fill: %s; font-size: 16px; font-weight: 300; }\n' %(pal['white'])
+  output += '  </style>\n'
+  output += '</defs>\n'
+
   # Header
   output += '<g>\n'
   output += '<rect x="%d" y="%d" width="%d" height="%d" fill="%s" />\n' \
