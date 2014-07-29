@@ -87,6 +87,7 @@ def render(data):
   output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);</style>\n'
   output += '  <style type="text/css">\n'
   output += '    .subtitle { font-family: \'Open Sans\', sans-serif; fill: %s; font-size: 16px; font-weight: 300; }\n' %(pal['white'])
+  output += '    .meetings { font-family: \'Open Sans Condensed\', sans-serif; fill: %s; font-size: 13px; font-weight: 700; }\n' %(pal['white'])
   output += '  </style>\n'
   output += '</defs>\n'
 
@@ -100,12 +101,33 @@ def render(data):
   output += '<text x="%d" y="%d" class="subtitle">' %(MARGIN+12, MARGIN+108-12)
   output += 'The Carnegie Mellon University Computer Club'
   output += '</text>\n'
+
+  # Meetings
   output += '<rect x="%d" y="%d" width="%d" height="%d" fill="%s" />\n' \
     %(DOCUMENT_WIDTH-MARGIN-12-144, MARGIN+12, 144, 108-(12*2), pal['gray'])
+  (m1l1, m1l2) = make_meeting(data['meetings'][0])
+  output += '<text x="%d" y="%d" class="meetings">' %(DOCUMENT_WIDTH-MARGIN-150, MARGIN+30)
+  output += m1l1
+  output += '</text>\n'
+  output += '<text x="%d" y="%d" class="meetings">' %(DOCUMENT_WIDTH-MARGIN-150, MARGIN+45)
+  output += m1l2
+  output += '</text>\n'
+  (m2l1, m2l2) = make_meeting(data['meetings'][1])
+  output += '<text x="%d" y="%d" class="meetings">' %(DOCUMENT_WIDTH-MARGIN-150, MARGIN+69)
+  output += m2l1
+  output += '</text>\n'
+  output += '<text x="%d" y="%d" class="meetings">' %(DOCUMENT_WIDTH-MARGIN-150, MARGIN+84)
+  output += m2l2
+  output += '</text>\n'
   output += '</g>\n'
-
   output += '</svg>'
   return output
+
+def make_meeting(mtg):
+  line1 = mtg['type'] + ' (' + mtg['location'] +')'
+  time = datetime.datetime.strptime(mtg['time'], '%H:%M')
+  line2 = mtg['day'] + 's @ ' + time.strftime('%I:%M %p')
+  return (line1, line2)
 
 # Invoke main as top-level function
 if __name__ == '__main__':
