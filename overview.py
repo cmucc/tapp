@@ -64,6 +64,13 @@ def validate(data):
 def render(data):
   output = ''
 
+  # Color palette
+  pal = {
+    'red' : '#9c1b20',
+    'gray' : '#413f42',
+    'white' : '#ffffff',
+    'black' : '#231f20' }
+
   # Preamble
   output += '<?xml version="1.0"?>\n'
   output += '<svg xmlns="http://www.w3.org/2000/svg" '
