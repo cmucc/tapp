@@ -91,6 +91,7 @@ def render(data):
   output += '    .heading { font-family: \'Open Sans Condensed\', sans-serif; fill: %s; font-size: 36px; font-weight: 700; }\n' %(pal['gray'])
   output += '    .body { font-family: \'Open Sans\', sans-serif; fill: %s; font-size: 16px; font-weight: 400; letter-spacing: -0.5px; }\n' %(pal['black'])
   output += '    .bold-body { font-family: \'Open Sans\', sans-serif; fill: %s; font-size: 16px; font-weight: 700; letter-spacing: -0.5px; }\n' %(pal['black'])
+  output += '    .bracket {font-family: \'Open Sans Condensed\', sans-serif; fill: %s; font-size: 20px; font-weight: 700; }\n' %(pal['gray'])
   output += '  </style>\n'
   output += '</defs>\n'
 
@@ -144,6 +145,31 @@ def render(data):
     yPosition = MARGIN + 204 + (idx/2)*24
     output += '<text x="%d" y="%d" class="bold-body">' %(xPosition, yPosition)
     output += '- ' + data['services'][idx]
+    output += '</text>\n'
+
+  # Events
+  output += '<text x="%d" y="%d" class="heading">' %(MARGIN, MARGIN+306)
+  output += 'We Also Host Events'
+  output += '</text>\n'
+  output += red_bar(MARGIN+312)
+  for idx in range(0,3):
+    xPosition = MARGIN + 12
+    yPosition = MARGIN + 336 + (idx*24)
+    output += '<text x="%d" y="%d" class="body">' %(xPosition, yPosition)
+    output += '<tspan class="bold-body">- ' + data['events'][idx]['name'] + '</tspan>'
+    output += ': ' + data['events'][idx]['blurb']
+    output += '</text>\n'
+    output += '<text x="%d" y="%d" class="bracket" text-anchor="end">' \
+      %(DOCUMENT_WIDTH - xPosition, yPosition)
+    output += ']'
+    output += '</text>\n'
+    output += '<text x="%d" y="%d" class="bracket" text-anchor="start">' \
+      %(DOCUMENT_WIDTH - xPosition - 72, yPosition)
+    output += '['
+    output += '</text>\n'
+    output += '<text x="%d" y="%d" class="body" text-anchor="middle">' \
+      %(DOCUMENT_WIDTH - xPosition - 36, yPosition)
+    output += data['events'][idx]['when']
     output += '</text>\n'
 
   output += '</svg>'

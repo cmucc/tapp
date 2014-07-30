@@ -20,5 +20,22 @@
     "Realtime Graphics Demos",
     "Freenode IRC Server",
     "Jabber &amp; Zephyr Chat Servers"
+  ],
+  "events" : [
+    {
+      "name" : "Demosplash",
+      "blurb" : "North America's largest Fall demoparty",
+      "when" : "October"
+    },
+    {
+      "name" : "Retro Gaming Night",
+      "blurb" : "Classic games on original hardware",
+      "when" : "Spring"
+    },
+    {
+      "name" : "Talk Series",
+      "blurb" : "Unlock the full power of your systems",
+      "when" : "All Year"
+    }
   ]
 }
