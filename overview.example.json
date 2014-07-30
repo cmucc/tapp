@@ -12,5 +12,13 @@
       "day" : "Tuesday",
       "time" : "17:30"
     }
+  ],
+  "services" : [
+    "Contributed Webserver",
+    "OpenVMS Cluster",
+    "Open Source Project Mirrors",
+    "Realtime Graphics Demos",
+    "Freenode IRC Server",
+    "Jabber &amp; Zephyr Chat Servers"
   ]
 }

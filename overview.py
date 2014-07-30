@@ -83,11 +83,14 @@ def render(data):
 
   # Font definitions and styles
   output += '<defs>\n'
-  output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600);</style>\n'
+  output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);</style>\n'
   output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);</style>\n'
   output += '  <style type="text/css">\n'
   output += '    .subtitle { font-family: \'Open Sans\', sans-serif; fill: %s; font-size: 16px; font-weight: 300; }\n' %(pal['white'])
   output += '    .meetings { font-family: \'Open Sans Condensed\', sans-serif; fill: %s; font-size: 13px; font-weight: 700; }\n' %(pal['white'])
+  output += '    .heading { font-family: \'Open Sans Condensed\', sans-serif; fill: %s; font-size: 36px; font-weight: 700; }\n' %(pal['gray'])
+  output += '    .body { font-family: \'Open Sans\', sans-serif; fill: %s; font-size: 16px; font-weight: 400; letter-spacing: -0.5px; }\n' %(pal['black'])
+  output += '    .bold-body { font-family: \'Open Sans\', sans-serif; fill: %s; font-size: 16px; font-weight: 700; letter-spacing: -0.5px; }\n' %(pal['black'])
   output += '  </style>\n'
   output += '</defs>\n'
 
@@ -120,6 +123,29 @@ def render(data):
   output += m2l2
   output += '</text>\n'
   output += '</g>\n'
+
+  def red_bar(yPosition):
+    return '<rect x="%d" y="%d" width="%d" height="%d" fill="%s" />\n' \
+      %(MARGIN, yPosition, DOCUMENT_WIDTH-(MARGIN*2), 3, pal['red'])
+
+  # Services
+  output += '<text x="%d" y="%d" class="heading">' %(MARGIN, MARGIN+150)
+  output += 'We Create &amp; Run Services'
+  output += '</text>'
+  output += red_bar(MARGIN+156)
+  output += '<text x="%d" y="%d" class="body">' %(MARGIN, MARGIN+180)
+  output += 'Computer Club hacks on projects used at CMU and around the world:'
+  output += '</text>\n'
+  for idx in range(0,6):
+    if idx % 2 == 0:
+      xPosition = MARGIN+12
+    else:
+      xPosition = ((DOCUMENT_WIDTH+MARGIN)/2) + 12
+    yPosition = MARGIN + 204 + (idx/2)*24
+    output += '<text x="%d" y="%d" class="bold-body">' %(xPosition, yPosition)
+    output += '- ' + data['services'][idx]
+    output += '</text>\n'
+
   output += '</svg>'
   return output
 
