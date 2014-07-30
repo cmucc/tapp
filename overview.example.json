@@ -37,5 +37,19 @@
       "blurb" : "Unlock the full power of your systems",
       "when" : "All Year"
     }
+  ],
+  "toys" : [
+    {
+      "name" : "Shell Machines",
+      "blurb" : "Less crowded than Andrew and no nightly reboots."
+    },
+    {
+      "name" : "Club AFS",
+      "blurb" : "More space and faster access than Andrew AFS."
+    },
+    {
+      "name" : "Virtual Machines",
+      "blurb" : "Why pay someone else to host your code?"
+    }
   ]
 }

@@ -172,6 +172,22 @@ def render(data):
     output += data['events'][idx]['when']
     output += '</text>\n'
 
+  # Toys
+  output += '<text x="%d" y="%d" class="heading">' %(MARGIN, MARGIN+438)
+  output += 'And We Have Cool Toys'
+  output += '</text>\n'
+  output += red_bar(MARGIN+444)
+  output += '<text x="%d" y="%d" class="body">' %(MARGIN, MARGIN+468)
+  output += 'Members have access to our internal services:'
+  output += '</text>\n'
+  for idx in range(0,3):
+    xPosition = MARGIN + 12
+    yPosition = MARGIN + 492 + (idx*24)
+    output += '<text x="%d" y="%d" class="body">' %(xPosition, yPosition)
+    output += '<tspan class="bold-body">- ' + data['toys'][idx]['name'] + '</tspan>'
+    output += ': ' + data['toys'][idx]['blurb']
+    output += '</text>\n'
+
   output += '</svg>'
   return output
 
