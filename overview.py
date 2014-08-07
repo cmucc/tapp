@@ -188,6 +188,11 @@ def render(data):
     output += ': ' + data['toys'][idx]['blurb']
     output += '</text>\n'
 
+  # QR
+  QR_FILE = 'cmucc_qr.svg'
+  output += '<image x="%d" y="%d" width="%d" height="%d" xlink:href="%s" />\n' \
+    %(DOCUMENT_WIDTH-MARGIN-144, DOCUMENT_HEIGHT-MARGIN-144, 144, 144, QR_FILE)
+
   output += '</svg>'
   return output
 
