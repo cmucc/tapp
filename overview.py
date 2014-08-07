@@ -92,6 +92,7 @@ def render(data):
   output += '    .body { font-family: \'Open Sans\', sans-serif; fill: %s; font-size: 16px; font-weight: 400; letter-spacing: -0.5px; }\n' %(pal['black'])
   output += '    .bold-body { font-family: \'Open Sans\', sans-serif; fill: %s; font-size: 16px; font-weight: 700; letter-spacing: -0.5px; }\n' %(pal['black'])
   output += '    .bracket {font-family: \'Open Sans Condensed\', sans-serif; fill: %s; font-size: 20px; font-weight: 700; }\n' %(pal['gray'])
+  output += '    .link { font-family: \'Open Sans Condensed\', sans-serif; fill: %s; font-size: 26px; font-weight: 700; }\n' %(pal['gray'])
   output += '  </style>\n'
   output += '</defs>\n'
 
@@ -192,6 +193,16 @@ def render(data):
   QR_FILE = 'cmucc_qr.svg'
   output += '<image x="%d" y="%d" width="%d" height="%d" xlink:href="%s" />\n' \
     %(DOCUMENT_WIDTH-MARGIN-144, DOCUMENT_HEIGHT-MARGIN-144, 144, 144, QR_FILE)
+
+  # Links
+  output += '<g>\n'
+  for idx in range(0,4):
+    xPosition = MARGIN + 12
+    yPosition = DOCUMENT_HEIGHT-MARGIN-144+18+(41*idx)
+    output += '<text x="%d" y="%d" class="link">' %(xPosition, yPosition)
+    output += data['links'][idx]
+    output += '</text>\n'
+  output += '</g>\n'
 
   output += '</svg>'
   return output

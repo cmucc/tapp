@@ -51,5 +51,11 @@
       "name" : "Virtual Machines",
       "blurb" : "Why pay someone else to host your code?"
     }
+  ],
+  "links" : [
+    "cmucc.org",
+    "twitter.com/cl0x",
+    "facebook.com/cmucclub",
+    "irc://freenode.net/##cclub"
   ]
 }
