@@ -37,10 +37,7 @@
     <path d="M 1 8 L 1 10 L 2 10 L 2 9 L 3 9 L 3 8 Z" fill="#000000" class="final" />
     <rect x="3" y="9" width="1" height="1" fill="#000000" class="final" />
     <rect x="2" y="11" width="2" height="1" fill="#000000" class="final" />
-    <rect x="4" y="10" width="3" height="3" fill="#000000" />
-    <rect x="4" y="11" width="1" height="1" fill="#ffffff" />
-    <rect x="6" y="11" width="1" height="1" fill="#ffffff" />
-    <rect x="4" y="13" width="1" height="1" fill="#000000" />
+    <path d="M 4 10 L 4 11 L 5 11 L 5 12 L 4 12 L 4 14 L 5 14 L 5 13 L 7 13 L 7 12 L 6 12 L 6 11 L 7 11 L 7 10 Z" fill="#000000" class="final" />
     <path d="M 5 14 L 5 16 L 6 16 L 6 15 L 7 15 L 7 16 L 6 16 L 6 17 L 8 17 L 8 14 Z" fill="#000000" class="final" />
     <rect x="7" y="9" width="1" height="1" fill="#000000" class="final" />
     <rect x="6" y="8" width="1" height="1" fill="#000000" class="final" />
