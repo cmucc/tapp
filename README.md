@@ -10,3 +10,11 @@ Usage:
     ./talk_series.py -i foo.json -o bar.svg
 
 See the example `json` file for reference.
+
+## Club Overview Flyers
+
+Usage:
+
+    ./overview.py -i foo.json -o bar.svg
+
+See the example `json` file for reference.
