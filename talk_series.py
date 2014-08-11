@@ -75,9 +75,9 @@ def validate(data):
     print 'Parse Error: first_date must be datestring.'
     failed = True
   try:
-    dummydate = datetime.datetime.strptime(data['first_date'], '%d-%m-%Y')
+    dummydate = datetime.datetime.strptime(data['first_date'], '%Y-%m-%d')
   except ValueError:
-    print 'Parse Error: first_date must match format %d-%m-%Y.'
+    print 'Parse Error: first_date must match format %Y-%m-%d.'
     failed = True
 
   if not 'location' in data:
@@ -124,7 +124,7 @@ def render(data):
           'cat': ['#a5afa4', '#fec24d', '#f598ab', '#70ceec', '#a5ce43', '#fe824d'] }
 
   # Manufacture start date object
-  startDate = datetime.datetime.strptime(data['first_date'], '%d-%m-%Y')
+  startDate = datetime.datetime.strptime(data['first_date'], '%Y-%m-%d')
   startTime = datetime.datetime.strptime(data['start_time'], '%H:%M')
   endTime = datetime.datetime.strptime(data['end_time'], '%H:%M')
 
