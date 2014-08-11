@@ -121,7 +121,7 @@ def render(data):
           'em':  '#ffea7f',
           'reg': '#a5afa4',
           'blk': '#1f1f1f',
-          'cat': ['#a5afa4', '#fec24d', '#f598ab', '#70ceec', '#a5ce43'] }
+          'cat': ['#a5afa4', '#fec24d', '#f598ab', '#70ceec', '#a5ce43', '#fe824d'] }
 
   # Manufacture start date object
   startDate = datetime.datetime.strptime(data['first_date'], '%d-%m-%Y')
