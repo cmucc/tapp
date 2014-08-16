@@ -210,7 +210,7 @@ def render(data):
 def make_meeting(mtg):
   line1 = mtg['type'] + ' (' + mtg['location'] +')'
   time = datetime.datetime.strptime(mtg['time'], '%H:%M')
-  line2 = mtg['day'] + 's @ ' + time.strftime('%I:%M %p')
+  line2 = mtg['day'] + 's @ ' + time.strftime('%I:%M %p').lstrip('0')
   return (line1, line2)
 
 # Invoke main as top-level function
