@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-# talk_series.py
+# talk_series/svg-gen.py
 # Generator for talk series posters
 # Part of the TAPP library
 # Copyright 2014 Sam Gruber <scgruber@club.cc.cmu.edu>
@@ -14,12 +14,12 @@ def main(argv):
   try:
     opts, args = getopt.getopt(argv, 'hi:o:', ['infile=','outfile='])
   except getopt.GetoptError:
-    print 'talk_series.py -i <inputfilename> -o <outputfilename>'
+    print 'talk_series/svg-gen.py -i <inputfilename> -o <outputfilename>'
     sys.exit(2)
 
   for opt, arg in opts:
     if opt == '-h':
-      print 'talk_series.py -i <inputfilename> -o <outputfilename>'
+      print 'talk_series/svg-gen.py -i <inputfilename> -o <outputfilename>'
       sys.exit()
     elif opt in ('-i','--infile'):
       inFileName = arg
