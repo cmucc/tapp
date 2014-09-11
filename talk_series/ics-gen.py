@@ -170,15 +170,6 @@ def render(data):
   output += 'END:VCALENDAR\n'
   return output
 
-def time_range_str(start, end):
-  if (start.hour < 12) != (end.hour < 12):
-    startM = choose(start.hour < 12,'AM','PM')
-    endM = choose(end.hour < 12,'AM','PM')
-    # Different AM/PM
-    return start.strftime('%I:%M %p').lstrip('0') + ' - ' + end.strftime('%I:%M %p').lstrip('0')
-  else:
-    return start.strftime('%I:%M').lstrip('0') + ' - ' + end.strftime('%I:%M %p').lstrip('0')
-
 def disperse_dates(startDate, numEvents):
   step = datetime.timedelta(days=7)
   dates = [startDate]
@@ -186,12 +177,6 @@ def disperse_dates(startDate, numEvents):
     startDate += step
     dates += [startDate]
   return dates
-
-def choose(cond, t, f):
-  if cond:
-    return t
-  else:
-    return f
 
 # Invoke main as top-level function
 if __name__ == '__main__':

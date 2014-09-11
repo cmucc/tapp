@@ -4,25 +4,33 @@ Totally Automated Propaganda Producer
 This package contains scripts to be used to produce marketing materials for the
 CMU Computer Club.
 
-## Talk Series Posters
+## Talk Series
+
+See the example `talks_series/example.json` for input reference.
+
+### Posters
 
 Usage:
 
     ./talk_series/svg-gen.py -i foo.json -o bar.svg
 
-See the example `talks_series/example.json` file for reference.
-
 The file `2013logo_light.svg` must be in the same directory as the output file
 to display properly.  Additionally, the filename given in the `sponsor_logo`
 field must be relative to the output file.
 
+### iCalendar File
+
+Usage:
+
+    ./talk_series/ics-gen.py -i foo.json -o bar.ics
+
 ## Club Overview Flyers
+
+See the example `overview/example.json` for input reference.
 
 Usage:
 
     ./overview/svg-gen.py -i foo.json -o bar.svg
-
-See the example `overview/example.json` file for reference.
 
 The files `2013logo_light.svg` and `cmucc_qr.svg` must be in the same directory
 as the output file to display properly.
