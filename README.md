@@ -27,3 +27,12 @@ See the example `overview/example.json` file for reference.
 The files `2013logo_light.svg` and `cmucc_qr.svg` must be in the same directory
 as the output file to display properly.
 
+## Printing SVGs
+
+Generated SVGs are intended to be viewed and printed from [Google
+Chrome](https://www.google.com/chrome/browser/); however, the transcluded logos
+can cause issues.  As a workaround, manually remove the `<image>` tags from the
+SVG output, and replace them using an SVG editor such as
+[Inkscape](http://www.inkscape.org/en/).  Ensure all required fonts are
+installed, resize to desired output size, and print.
+
