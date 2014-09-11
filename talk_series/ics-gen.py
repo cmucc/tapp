@@ -153,19 +153,20 @@ def render(data):
   # Create individual events
   dates = disperse_dates(startDate, len(data['talks']))
   for idx in range(0, len(dates)):
-    output += (
-      'BEGIN:VEVENT\n'
-      'UID:talks-series-' + dates[idx].strftime("%Y-%m-%d") + '@club.cc.cmu.edu\n'
-      'DTSTART:' + dates[idx].strftime("%Y%m%d") + 'T' + startTime.strftime("%H%M%S") + '\n'
-      'DTEND:' + dates[idx].strftime("%Y%m%d") + 'T' + endTime.strftime("%H%M%S") + '\n'
-      'SUMMARY:' + data['talks'][idx]['title'] + '\n'
-      'LOCATION:' + data['location'] + '\n'
-      'DESCRIPTION:' + data['url'] + '\n'
-      'SEQUENCE:0\n'
-      'STATUS:CONFIRMED\n'
-      'TRANSP:OPAQUE\n'
-      'END:VEVENT\n'
-    )
+    if not data['talks'][idx]['cat'] == 0:
+      output += (
+        'BEGIN:VEVENT\n'
+        'UID:talks-series-' + dates[idx].strftime("%Y-%m-%d") + '@club.cc.cmu.edu\n'
+        'DTSTART:' + dates[idx].strftime("%Y%m%d") + 'T' + startTime.strftime("%H%M%S") + '\n'
+        'DTEND:' + dates[idx].strftime("%Y%m%d") + 'T' + endTime.strftime("%H%M%S") + '\n'
+        'SUMMARY:' + data['talks'][idx]['title'] + '\n'
+        'LOCATION:' + data['location'] + '\n'
+        'DESCRIPTION:' + data['url'] + '\n'
+        'SEQUENCE:0\n'
+        'STATUS:CONFIRMED\n'
+        'TRANSP:OPAQUE\n'
+        'END:VEVENT\n'
+      )
 
   output += 'END:VCALENDAR\n'
   return output
