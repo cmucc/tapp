@@ -188,10 +188,10 @@ def render(data):
   # Sponsor
   SPONSOR_WIDTH = 144
   SPONSOR_HEIGHT = 108
-  output += '<text x="%d" y="%d" fill="%s" class="sponsored-by" text-anchor="end">' %(396 - SPONSOR_WIDTH, DOCUMENT_HEIGHT - MARGIN - data['sponsor_height_offset'], pal['reg'])
+  output += '<text x="%d" y="%d" fill="%s" class="sponsored-by" text-anchor="end">' %(396 - SPONSOR_WIDTH, DOCUMENT_HEIGHT - MARGIN - data['sponsor']['logo_svg-gen_height_offset'], pal['reg'])
   output += 'Sponsored by'
   output += '</text>\n'
-  output += '<image x="%d" y="%d" width="%d" height="%d" xlink:href="%s" />\n' %(396 - SPONSOR_WIDTH, DOCUMENT_HEIGHT - MARGIN - SPONSOR_HEIGHT, SPONSOR_WIDTH, SPONSOR_HEIGHT, data['sponsor_logo'])
+  output += '<image x="%d" y="%d" width="%d" height="%d" xlink:href="%s" />\n' %(396 - SPONSOR_WIDTH, DOCUMENT_HEIGHT - MARGIN - SPONSOR_HEIGHT, SPONSOR_WIDTH, SPONSOR_HEIGHT, data['sponsor']['logo'])
 
   # Lay out schedule
   SCHEDULE_X = 492

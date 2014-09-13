@@ -125,7 +125,8 @@ def render(data):
   endTime = datetime.datetime.strptime(data['end_time'], '%H:%M')
 
   # Preamble
-  calendarDescription = data['url'] + '\\n\\n' + data['ical_desc']
+  calendarDescription = data['url'] + '\\n\\n' + data['ical_desc'] + '\\n\\n'
+  calendarDescription += 'Sponsored by ' + data['sponsor']['name'] + ' <' + data['sponsor']['url'] + '>'
   output = (
     'BEGIN:VCALENDAR\n'
     'VERSION:2.0\n'
@@ -160,7 +161,8 @@ def render(data):
   dates = disperse_dates(startDate, len(data['talks']))
   for idx in range(0, len(dates)):
     if not data['talks'][idx]['cat'] == 0:
-      fullDescription = data['talks'][idx]['desc'] + '\\n\\n' + data['url']
+      fullDescription = data['talks'][idx]['desc'] + '\\n\\n' + data['url'] + '\\n\\n'
+      fullDescription += 'Sponsored by ' + data['sponsor']['name'] + ' <' + data['sponsor']['url'] + '>'
       output += (
         'BEGIN:VEVENT\n'
         'UID:talks-series-' + dates[idx].strftime("%Y-%m-%d") + '@club.cc.cmu.edu\n'

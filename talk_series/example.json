@@ -83,6 +83,10 @@
     }
   ],
   "url" : "http://www.cmucc.org/talks",
-  "sponsor_logo" : "2013logo_light.svg",
-  "sponsor_height_offset" : 48
+  "sponsor" : {
+    "name" : "Green Hills Software",
+    "url" : "http://www.ghs.com",
+    "logo" : "2013logo_light.svg",
+    "logo_svg-gen_height_offset" : 48
+  }
 }
