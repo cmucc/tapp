@@ -116,12 +116,16 @@ def validate(data):
 
 # Converts the data into an ICS
 def render(data):
+  ICS_LINE_WIDTH = 72
+  ICS_LINE_CONTINUATION = '\n '
+
   # Manufacture start date object
   startDate = datetime.datetime.strptime(data['first_date'], '%Y-%m-%d')
   startTime = datetime.datetime.strptime(data['start_time'], '%H:%M')
   endTime = datetime.datetime.strptime(data['end_time'], '%H:%M')
 
   # Preamble
+  calendarDescription = data['url'] + '\\n\\n' + data['ical_desc']
   output = (
     'BEGIN:VCALENDAR\n'
     'VERSION:2.0\n'
@@ -129,7 +133,9 @@ def render(data):
     'METHOD:PUBLISH\n'
     'X-WR-CALNAME:CMU Computer Club ' + data['name'] + ' Talks Series\n'
     'X-WR-TIMEZONE:America/New_York\n'
-    'X-WR-CALDESC:' + data['url'] + ' - A series of talks and workshops on some of the most useful tools for advanced users and developers led by the Carnegie Mellon University Computer Club.\n'
+  )
+  output += wrap_line('X-WR-CALDESC:' + calendarDescription, ICS_LINE_WIDTH, ICS_LINE_CONTINUATION) + '\n'
+  output += (
     'BEGIN:VTIMEZONE\n'
     'TZID:America/New_York\n'
     'X-LIC-LOCATION:America/New_York\n'
@@ -154,6 +160,7 @@ def render(data):
   dates = disperse_dates(startDate, len(data['talks']))
   for idx in range(0, len(dates)):
     if not data['talks'][idx]['cat'] == 0:
+      fullDescription = data['talks'][idx]['desc'] + '\\n\\n' + data['url']
       output += (
         'BEGIN:VEVENT\n'
         'UID:talks-series-' + dates[idx].strftime("%Y-%m-%d") + '@club.cc.cmu.edu\n'
@@ -161,7 +168,9 @@ def render(data):
         'DTEND:' + dates[idx].strftime("%Y%m%d") + 'T' + endTime.strftime("%H%M%S") + '\n'
         'SUMMARY:' + data['talks'][idx]['title'] + '\n'
         'LOCATION:' + data['location'] + '\n'
-        'DESCRIPTION:' + data['url'] + '\n'
+      )
+      output += wrap_line('DESCRIPTION:' + fullDescription, ICS_LINE_WIDTH, ICS_LINE_CONTINUATION) + '\n'
+      output += (
         'SEQUENCE:0\n'
         'STATUS:CONFIRMED\n'
         'TRANSP:OPAQUE\n'
@@ -178,6 +187,11 @@ def disperse_dates(startDate, numEvents):
     startDate += step
     dates += [startDate]
   return dates
+
+def wrap_line(line, n, sep):
+  split_line = [line[i:i+n] for i in range(0, len(line), n)]
+  joined_line = sep.join(split_line)
+  return joined_line
 
 # Invoke main as top-level function
 if __name__ == '__main__':
