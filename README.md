@@ -25,6 +25,12 @@ Usage:
 
     ./talk_series/ics-gen.py -i foo.json -o bar.ics
 
+### Webpage
+
+Usage:
+
+    ./talk_series/php-gen.py -i foo.json -o bar.php
+
 ## Club Overview Flyers
 
 See the example `overview/example.json` for input reference.

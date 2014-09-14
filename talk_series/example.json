@@ -5,6 +5,13 @@
   "end_time" : "21:00",
   "location" : "Wean Hall 5415",
   "ical_desc" : "A series of talks and workshops on some of the most useful tools for advanced users and developers led by the Carnegie Mellon University Computer Club.",
+  "web_desc" : "<p>All software tools are designed to be used, so it's not too hard to get by without really understanding them.  But if you spend a little time on learning, you can save yourself hours of work when getting things done.</p><p>That's why the CMU Computer Club is leading a series of talks and workshops on some of the most useful tools for advanced users and developers.</p>",
+  "categories" : [
+    "Linux Systems",
+    "Programming Tools",
+    "OS Survey",
+    "Linux for Power Users"
+  ],
   "talks" : [
     {
       "title" : "Practical Command Line Usage",
@@ -86,6 +93,7 @@
   "sponsor" : {
     "name" : "Green Hills Software",
     "url" : "http://www.ghs.com",
+    "desc" : "Green Hills make the world's highest performing compiles, most secure real-time operating systems, revolutionary debuggers, and virtualization solutions for embedded systems.",
     "logo" : "2013logo_light.svg",
     "logo_svg-gen_height_offset" : 48
   }

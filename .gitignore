@@ -1,4 +1,5 @@
 # Ignore output files
 *.svg
 *.ics
+*.php
 
