@@ -16,76 +16,91 @@
     {
       "title" : "Practical Command Line Usage",
       "cat" : 1,
+      "notes" : "terminal-primer.html",
       "desc" : "Do you feel intimidated and afraid whenever you open a terminal? Or are you a master of all things Unix? Either way, we guarantee you will learn something useful at this talk! You'll learn how to use the command line properly, with basics like man and pipes, and more advanced features like history manipulation and readline bindings."
     },
     {
       "title" : "Using Linux with VirtualBox",
       "cat" : 1,
+      "notes" : "virtualbox-ubuntu.html",
       "desc" : "Don't feel comfortable with installing Linux on your machine? Do the next best thing! Run a Linux system from within your usual operating system using virtualization. We will walk you through the installation of Ubuntu 13.10 \"Saucy Salamander\" in VirtualBox."
     },
     {
       "title" : "Kerberos and OpenAFS",
       "cat" : 1,
+      "notes" : "kerb_and_afs.txt",
       "desc" : "By installing OpenAFS on your own system, you can use your own tools to work on your AFS files. Your files will magically appear in a directory on your local system! No more SCPing to unix.andrew.cmu.edu! Also learn the basics of Kerberos, the standard enterprise authentication system, and how it can be useful for you."
     },
     {
       "title" : "Source Version Control",
       "cat" : 2,
+      "notes" : "versioncontrol.html",
       "desc" : "Do you like having undo and redo available in your editor? Then you're sure to like having undo and redo available for your files! In this talk, you'll learn about the ideas behind the source version control system Git, and how to use its immense power for your own aims."
     },
     {
       "title" : "Power Vim",
       "cat" : 2,
+      "notes" : "vim.txt",
       "desc" : "Attend this talk to learn how to efficiently use the most powerful editor on earth! Even if you use an inferior editor, come to this talk! You might find you'd prefer this one!"
     },
     {
       "title" : "Power Emacs",
       "cat" : 2,
+      "notes" : "emacs.html",
       "desc" : "Attend this talk to learn how to efficiently use the most powerful editor on earth! Even if you use an inferior editor, come to this talk! You might find you'd prefer this one!"
     },
     {
       "title" : "Integrated Development Environments",
       "cat" : 2,
+      "notes" : "ide.html",
       "desc" : "IDEs provide a single, consistent interface for managing and developing a software project. We will discuss the central features of IDEs such as intelligent code completion, refactoring support, semantic analysis, and interactive debugging."
     },
     {
       "title" : "(Spring Break)",
       "cat" : 0,
+      "notes" : "",
       "desc" : ""
     },
     {
       "title" : "Advanced Windows Usage",
       "cat" : 3,
+      "notes" : "windows.html",
       "desc" : "Are you still using Windows? Well, you'd better come to this talk. Learn about PowerShell, orthodox file managers, package control systems, and other tools that unlock powers you never knew Windows had."
     },
     {
       "title" : "OSX for Power Users",
       "cat" : 3,
+      "notes" : "mac.html",
       "desc" : "Using OS X? Learn how to use the powerful tools already built into the OS, or bypass the \"well designed\" operating system and find true power in the Unix command line! Install a package manager to gain access to software Apple doesn't want you to have!"
     },
     {
       "title" : "Week of the Linux Desktop",
       "cat" : 3,
+      "notes" : "linux.txt",
       "desc" : "Are you interested in using the best, most freedom-respecting operating system in existence on your personal computer? Come to this talk! You'll learn how to navigate the sea of distros, basic troubleshooting, and guidance on how to overcome Baby Duck Syndrome!"
     },
     {
       "title" : "Advanced Linux",
       "cat" : 4,
+      "notes" : "advlinux.html",
       "desc" : "Ready to take the next step? Learn to use the power and flexibility of Linux with tiling window managers and other efficient tools not available on other operating systems!"
     },
     {
       "title" : "Bash Scripting",
       "cat" : 4,
+      "notes" : "bash_scripting.html",
       "desc" : "Tired of installing shareware to do something as simple as renaming files according to a pattern? Sick of manually performing repetitive tasks? Wish you could automate the tedium of software development and system administration? Come to this talk and learn how to quickly and easily do these things, and more, with the power of bash!"
     },
     {
       "title" : "Supercharging Your Terminal",
       "cat" : 4,
+      "notes" : "super-terminal.txt",
       "desc" : "Do you use the command line? Did you know that many people willingly use the command line for most of their daily tasks? Learn about the powerful and convenient tools available on the command line, such as tmux, atool and ranger, straight from the mouth of one of these lunatics!"
     },
     {
       "title" : "Virtual Private Servers",
       "cat" : 4,
+      "notes" : "vps.html",
       "desc" : "Have you ever wanted your own castle? I sure have. Unfortunately, castles are expensive. But VPSs are insanely cheap! Learn how to get your own private server and all the hugely useful things you can do with it!"
     }
   ],

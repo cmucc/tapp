@@ -164,7 +164,7 @@ def render(data):
         '    <div class="' + date_style_call(dates[idx]) + '">\n'
         '      <time datetime="' + dates[idx].strftime('%Y-%m-%d') + 'T' + startTime.time().strftime('%H:%M:%S') + '">' + dates[idx].strftime("%b %d") + '</time>\n'
         '    </div>\n'
-        '    <h1>' + data['talks'][idx]['title'] + '</h1>\n'
+        '    <h1>' + notes_link_call(data['talks'][idx]['title'], data['talks'][idx]['notes']) + '</h1>\n'
         '    <p>' + data['talks'][idx]['desc'] + '</p>\n'
       )
 
@@ -205,6 +205,21 @@ def render(data):
     '?>\n'
   )
 
+  # PHP notes linking function
+  output += (
+    '\n'
+    '<?php\n'
+    '  function notesLink($title, $path) {\n'
+    '    if (file_exists($path)) {\n'
+    '      return "<a href=\\"".$path."\\">".$title."</a>";\n'
+    '    }\n'
+    '    else {\n'
+    '      return $title;\n'
+    '    }\n'
+    '  }\n'
+    '?>\n'
+  )
+
   return output
 
 def disperse_dates(startDate, numEvents):
@@ -217,6 +232,9 @@ def disperse_dates(startDate, numEvents):
 
 def date_style_call(date):
   return '<?php echo dateStyle("' + date.strftime("%Y-%m-%d") + '"); ?>'
+
+def notes_link_call(title, path):
+  return '<?php echo notesLink("' + title + '", "' + path + '"); ?>'
 
 # Invoke main as top-level function
 if __name__ == '__main__':
