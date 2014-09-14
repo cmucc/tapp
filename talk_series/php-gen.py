@@ -161,7 +161,9 @@ def render(data):
         output += '    <hr/>\n'
       # List the event.
       output += (
-        '    <div class="date-future">' + dates[idx].strftime("%b %d") + '</div>\n'
+        '    <div class="' + date_style_call(dates[idx]) + '">\n'
+        '      <time datetime="' + dates[idx].strftime('%Y-%m-%d') + 'T' + startTime.time().strftime('%H:%M:%S') + '">' + dates[idx].strftime("%b %d") + '</time>\n'
+        '    </div>\n'
         '    <h1>' + data['talks'][idx]['title'] + '</h1>\n'
         '    <p>' + data['talks'][idx]['desc'] + '</p>\n'
       )
@@ -173,6 +175,36 @@ def render(data):
     '<?php include(\'../../footer.php\'); ?>\n'
   )
 
+  # PHP date styling function
+  output += (
+    '\n'
+    '<?php\n'
+    '  function dateStyle($date) {\n'
+    # Extract dates of actual talks
+    '    $dates = array(' + ', '.join([dates[idx].strftime('"%Y-%m-%d"') for idx in range(len(dates)) if not data['talks'][idx]['cat'] == 0]) + ');\n'
+    '    $today = date("Y-m-d");\n'
+    '    \n'
+    '    foreach ($dates as $d) {\n'
+    '      if ($d >= $today) {\n'
+    '        $next = $d;\n'
+    '        break;\n'
+    '      }\n'
+    '    }\n'
+    '    \n'
+    '    if ($date < $today) {\n'
+    '      $class = "date-past";\n'
+    '    }\n'
+    '    elseif (isset($next) && $date == $next) {\n'
+    '      $class = "date-next";\n'
+    '    }\n'
+    '    else {\n'
+    '      $class = "date-future";\n'
+    '    }\n'
+    '    return $class;'
+    '  }\n'
+    '?>\n'
+  )
+
   return output
 
 def disperse_dates(startDate, numEvents):
@@ -182,6 +214,9 @@ def disperse_dates(startDate, numEvents):
     startDate += step
     dates += [startDate]
   return dates
+
+def date_style_call(date):
+  return '<?php echo dateStyle("' + date.strftime("%Y-%m-%d") + '"); ?>'
 
 # Invoke main as top-level function
 if __name__ == '__main__':
