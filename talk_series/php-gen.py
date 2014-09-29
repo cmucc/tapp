@@ -133,7 +133,7 @@ def render(data):
     '      These talks will take place every <b>' + startDate.strftime('%A') + '</b> starting at <b>' + startTime.time().strftime('%I:%M %p').lstrip('0') + '</b> in <b>' + data['location'] + '</b> throughout the semester.\n'
     '    </p>\n'
     '    <p>\n'
-    '    This schedule is also available as an <a href="ccst.ics"></a> which is compatible with all calendaring software.\n'
+    '    This schedule is also available as an <a href="ccst.ics">iCalendar file</a> which is compatible with all calendaring software.\n'
     '    </p>\n'
     '    <p>\n'
     '      Sponsored by <a href="' + data['sponsor']['url'] + '" target="_blank">' + data['sponsor']['name'] + '</a>.\n'
