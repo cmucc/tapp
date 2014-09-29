@@ -6,7 +6,7 @@ CMU Computer Club.
 
 ## Talk Series
 
-See the example `talks_series/example.json` for input reference.
+See data files such as `data/spring2014/talks_series.json` for input reference.
 Use 0 as the `cat` value for weeks without a talk due to holidays, etc.
 
 ### Posters
@@ -33,7 +33,7 @@ Usage:
 
 ## Club Overview Flyers
 
-See the example `overview/example.json` for input reference.
+See data files such as `data/spring2014/overview.json` for input reference.
 
 Usage:
 
