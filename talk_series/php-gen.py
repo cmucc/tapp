@@ -124,6 +124,7 @@ def render(data):
   # Preamble
   output = (
     '<?php include(\'../../header.php\'); ?>\n'
+    '<?php date_default_timezone_set("America/New_York"); ?>\n'
     '<div>\n'
     '<div id="onecol">\n'
     '  <div class="cbox">\n'
