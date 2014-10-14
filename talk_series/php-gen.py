@@ -125,6 +125,7 @@ def render(data):
   output = (
     '<?php include(\'../../header.php\'); ?>\n'
     '<?php date_default_timezone_set("America/New_York"); ?>\n'
+    '<base href="/talks/' + data['slug'] + '/" />\n'
     '<div>\n'
     '<div id="onecol">\n'
     '  <div class="cbox">\n'
