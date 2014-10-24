@@ -5,7 +5,8 @@
 # Part of the TAPP library
 # Copyright 2014 Sam Gruber <scgruber@club.cc.cmu.edu>
 
-import sys, getopt, json, datetime
+import os, sys, getopt, json, datetime
+from jsonschema import validate
 
 # Top-level function, parses arguments
 def main(argv):
@@ -46,73 +47,19 @@ def main(argv):
 
   inData = json.load(inFile)
 
-  validate(inData)
+  try:
+    schemaFile = open(os.path.dirname(sys.argv[0])+'/schema.json', 'r') # XXX use os.path.realpath
+  except IOError:
+    print 'Could not load data format file.'
+    sys.exit()
+  schema = json.load(schemaFile)
+
+  validate(inData, schema)
 
   outSvg = render(inData)
 
   outFile.write(outSvg)
   outFile.write('\n')
-
-# Checks that data is a properly-formatted input to the generator
-def validate(data):
-  failed = False
-
-  if not isinstance(data, dict):
-    print 'Parse Error: Input must be JSON object.'
-    failed = True
-
-  if not 'name' in data:
-    print 'Parse Error: Talk series must have name.'
-    failed = True
-  elif not isinstance(data['name'], unicode):
-    print 'Parse Error: name must be string.'
-    failed = True
-
-  if not 'first_date' in data:
-    print 'Parse Error: Talk series must have first_date.'
-    failed = True
-  elif not isinstance(data['first_date'], unicode):
-    print 'Parse Error: first_date must be datestring.'
-    failed = True
-  try:
-    dummydate = datetime.datetime.strptime(data['first_date'], '%Y-%m-%d')
-  except ValueError:
-    print 'Parse Error: first_date must match format %Y-%m-%d.'
-    failed = True
-
-  if not 'location' in data:
-    print 'Parse Error: Talk series must have location.'
-    failed = True
-  elif not isinstance(data['location'], unicode):
-    print 'Parse Error: location must be string.'
-    failed = True
-
-  if not 'talks' in data:
-    print 'Parse Error: Talk series must have talks.'
-    failed = True
-  elif not isinstance(data['talks'], list):
-    print 'Parse Error: talks must be list.'
-    failed = True
-  elif len(data['talks']) < 2:
-    print 'Parse Error: talks must have length > 1'
-    failed = True
-  else:
-    for talk in data['talks']:
-      if not 'title' in talk:
-        print 'Parse Error: talk must have title.'
-        failed = True
-      elif not isinstance(talk['title'], unicode):
-        print 'Parse Error: title must be string.'
-        failed = True
-      if not 'cat' in talk:
-        print 'Parse Error: talk must have cat.'
-        failed = True
-      elif not isinstance(talk['cat'], int):
-        print 'Parse Error: cat must be integer.'
-        failed = True
-
-  if failed:
-    sys.exit()
 
 # Converts the data into an SVG
 def render(data):
