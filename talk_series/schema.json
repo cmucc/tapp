@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": [ "name", "first_date", "start_time", "end_time", "location",
+    "categories", "talks", "url" ],
+  "properties": {
+    "name": { "type": "string" },
+    "first_date": { "$ref": "#/definitions/isoDate" },
+    "start_time": { "$ref": "#/definitions/hmTime" },
+    "end_time": { "$ref": "#/definitions/hmTime" },
+    "location": { "type": "string" },
+    "categories": {
+      "type": "array",
+      "minItems": 0,
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "talks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [ "title", "cat" ],
+        "properties": {
+          "title": { "type": "string" },
+          "cat": {
+            "type": "integer",
+            "minimum": 0
+           }
+        }
+      }
+    },
+    "url": { "$ref": "#/definitions/url" },
+    "sponsor": {
+      "type": "object",
+      "required": [ "name", "url", "logo", "logo_svg-gen_height_offset" ],
+      "properties": {
+        "name": { "type": "string" },
+        "url": { "$ref": "#/definitions/url" },
+        "logo": { "$ref": "#/definitions/unixFile" },
+        "logo_svg-gen_height_offset": { "type": "integer" }
+      }
+    }
+  },
+  "definitions": {
+    "isoDate": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$"
+    },
+    "hmTime": {
+      "type": "string",
+      "pattern": "^[0-2][0-9]:[0-5][0-9]$"
+    },
+    "url": {
+      "type": "string",
+      "pattern": "(https?|ftp)://([^\\s/?\\.#-]+\\.?)+(/[^\\s]*)?"
+    },
+    "unixFile": {
+      "type": "string",
+      "pattern": "(/[^\\s]+)*[^\\s]*(.[^\\s]*)*.?[^\\s]+"
+    }
+  }
+}
