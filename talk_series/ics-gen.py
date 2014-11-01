@@ -6,6 +6,8 @@
 # Copyright 2014 Tim Parenti <tparenti@club.cc.cmu.edu>
 
 import sys, getopt, json, datetime
+import icalendar
+from icalendar import *
 
 # Top-level function, parses arguments
 def main(argv):
@@ -48,7 +50,7 @@ def main(argv):
 
   validate(inData)
 
-  outIcs = render(inData)
+  outIcs = render_pkg(inData)
 
   outFile.write(outIcs)
   outFile.write('\n')
@@ -114,7 +116,97 @@ def validate(data):
   if failed:
     sys.exit()
 
-# Converts the data into an ICS
+def render_pkg(data):
+    cal = Calendar()
+
+    # Header for calendar
+    header = [
+            ['version', 2.0],
+            ['calscale', 'GREGORIAN'],
+            ['method', 'PUBLISH'],
+            ['x-wr-calname', 'CMU Computer Club ' + data['name'] + ' Talks Series'], 
+            ['x-wr-timezone', 'America/New_York'],
+            ['x-wr-caldesc', 
+                data['url'] + '\n\n' +
+                data['ical_desc'] + '\n\n' +
+                'Sponsored by ' + data['sponsor']['name'] +
+                ' <' + data['sponsor']['url'] + '>'
+            ],
+    ]
+    for item in header:
+        cal.add(item[0], item[1])
+
+    # Timezone settings
+    tz = Timezone()
+    tz_settings = [
+            ['tzid', 'America/New_York'], 
+            ['x-lic-location', 'America/New_York'], 
+    ]
+    for item in tz_settings:
+        tz.add(item[0], item[1])
+    
+    # Timezone Daylight
+    tz_d = TimezoneDaylight()
+    tz_d_settings = [
+            ['tzname', 'EDT'],
+            ['tzoffsetfrom', datetime.timedelta(hours=5)],
+            ['tzoffsetto', datetime.timedelta(hours=4)],
+            ['dtstart', datetime.datetime(1970, 3, 8, 2, 0, 0)],
+            ['rrule', {'freq': 'yearly', 'bymonth': 3, 'byday': '2su'}],
+    ]
+    for item in tz_d_settings:
+        tz_d.add(item[0], item[1])
+    tz.add_component(tz_d)
+
+    # Timezone Standard
+    tz_s = TimezoneStandard()
+    tz_s_settings = [
+            ['tzname', 'EST'],
+            ['tzoffsetfrom', datetime.timedelta(hours=4)],
+            ['tzoffsetto', datetime.timedelta(hours=5)],
+            ['dtstart', datetime.datetime(1970, 11, 1, 2, 0, 0)],
+            ['rrule', {'freq': 'yearly', 'bymonth': 11, 'byday': '1su'}],
+    ]
+
+    for item in tz_s_settings:
+        tz_s.add(item[0], item[1])
+    tz.add_component(tz_s)
+
+    cal.add_component(tz)
+
+    # Manufacture dates
+    startDate = datetime.datetime.strptime(data['first_date'], '%Y-%m-%d')
+    startTime = datetime.datetime.strptime(data['start_time'], '%H:%M').time()
+    endTime = datetime.datetime.strptime(data['end_time'], '%H:%M').time()
+    dates = disperse_dates(startDate, len(data['talks']))
+    # Create individual events
+    for idx in range(0, len(dates)):
+        if not data['talks'][idx]['cat'] == 0:
+            event = Event()
+            event_settings = [
+                ['uid', 'talks-series-' + dates[idx].strftime("%Y-%m-%d") + '@club.cc.cmu.edu'],
+                ['dtstart', datetime.datetime.combine(dates[idx], startTime)],
+                ['dtend', datetime.datetime.combine(dates[idx], endTime)],
+                ['summary', data['talks'][idx]['title']],
+                ['location', data['location']],
+                ['description', 
+                        data['talks'][idx]['desc'] + '\n\n' +
+                        data['url'] + '\n\n' +
+                        'Sponsored by ' + data['sponsor']['name'] +
+                        ' <' + data['sponsor']['url'] + '>'
+                ],
+                ['sequence', 0],
+                ['status', 'CONFIRMED'],
+                ['transp', 'OPAQUE'],
+            ]
+            for item in event_settings:
+                event.add(item[0], item[1])
+            cal.add_component(event)
+
+    return cal.to_ical()
+
+
+    # Converts the data into an ICS
 def render(data):
   ICS_LINE_WIDTH = 72
   ICS_LINE_CONTINUATION = '\n '
@@ -130,11 +222,11 @@ def render(data):
   output = (
     'BEGIN:VCALENDAR\n'
     'VERSION:2.0\n'
-    'CALSCALE:GREGORIAN\n'
-    'METHOD:PUBLISH\n'
-    'X-WR-CALNAME:CMU Computer Club ' + data['name'] + ' Talks Series\n'
-    'X-WR-TIMEZONE:America/New_York\n'
-  )
+'CALSCALE:GREGORIAN\n'
+'METHOD:PUBLISH\n'
+'X-WR-CALNAME:CMU Computer Club ' + data['name'] + ' Talks Series\n'
+'X-WR-TIMEZONE:America/New_York\n'
+)
   output += wrap_line('X-WR-CALDESC:' + calendarDescription, ICS_LINE_WIDTH, ICS_LINE_CONTINUATION) + '\n'
   output += (
     'BEGIN:VTIMEZONE\n'
