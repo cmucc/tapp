@@ -130,8 +130,8 @@ def render(data):
             ['x-wr-caldesc',
                 data['url'] + '\n\n' +
                 data['ical_desc'] + '\n\n' +
-                'Sponsored by ' + data['sponsor']['name'] +
-                ' <' + data['sponsor']['url'] + '>'
+                'Sponsored by ' + data['sponsor']['name'] + '\n' +
+                data['sponsor']['url']
             ],
     ]
     for item in header:
@@ -188,13 +188,14 @@ def render(data):
                 ['uid', 'talks-series-' + dates[idx].strftime("%Y-%m-%d") + '@club.cc.cmu.edu'],
                 ['dtstart', datetime.datetime.combine(dates[idx], startTime)],
                 ['dtend', datetime.datetime.combine(dates[idx], endTime)],
-                ['summary', data['talks'][idx]['title']],
+                ['summary', 'CMUCC Talk: ' + data['talks'][idx]['title']],
                 ['location', data['location']],
                 ['description',
                         data['talks'][idx]['desc'] + '\n\n' +
+                        'Part of the CMU Computer Club ' + data['name'] + ' Talks Series\n' +
                         data['url'] + '\n\n' +
-                        'Sponsored by ' + data['sponsor']['name'] +
-                        ' <' + data['sponsor']['url'] + '>'
+                        'Sponsored by ' + data['sponsor']['name'] + '\n' +
+                        data['sponsor']['url']
                 ],
                 ['sequence', 0],
                 ['status', 'CONFIRMED'],
