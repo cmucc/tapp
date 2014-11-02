@@ -149,8 +149,8 @@ def render_pkg(data):
     tz_d = TimezoneDaylight()
     tz_d_settings = [
             ['tzname', 'EDT'],
-            ['tzoffsetfrom', datetime.timedelta(hours=5)],
-            ['tzoffsetto', datetime.timedelta(hours=4)],
+            ['tzoffsetfrom', datetime.timedelta(hours=-5)],
+            ['tzoffsetto', datetime.timedelta(hours=-4)],
             ['dtstart', datetime.datetime(1970, 3, 8, 2, 0, 0)],
             ['rrule', {'freq': 'yearly', 'bymonth': 3, 'byday': '2su'}],
     ]
@@ -162,12 +162,11 @@ def render_pkg(data):
     tz_s = TimezoneStandard()
     tz_s_settings = [
             ['tzname', 'EST'],
-            ['tzoffsetfrom', datetime.timedelta(hours=4)],
-            ['tzoffsetto', datetime.timedelta(hours=5)],
+            ['tzoffsetfrom', datetime.timedelta(hours=-4)],
+            ['tzoffsetto', datetime.timedelta(hours=-5)],
             ['dtstart', datetime.datetime(1970, 11, 1, 2, 0, 0)],
             ['rrule', {'freq': 'yearly', 'bymonth': 11, 'byday': '1su'}],
     ]
-
     for item in tz_s_settings:
         tz_s.add(item[0], item[1])
     tz.add_component(tz_s)
@@ -179,6 +178,7 @@ def render_pkg(data):
     startTime = datetime.datetime.strptime(data['start_time'], '%H:%M').time()
     endTime = datetime.datetime.strptime(data['end_time'], '%H:%M').time()
     dates = disperse_dates(startDate, len(data['talks']))
+
     # Create individual events
     for idx in range(0, len(dates)):
         if not data['talks'][idx]['cat'] == 0:
