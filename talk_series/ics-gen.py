@@ -50,7 +50,7 @@ def main(argv):
 
   validate(inData)
 
-  outIcs = render_pkg(inData)
+  outIcs = render(inData)
 
   outFile.write(outIcs)
   outFile.write('\n')
@@ -116,7 +116,8 @@ def validate(data):
   if failed:
     sys.exit()
 
-def render_pkg(data):
+# Converts the data into an ICS
+def render(data):
     cal = Calendar()
 
     # Header for calendar
@@ -205,74 +206,6 @@ def render_pkg(data):
 
     return cal.to_ical()
 
-
-    # Converts the data into an ICS
-def render(data):
-  ICS_LINE_WIDTH = 72
-  ICS_LINE_CONTINUATION = '\n '
-
-  # Manufacture start date object
-  startDate = datetime.datetime.strptime(data['first_date'], '%Y-%m-%d')
-  startTime = datetime.datetime.strptime(data['start_time'], '%H:%M')
-  endTime = datetime.datetime.strptime(data['end_time'], '%H:%M')
-
-  # Preamble
-  calendarDescription = data['url'] + '\\n\\n' + data['ical_desc'] + '\\n\\n'
-  calendarDescription += 'Sponsored by ' + data['sponsor']['name'] + ' <' + data['sponsor']['url'] + '>'
-  output = (
-    'BEGIN:VCALENDAR\n'
-    'VERSION:2.0\n'
-    'CALSCALE:GREGORIAN\n'
-    'METHOD:PUBLISH\n'
-    'X-WR-CALNAME:CMU Computer Club ' + data['name'] + ' Talks Series\n'
-    'X-WR-TIMEZONE:America/New_York\n'
-  )
-  output += wrap_line('X-WR-CALDESC:' + calendarDescription, ICS_LINE_WIDTH, ICS_LINE_CONTINUATION) + '\n'
-  output += (
-    'BEGIN:VTIMEZONE\n'
-    'TZID:America/New_York\n'
-    'X-LIC-LOCATION:America/New_York\n'
-    'BEGIN:DAYLIGHT\n'
-    'TZOFFSETFROM:-0500\n'
-    'TZOFFSETTO:-0400\n'
-    'TZNAME:EDT\n'
-    'DTSTART:19700308T020000\n'
-    'RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU\n'
-    'END:DAYLIGHT\n'
-    'BEGIN:STANDARD\n'
-    'TZOFFSETFROM:-0400\n'
-    'TZOFFSETTO:-0500\n'
-    'TZNAME:EST\n'
-    'DTSTART:19701101T020000\n'
-    'RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU\n'
-    'END:STANDARD\n'
-    'END:VTIMEZONE\n'
-  )
-
-  # Create individual events
-  dates = disperse_dates(startDate, len(data['talks']))
-  for idx in range(0, len(dates)):
-    if not data['talks'][idx]['cat'] == 0:
-      fullDescription = data['talks'][idx]['desc'] + '\\n\\n' + data['url'] + '\\n\\n'
-      fullDescription += 'Sponsored by ' + data['sponsor']['name'] + ' <' + data['sponsor']['url'] + '>'
-      output += (
-        'BEGIN:VEVENT\n'
-        'UID:talks-series-' + dates[idx].strftime("%Y-%m-%d") + '@club.cc.cmu.edu\n'
-        'DTSTART:' + dates[idx].strftime("%Y%m%d") + 'T' + startTime.strftime("%H%M%S") + '\n'
-        'DTEND:' + dates[idx].strftime("%Y%m%d") + 'T' + endTime.strftime("%H%M%S") + '\n'
-        'SUMMARY:' + data['talks'][idx]['title'] + '\n'
-        'LOCATION:' + data['location'] + '\n'
-      )
-      output += wrap_line('DESCRIPTION:' + fullDescription, ICS_LINE_WIDTH, ICS_LINE_CONTINUATION) + '\n'
-      output += (
-        'SEQUENCE:0\n'
-        'STATUS:CONFIRMED\n'
-        'TRANSP:OPAQUE\n'
-        'END:VEVENT\n'
-      )
-
-  output += 'END:VCALENDAR\n'
-  return output
 
 def disperse_dates(startDate, numEvents):
   step = datetime.timedelta(days=7)
