@@ -4,6 +4,13 @@ Totally Automated Propaganda Producer
 This package contains scripts to be used to produce marketing materials for the
 CMU Computer Club.
 
+## Requirements
+
+Before running these scripts, you must [install `pip`](https://pip.pypa.io/en/latest/installing.html),
+a Python package manager.  Then, to install all of the necessary modules on your system, run:
+
+    pip install --user -r requirements.txt
+
 ## Talk Series
 
 See data files such as `data/spring2014/talks_series.json` for input reference.

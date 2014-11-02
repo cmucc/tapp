@@ -1,0 +1,6 @@
+# Requirements file for Python dependencies
+# See README.md for installation instructions
+
+icalendar>=3.8.4
+pytz
+
