@@ -5,60 +5,51 @@
 # Part of the TAPP library
 # Copyright 2014 Sam Gruber <scgruber@club.cc.cmu.edu>
 
-import sys, getopt, json, datetime
+import sys, getopt, json, datetime, argparse
 
-# Top-level function, parses arguments
-def main(argv):
-  inFileName = ''
-  outFileName = ''
-  try:
-    opts, args = getopt.getopt(argv, 'hi:o:', ['infile=','outfile='])
-  except getopt.GetoptError:
-    print 'overview/svg-gen.py -i <inputfilename> -o <outputfilename>'
-    sys.exit(2)
-
-  for opt, arg in opts:
-    if opt == '-h':
-      print 'overview/svg-gen.py -i <inputfilename> -o <outputfilename>'
-      sys.exit()
-    elif opt in ('-i','--infile'):
-      inFileName = arg
-    elif opt in ('-o','--outfile'):
-      outFileName = arg
-
-  if inFileName == '':
-    inFile = sys.stdin
-  else:
-    try:
-      inFile = open(inFileName, 'r')
-    except IOError:
-      print 'Input filename not valid.'
-      sys.exit()
-
-  if outFileName == '':
-    outFile = sys.stdout
-  else:
-    try:
-      outFile = open(outFileName, 'w')
-    except IOError:
-      print 'Output filename not valid.'
-      sys.exit()
-
-  inData = json.load(inFile)
-
-  validate(inData)
+# Top-level function
+def main():
+  inData, outFile = parse_arguments()
 
   outSvg = render(inData)
 
-  outFile.write(outSvg)
-  outFile.write('\n')
+  outFile.write(outSvg + '\n')
+
+# Defines a valid json input file for argparse
+def valid_json_file(filename):
+  try:
+    infile = open(filename, 'r')
+    inData = json.load(infile)
+    validate(inData)
+    return inData
+  except IOError as e:
+    raise argparse.ArgumentTypeError(e.strerror)
+
+# Parses arguments from command line
+def parse_arguments():
+  parser = argparse.ArgumentParser(description='Generator for overview posters',
+                                   epilog='TAPP Library')
+
+  arguments = [
+  ['-i', '--infile', 'inputfile', 'input file name, omit option to read from stdin', valid_json_file, sys.stdin],
+  ['-o', '--outfile', 'outputfile', 'output file name, omit option to write to stdout', argparse.FileType('w'), sys.stdout],
+  ]
+
+  for item in arguments:
+    parser.add_argument(item[0], item[1], metavar=item[2], help=item[3], type=item[4], default=item[5])
+
+  args = parser.parse_args()
+  # I have no idea how to make argparse lazy evaluate default arguments,
+  # thus this workaround
+  if args.infile == sys.stdin:
+    args.infile = json.load(sys.stdin)
+  return args.infile, args.outfile
 
 # Checks that data is a properly-formatted input to the generator
 def validate(data):
   failed = False
 
-  if failed:
-    sys.exit()
+  return not failed
 
 # Converts the data into an SVG
 def render(data):
@@ -215,4 +206,4 @@ def make_meeting(mtg):
 
 # Invoke main as top-level function
 if __name__ == '__main__':
-  main(sys.argv[1:])
+  main()
