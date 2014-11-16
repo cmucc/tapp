@@ -5,47 +5,23 @@
 # Part of the TAPP library
 # Copyright 2014 Sam Gruber <scgruber@club.cc.cmu.edu>
 
-import os, sys, getopt, json, datetime
+import os, sys, getopt, json, datetime, argparse
 from jsonschema import validate, ValidationError
 
-# Top-level function, parses arguments
-def main(argv):
-  inFileName = ''
-  outFileName = ''
+# Top-level function
+def main():
+  inData, outFile = parse_arguments()
+  outSvg = render(inData)
+  outFile.write(outSvg + '\n')
+
+# Defines a valid json input file for argparse
+def valid_json_file(filename):
   try:
-    opts, args = getopt.getopt(argv, 'hi:o:', ['infile=','outfile='])
-  except getopt.GetoptError:
-    print 'talk_series/svg-gen.py -i <inputfilename> -o <outputfilename>'
-    sys.exit(2)
-
-  for opt, arg in opts:
-    if opt == '-h':
-      print 'talk_series/svg-gen.py -i <inputfilename> -o <outputfilename>'
-      sys.exit()
-    elif opt in ('-i','--infile'):
-      inFileName = arg
-    elif opt in ('-o','--outfile'):
-      outFileName = arg
-
-  if inFileName == '':
-    inFile = sys.stdin
-  else:
-    try:
-      inFile = open(inFileName, 'r')
-    except IOError:
-      print 'Input filename not valid.'
-      sys.exit()
-
-  if outFileName == '':
-    outFile = sys.stdout
-  else:
-    try:
-      outFile = open(outFileName, 'w')
-    except IOError:
-      print 'Output filename not valid.'
-      sys.exit()
-
-  inData = json.load(inFile)
+    infile = open(filename, 'r')
+    inData = json.load(infile)
+  except IOError as e:
+    raise argparse.ArgumentTypeError(e.strerror)
+    sys.exit()
 
   try:
     schemaFile = open(os.path.dirname(sys.argv[0])+'/schema.json', 'r') # XXX use os.path.realpath
@@ -60,10 +36,26 @@ def main(argv):
     print 'JSON validation error:\n' + e.message
     sys.exit()
 
-  outSvg = render(inData)
+  return inData
 
-  outFile.write(outSvg)
-  outFile.write('\n')
+# Parses arguments from command line
+def parse_arguments():
+  parser = argparse.ArgumentParser(description='Generator for talk series posters',
+                                   epilog='TAPP Library')
+
+  arguments = [
+  ['-i', '--infile', 'inputfile', 'input file name, omit option to read from stdin', valid_json_file, sys.stdin],
+  ['-o', '--outfile', 'outputfile', 'output file name, omit option to write to stdout', argparse.FileType('w'), sys.stdout],
+  ]
+
+  for item in arguments:
+    parser.add_argument(item[0], item[1], metavar=item[2], help=item[3], type=item[4], default=item[5])
+
+  args = parser.parse_args()
+  # Workaround instead of lazy-evaluating default argparse arguments:
+  if args.infile == sys.stdin:
+    args.infile = json.load(sys.stdin)
+  return args.infile, args.outfile
 
 # Converts the data into an SVG
 def render(data):
@@ -202,4 +194,4 @@ def choose(cond, t, f):
 
 # Invoke main as top-level function
 if __name__ == '__main__':
-  main(sys.argv[1:])
+  main()
