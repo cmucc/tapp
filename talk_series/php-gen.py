@@ -26,7 +26,7 @@ def valid_json_file(filename):
   try:
     schemaFile = open(os.path.dirname(sys.argv[0])+'/schema.json', 'r') # XXX use os.path.realpath
   except IOError:
-    print 'Could not load data format file.'
+    print 'Could not load JSON schema file.'
     sys.exit()
 
   try:
