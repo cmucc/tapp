@@ -1,14 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "required": [ "name", "first_date", "start_time", "end_time", "location",
-    "categories", "talks", "url" ],
+  "required": [ "name", "slug", "first_date", "start_time", "end_time", "location",
+    "ical_desc", "web_desc", "web_suggest", "categories", "talks", "url", "sponsor" ],
   "properties": {
     "name": { "type": "string" },
+    "slug": { "type": "string" },
     "first_date": { "$ref": "#/definitions/isoDate" },
     "start_time": { "$ref": "#/definitions/hmTime" },
     "end_time": { "$ref": "#/definitions/hmTime" },
     "location": { "type": "string" },
+    "ical_desc": { "type": "string" },
+    "web_desc": { "type": "string" },
+    "web_suggest": { "type": "string" },
     "categories": {
       "type": "array",
       "minItems": 0,
@@ -20,23 +24,25 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": [ "title", "cat" ],
+        "required": [ "title", "cat", "desc" ],
         "properties": {
           "title": { "type": "string" },
           "cat": {
             "type": "integer",
             "minimum": 0
-           }
+           },
+          "desc": { "type": "string" }
         }
       }
     },
     "url": { "$ref": "#/definitions/url" },
     "sponsor": {
       "type": "object",
-      "required": [ "name", "url", "logo", "logo_svg-gen_height_offset" ],
+      "required": [ "name", "url", "desc", "logo", "logo_svg-gen_height_offset" ],
       "properties": {
         "name": { "type": "string" },
         "url": { "$ref": "#/definitions/url" },
+        "desc": { "type": "string" },
         "logo": { "$ref": "#/definitions/unixFile" },
         "logo_svg-gen_height_offset": { "type": "integer" }
       }

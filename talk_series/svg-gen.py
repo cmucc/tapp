@@ -6,7 +6,7 @@
 # Copyright 2014 Sam Gruber <scgruber@club.cc.cmu.edu>
 
 import os, sys, getopt, json, datetime
-from jsonschema import validate
+from jsonschema import validate, ValidationError
 
 # Top-level function, parses arguments
 def main(argv):
@@ -52,9 +52,13 @@ def main(argv):
   except IOError:
     print 'Could not load data format file.'
     sys.exit()
-  schema = json.load(schemaFile)
 
-  validate(inData, schema)
+  try:
+    schema = json.load(schemaFile)
+    validate(inData, schema)
+  except ValidationError as e:
+    print 'JSON validation error:\n' + e.message
+    sys.exit()
 
   outSvg = render(inData)
 
