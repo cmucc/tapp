@@ -5,116 +5,60 @@
 # Part of the TAPP library
 # Copyright 2014 Tim Parenti <tparenti@club.cc.cmu.edu>
 
-import sys, getopt, json, datetime
+import os, sys, getopt, json, datetime, argparse
+from jsonschema import validate, ValidationError
+
 import icalendar
 from icalendar import *
 
-# Top-level function, parses arguments
-def main(argv):
-  inFileName = ''
-  outFileName = ''
+# Top-level function
+def main():
+  inData, outFile = parse_arguments()
+  outSvg = render(inData)
+  outFile.write(outSvg + '\n')
+
+# Defines a valid json input file for argparse
+def valid_json_file(filename):
   try:
-    opts, args = getopt.getopt(argv, 'hi:o:', ['infile=','outfile='])
-  except getopt.GetoptError:
-    print 'talk_series/ics-gen.py -i <inputfilename> -o <outputfilename>'
-    sys.exit(2)
-
-  for opt, arg in opts:
-    if opt == '-h':
-      print 'talk_series/ics-gen.py -i <inputfilename> -o <outputfilename>'
-      sys.exit()
-    elif opt in ('-i','--infile'):
-      inFileName = arg
-    elif opt in ('-o','--outfile'):
-      outFileName = arg
-
-  if inFileName == '':
-    inFile = sys.stdin
-  else:
-    try:
-      inFile = open(inFileName, 'r')
-    except IOError:
-      print 'Input filename not valid.'
-      sys.exit()
-
-  if outFileName == '':
-    outFile = sys.stdout
-  else:
-    try:
-      outFile = open(outFileName, 'w')
-    except IOError:
-      print 'Output filename not valid.'
-      sys.exit()
-
-  inData = json.load(inFile)
-
-  validate(inData)
-
-  outIcs = render(inData)
-
-  outFile.write(outIcs)
-  outFile.write('\n')
-
-# Checks that data is a properly-formatted input to the generator
-def validate(data):
-  failed = False
-
-  if not isinstance(data, dict):
-    print 'Parse Error: Input must be JSON object.'
-    failed = True
-
-  if not 'name' in data:
-    print 'Parse Error: Talk series must have name.'
-    failed = True
-  elif not isinstance(data['name'], unicode):
-    print 'Parse Error: name must be string.'
-    failed = True
-
-  if not 'first_date' in data:
-    print 'Parse Error: Talk series must have first_date.'
-    failed = True
-  elif not isinstance(data['first_date'], unicode):
-    print 'Parse Error: first_date must be datestring.'
-    failed = True
-  try:
-    dummydate = datetime.datetime.strptime(data['first_date'], '%Y-%m-%d')
-  except ValueError:
-    print 'Parse Error: first_date must match format %Y-%m-%d.'
-    failed = True
-
-  if not 'location' in data:
-    print 'Parse Error: Talk series must have location.'
-    failed = True
-  elif not isinstance(data['location'], unicode):
-    print 'Parse Error: location must be string.'
-    failed = True
-
-  if not 'talks' in data:
-    print 'Parse Error: Talk series must have talks.'
-    failed = True
-  elif not isinstance(data['talks'], list):
-    print 'Parse Error: talks must be list.'
-    failed = True
-  elif len(data['talks']) < 2:
-    print 'Parse Error: talks must have length > 1'
-    failed = True
-  else:
-    for talk in data['talks']:
-      if not 'title' in talk:
-        print 'Parse Error: talk must have title.'
-        failed = True
-      elif not isinstance(talk['title'], unicode):
-        print 'Parse Error: title must be string.'
-        failed = True
-      if not 'cat' in talk:
-        print 'Parse Error: talk must have cat.'
-        failed = True
-      elif not isinstance(talk['cat'], int):
-        print 'Parse Error: cat must be integer.'
-        failed = True
-
-  if failed:
+    infile = open(filename, 'r')
+    inData = json.load(infile)
+  except IOError as e:
+    raise argparse.ArgumentTypeError(e.strerror)
     sys.exit()
+
+  try:
+    schemaFile = open(os.path.dirname(sys.argv[0])+'/schema.json', 'r') # XXX use os.path.realpath
+  except IOError:
+    print 'Could not load data format file.'
+    sys.exit()
+
+  try:
+    schema = json.load(schemaFile)
+    validate(inData, schema)
+  except ValidationError as e:
+    print 'JSON validation error:\n' + e.message
+    sys.exit()
+
+  return inData
+
+# Parses arguments from command line
+def parse_arguments():
+  parser = argparse.ArgumentParser(description='Generator for talk series iCalendar file',
+                                   epilog='TAPP Library')
+
+  arguments = [
+  ['-i', '--infile', 'inputfile', 'input file name, omit option to read from stdin', valid_json_file, sys.stdin],
+  ['-o', '--outfile', 'outputfile', 'output file name, omit option to write to stdout', argparse.FileType('w'), sys.stdout],
+  ]
+
+  for item in arguments:
+    parser.add_argument(item[0], item[1], metavar=item[2], help=item[3], type=item[4], default=item[5])
+
+  args = parser.parse_args()
+  # Workaround instead of lazy-evaluating default argparse arguments:
+  if args.infile == sys.stdin:
+    args.infile = json.load(sys.stdin)
+  return args.infile, args.outfile
 
 # Converts the data into an ICS
 def render(data):
@@ -223,4 +167,4 @@ def wrap_line(line, n, sep):
 
 # Invoke main as top-level function
 if __name__ == '__main__':
-  main(sys.argv[1:])
+  main()
