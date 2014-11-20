@@ -111,7 +111,7 @@
   "sponsor" : {
     "name" : "Green Hills Software",
     "url" : "http://www.ghs.com",
-    "desc" : "Green Hills make the world's highest performing compiles, most secure real-time operating systems, revolutionary debuggers, and virtualization solutions for embedded systems.",
+    "desc" : "Green Hills make the world's highest performing compilers, most secure real-time operating systems, revolutionary debuggers, and virtualization solutions for embedded systems.",
     "logo" : "2013logo_light.svg",
     "logo_svg-gen_height_offset" : 48
   }
