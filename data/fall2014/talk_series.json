@@ -55,7 +55,7 @@
     {
       "title" : "Advanced Filesystems and RAID",
       "cat" : 3,
-      "notes" : "filesystems.html",
+      "notes" : "storage_systems.pdf",
       "desc" : "Learn about exciting new developments like btrfs, and the fantastic features they provide! Also a short segment about things like LVM and RAID."
     },
     {
