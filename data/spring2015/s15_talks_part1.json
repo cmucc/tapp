@@ -1,0 +1,69 @@
+{
+  "name" : "Spring 2015",
+  "slug" : "spring15",
+  "first_date" : "2015-01-21",
+  "start_time" : "20:00",
+  "end_time" : "21:00",
+  "location" : "Wean Hall 5415",
+  "ical_desc" : "A series of talks and workshops on some of the most useful tools for advanced users and developers led by the Carnegie Mellon University Computer Club.",
+  "web_desc" : "<p>...</p>",
+  "web_suggest" : "<p>If you would like to request, propose, or volunteer a talk, join us on IRC or email your talk idea to operations@club.</p>",
+  "categories" : [
+    "A...",
+    "B...",
+    "C...",
+    "D..."
+  ],
+  "talks" : [
+    {
+      "title" : "Useful Command Line Workflows",
+      "cat" : 1,
+      "notes" : "command-line.html",
+      "desc" : "..."
+    },
+    {
+      "title" : "Elliptic Curve Cryptography",
+      "cat" : 2,
+      "notes" : "elliptic-curve-crypto.html",
+      "desc" : "..."
+    },
+    {
+      "title" : "Introduction to Bitcoin",
+      "cat" : 2,
+      "notes" : "bitcoin.html",
+      "desc" : "..."
+    },
+    {
+      "title" : "Node.js 101",
+      "cat" : 3,
+      "notes" : "node-js.html",
+      "desc" : "..."
+    },
+    {
+      "title" : "Docker and Fig for Web Applications",
+      "cat" : 3,
+      "notes" : "docker-and-fig.html",
+      "desc" : "..."
+    },
+    {
+      "title" : "Vim as an IDE",
+      "cat" : 4,
+      "notes" : "vim.html",
+      "desc" : "..."
+    },
+    {
+      "title" : "Coffeescript 101",
+      "cat" : 4,
+      "notes" : "coffeescript.html",
+      "desc" : "..."
+    }
+  ],
+  "url" : "http://www.cmucc.org/talks",
+  "sponsor" : {
+    "name" : "Green Hills Software",
+    "url" : "http://www.ghs.com",
+    "desc" : "Green Hills make the world's highest performing compilers, most secure real-time operating systems, revolutionary debuggers, and virtualization solutions for embedded systems.",
+    "logo" : "2013logo_light.svg",
+    "logo_svg-gen_height_offset" : 48
+  }
+}
