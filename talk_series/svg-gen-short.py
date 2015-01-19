@@ -64,7 +64,8 @@ def render(data):
           'em':  '#ffea7f',
           'reg': '#a5afa4',
           'blk': '#1f1f1f',
-          'cat': ['#a5afa4', '#fec24d', '#f598ab', '#70ceec', '#a5ce43', '#fe824d'] }
+          'cat': ['#a5afa4', '#70ceec', '#fe824d', '#f598ab', '#fec24d', '#a5ce43'] }
+  # (grey), blue, orange, pink, yellow, green
 
   # Manufacture start date object
   startDate = datetime.datetime.strptime(data['first_date'], '%Y-%m-%d')

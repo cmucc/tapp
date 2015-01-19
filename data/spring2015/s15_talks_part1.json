@@ -4,58 +4,56 @@
   "first_date" : "2015-01-21",
   "start_time" : "20:00",
   "end_time" : "21:00",
-  "location" : "Wean Hall 5415",
+  "location" : "Gates 4301",
   "ical_desc" : "A series of talks and workshops on some of the most useful tools for advanced users and developers led by the Carnegie Mellon University Computer Club.",
-  "web_desc" : "<p>...</p>",
+  "web_desc" : "<p>DEVOPS! Hippest of buzzwords, earner of thousands! Learn to harness the immense power of devops for yourself, by coming to the Spring 2015 Computer Club Workshop/Talk Series. We will tell you the tricks that will allow you to transcend the annoyances of administration and offenses of operations, and return to the elegant, pure simplicity of raw code!</p>",
   "web_suggest" : "<p>If you would like to request, propose, or volunteer a talk, join us on IRC or email your talk idea to operations@club.</p>",
   "categories" : [
-    "A...",
-    "B...",
-    "C...",
-    "D..."
+    "Hacky Things!",
+    "Web Applications"
   ],
   "talks" : [
     {
       "title" : "Useful Command Line Workflows",
       "cat" : 1,
       "notes" : "command-line.html",
-      "desc" : "..."
+      "desc" : "Wow! Who are these insane people who think the command line is good? They must be crazy! Come to this talk and witness them frantically try justify their weirdness with talk of \"efficiency\" and \"scriptability\", and see their demonstrations of a number of command line tools that are supposedly useful in your daily life."
     },
     {
       "title" : "Elliptic Curve Cryptography",
-      "cat" : 2,
+      "cat" : 1,
       "notes" : "elliptic-curve-crypto.html",
-      "desc" : "..."
+      "desc" : "Modern cryptography uses elliptic curves.  What is an elliptic curve, and why is it useful for cryptography?  And what does this have to do with ellipses, anyway?  Come find out."
     },
     {
       "title" : "Introduction to Bitcoin",
-      "cat" : 2,
+      "cat" : 1,
       "notes" : "bitcoin.html",
-      "desc" : "..."
+      "desc" : "Bitcoin is the application of cryptography to electronic money.  Come learn how to get started with bitcoin."
     },
     {
-      "title" : "Node.js 101",
-      "cat" : 3,
-      "notes" : "node-js.html",
-      "desc" : "..."
-    },
-    {
-      "title" : "Docker and Fig for Web Applications",
-      "cat" : 3,
+      "title" : "Docker and Fig 101",
+      "cat" : 2,
       "notes" : "docker-and-fig.html",
-      "desc" : "..."
-    },
-    {
-      "title" : "Vim as an IDE",
-      "cat" : 4,
-      "notes" : "vim.html",
-      "desc" : "..."
+      "desc" : "Docker and Fig are cool technologies that allow you to compartmentalize your production workflow in any language.  However, we'll discuss how we can use these technologies to improve your development cycle, as well!  While we'll be \"Dockerizing\" a Node.js application, the lessons are applicable to all of the main web development platforms.  A basic background with webapps is helpful, but not necessary.  No Docker experience needed."
     },
     {
       "title" : "Coffeescript 101",
-      "cat" : 4,
+      "cat" : 2,
       "notes" : "coffeescript.html",
-      "desc" : "..."
+      "desc" : "Check out the language sensation sweeping the nation!  Not really, but Coffeescript is a good way to dramatically increase legibility, avoid some Javascript pitfalls, and otherwise make developing on the client and server easier.  We'll open with a discussion of Coffee syntax and set up of the development platform, then run through applying it to the client with JQuery, and on the server with Node.js.  JavaScript syntax background is needed."
+    },
+    {
+      "title" : "Vim as an IDE",
+      "cat" : 2,
+      "notes" : "vim.html",
+      "desc" : "Vim was designed for the advanced user, and advanced users like complete control over their environment. To fulfill this requirement, Vim comes completely unconfigured--it's a blank slate. The problem is, not everyone's an advanced user! An unconfigured Vim is, all for all purposes, unusable. As it turns out, configuring Vim is very straightforward! In this talk, we'll introduce you to Vim plugins using the plugin manager Vundle. Our goal will be to walk out with a fully configured Vim setup. This includes a pleasant color scheme, fancy status bar indicators, code-aware features, Git integration, and more! Vim has a solution to handle just about anything that a normal IDE would. It's just about knowing where to start."
+    },
+    {
+      "title" : "Node.js 101",
+      "cat" : 2,
+      "notes" : "node-js.html",
+      "desc" : "This is an introduction to the hot new server paradigm of Node.js.  We'll briefly go over how Node.js is different from other platforms like Rails and Django (besides using JavaScript) and when it's best to use it.  Then we'll dive in to using Express and Mongo with Jade templating to make a MEN stack application.  When you leave, you should be able to build your own web-apps in Node.js.  Background in JavaScript syntax is helpful, but not necessary.  No web-app experience neeeded."
     }
   ],
   "url" : "http://www.cmucc.org/talks",
@@ -63,7 +61,8 @@
     "name" : "Green Hills Software",
     "url" : "http://www.ghs.com",
     "desc" : "Green Hills make the world's highest performing compilers, most secure real-time operating systems, revolutionary debuggers, and virtualization solutions for embedded systems.",
-    "logo" : "2013logo_light.svg",
+    "logo" : "ghlogos/GHS_Logo.svg",
     "logo_svg-gen_height_offset" : 48
   }
 }
+
