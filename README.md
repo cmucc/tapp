@@ -21,10 +21,14 @@ Use 0 as the `cat` value for weeks without a talk due to holidays, etc.
 Usage:
 
     ./talk_series/svg-gen.py -i foo.json -o bar.svg
+    ./talk_series/svg-gen-short.py -i foo.json -o bar.svg
 
 The file `2013logo_light.svg` must be in the same directory as the output file
 to display properly.  Additionally, the filename given in the `sponsor_logo`
 field must be relative to the output file.
+
+The "short" generator generates a poster suitable for a shorter series of talks
+(on the order of 7), as opposed to the normal 15.
 
 ### iCalendar File
 
