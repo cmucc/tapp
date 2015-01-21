@@ -6,7 +6,7 @@
   "end_time" : "21:00",
   "location" : "Gates 4301",
   "ical_desc" : "A series of talks and workshops on some of the most useful tools for advanced users and developers led by the Carnegie Mellon University Computer Club.",
-  "web_desc" : "<p>DEVOPS! Hippest of buzzwords, earner of thousands! Learn to harness the immense power of devops for yourself, by coming to the Spring 2015 Computer Club Workshop/Talk Series. We will tell you the tricks that will allow you to transcend the annoyances of administration and offenses of operations, and return to the elegant, pure simplicity of raw code!</p>",
+  "web_desc" : "<p>Want to learn more about practical aspects of computer engineering, ranging from command line usage to webapp deployment? Come to Computer Club's Spring 2015 weekly talk series! This semester, we will discuss topics ranging from command line workflows to Node.js.  <b>More talks will be added soon!</b></p>",
   "web_suggest" : "<p>If you would like to request, propose, or volunteer a talk, join us on IRC or email your talk idea to operations@club.</p>",
   "categories" : [
     "Hacky Things!",
@@ -17,7 +17,7 @@
       "title" : "Useful Command Line Workflows",
       "cat" : 1,
       "notes" : "command-line.html",
-      "desc" : "Wow! Who are these insane people who think the command line is good? They must be crazy! Come to this talk and witness them frantically try justify their weirdness with talk of \"efficiency\" and \"scriptability\", and see their demonstrations of a number of command line tools that are supposedly useful in your daily life."
+      "desc" : "Use the command line now and then, but find it to be tedious and painful? Just want to sharpen your skills and efficiency with command-line use?  In this talk, we will present several slick workflows which allow you to accomplish tasks quickly and efficiently from the command line, from grabbing videos off of YouTube from easily switching between running, compiling, and testing your code."
     },
     {
       "title" : "Elliptic Curve Cryptography",
