@@ -12,10 +12,10 @@ import icalendar
 from icalendar import *
 
 # Top-level function
-def main():
+def generate_ICS():
   inData, outFile = parse_arguments()
-  outSvg = render(inData)
-  outFile.write(outSvg + '\n')
+  outData = render_ICS(inData)
+  outFile.write(outData + '\n')
 
 # Defines a valid json input file for argparse
 def valid_json_file(filename):
@@ -61,7 +61,7 @@ def parse_arguments():
   return args.infile, args.outfile
 
 # Converts the data into an ICS
-def render(data):
+def render_ICS(data):
     cal = Calendar()
 
     # Header for calendar
@@ -165,6 +165,6 @@ def wrap_line(line, n, sep):
   joined_line = sep.join(split_line)
   return joined_line
 
-# Invoke main as top-level function
+# Invoke top-level function
 if __name__ == '__main__':
-  main()
+  generate_ICS()

@@ -9,10 +9,10 @@ import os, sys, getopt, json, datetime, argparse
 from jsonschema import validate, ValidationError
 
 # Top-level function
-def main():
+def generate_PHP():
   inData, outFile = parse_arguments()
-  outSvg = render(inData)
-  outFile.write(outSvg + '\n')
+  outData = render_PHP(inData)
+  outFile.write(outData + '\n')
 
 # Defines a valid json input file for argparse
 def valid_json_file(filename):
@@ -58,7 +58,7 @@ def parse_arguments():
   return args.infile, args.outfile
 
 # Converts the data into a PHP webpage
-def render(data):
+def render_PHP(data):
   # Manufacture start date object
   startDate = datetime.datetime.strptime(data['first_date'], '%Y-%m-%d')
   startTime = datetime.datetime.strptime(data['start_time'], '%H:%M')
@@ -184,6 +184,6 @@ def date_style_call(date):
 def notes_link_call(title, path):
   return '<?php echo notesLink("' + title + '", "' + path + '"); ?>'
 
-# Invoke main as top-level function
+# Invoke top-level function
 if __name__ == '__main__':
-  main()
+  generate_PHP()

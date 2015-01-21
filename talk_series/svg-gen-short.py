@@ -9,10 +9,10 @@ import os, sys, getopt, json, datetime, argparse
 from jsonschema import validate, ValidationError
 
 # Top-level function
-def main():
+def generate_SVG():
   inData, outFile = parse_arguments()
-  outSvg = render(inData)
-  outFile.write(outSvg + '\n')
+  outData = render_SVG(inData)
+  outFile.write(outData + '\n')
 
 # Defines a valid json input file for argparse
 def valid_json_file(filename):
@@ -58,7 +58,7 @@ def parse_arguments():
   return args.infile, args.outfile
 
 # Converts the data into an SVG
-def render(data):
+def render_SVG(data):
   # Color palette
   pal = { 'bg':  '#3f3a3c',
           'em':  '#ffea7f',
@@ -193,6 +193,6 @@ def choose(cond, t, f):
   else:
     return f
 
-# Invoke main as top-level function
+# Invoke top-level function
 if __name__ == '__main__':
-  main()
+  generate_SVG()
