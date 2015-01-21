@@ -56,7 +56,14 @@ as the output file to display properly.
 ## Printing SVGs
 
 Generated SVGs are intended to be viewed and printed from [Google
-Chrome](https://www.google.com/chrome/browser/); however, the transcluded logos
+Chrome](https://www.google.com/chrome/browser/).  Talk Series posters are best
+printed to tabloid (17"x11") paper, landscape orientation, with margins set to
+0.25" on the left and right, 0.2" on top, and 0" on bottom.  Club Overview
+flyers are best printed to letter (8.5"x11") paper, portrait orientation, with
+the "minimum margins" setting.  **For the most consistent results, print to a
+PDF.**
+
+In some cases, when attempting to open the SVGs in other tools, the transcluded logos
 can cause issues.  As a workaround, manually remove the `<image>` tags from the
 SVG output, and replace them using an SVG editor such as
 [Inkscape](http://www.inkscape.org/en/).  Ensure all required fonts are
