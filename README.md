@@ -20,8 +20,8 @@ Use 0 as the `cat` value for weeks without a talk due to holidays, etc.
 
 Usage:
 
-    ./talk_series/svg-gen.py -i foo.json -o bar.svg
-    ./talk_series/svg-gen-short.py -i foo.json -o bar.svg
+    ./tapp/talk_series/svg_gen.py -i foo.json -o bar.svg
+    ./tapp/talk_series/svg_gen_short.py -i foo.json -o bar.svg
 
 The file `2013logo_light.svg` must be in the same directory as the output file
 to display properly.  Additionally, the filename given in the `sponsor_logo`
@@ -34,13 +34,13 @@ The "short" generator generates a poster suitable for a shorter series of talks
 
 Usage:
 
-    ./talk_series/ics-gen.py -i foo.json -o bar.ics
+    ./tapp/talk_series/ics_gen.py -i foo.json -o bar.ics
 
 ### Webpage
 
 Usage:
 
-    ./talk_series/php-gen.py -i foo.json -o bar.php
+    ./tapp/talk_series/php_gen.py -i foo.json -o bar.php
 
 ## Club Overview Flyers
 
@@ -48,7 +48,7 @@ See data files such as `data/spring2014/overview.json` for input reference.
 
 Usage:
 
-    ./overview/svg-gen.py -i foo.json -o bar.svg
+    ./tapp/overview/svg_gen.py -i foo.json -o bar.svg
 
 The files `2013logo_light.svg` and `cmucc_qr.svg` must be in the same directory
 as the output file to display properly.
