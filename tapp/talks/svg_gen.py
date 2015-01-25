@@ -24,6 +24,7 @@ def render_SVG(data):
           'reg': '#a5afa4',
           'blk': '#1f1f1f',
           'cat': ['#a5afa4', '#fec24d', '#f598ab', '#70ceec', '#a5ce43', '#fe824d'] }
+          # (grey), yellow, pink, blue, green, orange
 
   # Manufacture start date object
   startDate = datetime.datetime.strptime(data['first_date'], '%Y-%m-%d')
@@ -35,6 +36,9 @@ def render_SVG(data):
   output += '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1224 792">\n'
 
   # Font definitions
+  LINE_HEIGHT = 32
+  BLOCK_WIDTH = 72
+
   output += '<defs>\n'
   output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);</style>\n'
   output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);</style>\n'
@@ -42,8 +46,8 @@ def render_SVG(data):
   output += '    .series-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: 40px; font-weight: 700; }\n'
   output += '    .when-and-where { font-family: \'Open Sans\', sans-serif; font-size: 18px; }\n'
   output += '    .website { font-family: \'Open Sans\', sans-serif; font-size: 24px; }\n'
-  output += '    .talk-date { font-family: \'Open Sans\', sans-serif; font-size: 16px; font-weight: 600; }\n'
-  output += '    .talk-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: 32px; font-weight: 700; }\n'
+  output += '    .talk-date { font-family: \'Open Sans\', sans-serif; font-size: %dpx; font-weight: 600; }\n' %(LINE_HEIGHT/2)
+  output += '    .talk-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: %dpx; font-weight: 700; }\n' %(LINE_HEIGHT)
   output += '    .sponsored-by { font-family: \'Open Sans\', sans-serif; font-size: 18px; }\n'
   output += '  </style>\n'
   output += '</defs>\n'
@@ -54,7 +58,7 @@ def render_SVG(data):
   MARGIN = 72
   output += '<rect x="0" y="0" width="%d" height="%d" fill="%s" />\n' %(DOCUMENT_WIDTH, DOCUMENT_HEIGHT, pal['bg'])
 
-  #CMUCC Logo
+  # CMUCC Logo
   LOGO_WIDTH = 475
   LOGO_HEIGHT = 100
   LOGO_MARGIN = 20
@@ -100,18 +104,18 @@ def render_SVG(data):
   SCHEDULE_Y = MARGIN
   SCHEDULE_WIDTH = 648
   SCHEDULE_HEIGHT = DOCUMENT_HEIGHT - (MARGIN * 2)
-  LINE_HEIGHT = 32
+
   heights = disperse_heights(SCHEDULE_Y, SCHEDULE_HEIGHT, len(data['talks']), LINE_HEIGHT)
   dates = disperse_dates(startDate, len(data['talks']))
   for idx in range(0, len(heights)):
     output += '<g>'
     # Date
-    output += '<rect x="%d" y="%d" width="72" height="%d" fill="%s" />' %(SCHEDULE_X, heights[idx], LINE_HEIGHT, pal['cat'][data['talks'][idx]['cat']])
-    output += '<text x="%d" y="%d" fill="%s" class="talk-date" text-anchor="middle">' %(SCHEDULE_X+36, heights[idx]+22, pal['blk'])
+    output += '<rect x="%d" y="%d" width="%d" height="%d" fill="%s" />' %(SCHEDULE_X, heights[idx], BLOCK_WIDTH, LINE_HEIGHT, pal['cat'][data['talks'][idx]['cat']])
+    output += '<text x="%d" y="%d" fill="%s" class="talk-date" text-anchor="middle">' %(SCHEDULE_X+(BLOCK_WIDTH/2), heights[idx]+(LINE_HEIGHT/2)+6, pal['blk'])
     output += dates[idx].strftime("%b %d").upper()
     output += '</text>'
     # Title
-    output += '<text x="%d" y="%d" fill="%s" class="talk-title" text-anchor="start">' %(SCHEDULE_X+98, heights[idx]+28, pal['cat'][data['talks'][idx]['cat']])
+    output += '<text x="%d" y="%d" fill="%s" class="talk-title" text-anchor="start">' %(SCHEDULE_X+BLOCK_WIDTH+26, heights[idx]+(LINE_HEIGHT/2)+12, pal['cat'][data['talks'][idx]['cat']])
     output += data['talks'][idx]['title']
     output += '</text>'
     output += '</g>'
