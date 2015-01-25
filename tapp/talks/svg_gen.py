@@ -3,7 +3,10 @@
 # tapp/talks/svg_gen.py
 # Generator for talk series posters
 # Part of the TAPP library
-# Copyright 2014 Sam Gruber <scgruber@club.cc.cmu.edu>
+#
+# Copyright 2014-2015
+# Sam Gruber <scgruber@club.cc.cmu.edu>
+# Tim Parenti <tparenti@club.cc.cmu.edu>
 
 import datetime
 
@@ -23,8 +26,9 @@ def render_SVG(data):
           'em':  '#ffea7f',
           'reg': '#a5afa4',
           'blk': '#1f1f1f',
-          'cat': ['#a5afa4', '#fec24d', '#f598ab', '#70ceec', '#a5ce43', '#fe824d'] }
+          'cat': ['#a5afa4', '#fec24d', '#f598ab', '#70ceec', '#a5ce43', '#fe824d']
           # (grey), yellow, pink, blue, green, orange
+  }
 
   # Manufacture start date object
   startDate = datetime.datetime.strptime(data['first_date'], '%Y-%m-%d')
@@ -36,8 +40,12 @@ def render_SVG(data):
   output += '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1224 792">\n'
 
   # Font definitions
-  LINE_HEIGHT = 32
-  BLOCK_WIDTH = 72
+  if (len(data['talks']) > 10):
+    LINE_HEIGHT = 32
+  else:
+    # Use a larger size if there are fewer talks
+    LINE_HEIGHT = 40
+  BLOCK_WIDTH = LINE_HEIGHT*2.25
 
   output += '<defs>\n'
   output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);</style>\n'
