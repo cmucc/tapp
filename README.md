@@ -13,7 +13,7 @@ a Python package manager.  Then, to install all of the necessary modules on your
 
 ## Talk Series
 
-See data files such as `data/spring2014/talks_series.json` for input reference.
+See data files such as `data/2014-01_S14-talks.json` for input reference.
 Use 0 as the `cat` value for weeks without a talk due to holidays, etc.
 
 ### Posters
@@ -44,7 +44,7 @@ Usage:
 
 ## Club Overview Flyers
 
-See data files such as `data/spring2014/overview.json` for input reference.
+See data files such as `data/2014-01_S14-flyer.json` for input reference.
 
 Usage:
 
