@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-# talk_series/svg-gen.py
+# tapp/talks/svg_gen.py
 # Generator for talk series posters
 # Part of the TAPP library
 # Copyright 2014 Sam Gruber <scgruber@club.cc.cmu.edu>

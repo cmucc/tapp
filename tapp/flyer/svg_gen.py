@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
-# overview/svg-gen.py
-# Generator for overview posters
+# tapp/flyer/svg_gen.py
+# Generator for club overview flyer
 # Part of the TAPP library
 # Copyright 2014 Sam Gruber <scgruber@club.cc.cmu.edu>
 

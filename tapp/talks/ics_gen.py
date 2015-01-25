@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-# talk_series/ics-gen.py
+# tapp/talks/ics_gen.py
 # Generator for talk series iCalendar file
 # Part of the TAPP library
 # Copyright 2014 Tim Parenti <tparenti@club.cc.cmu.edu>

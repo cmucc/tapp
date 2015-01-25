@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-# talk_series/svg-gen-short.py
+# tapp/talks/svg_gen_short.py
 # Generator for talk series posters
 # Part of the TAPP library
 # Copyright 2015 Tim Parenti <tparenti@club.cc.cmu.edu>

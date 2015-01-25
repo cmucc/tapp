@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-# talk_series/php-gen.py
+# tapp/talks/php_gen.py
 # Generator for talk series PHP webpage
 # Part of the TAPP library
 # Copyright 2014 Tim Parenti <tparenti@club.cc.cmu.edu>
