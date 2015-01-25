@@ -2,7 +2,12 @@
 *.pyc
 
 # Ignore output files
+output
 *.svg
 *.ics
 *.php
 
+# Don't commit sponsor logos to repository
+logos/sponsors/*
+!logos/sponsors/README.md
+!logos/cmucc/*
