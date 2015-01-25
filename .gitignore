@@ -1,3 +1,6 @@
+# Ignore compiled Python files
+*.pyc
+
 # Ignore output files
 *.svg
 *.ics
