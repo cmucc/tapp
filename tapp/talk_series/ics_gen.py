@@ -5,60 +5,17 @@
 # Part of the TAPP library
 # Copyright 2014 Tim Parenti <tparenti@club.cc.cmu.edu>
 
-import os, sys, getopt, json, datetime, argparse
-from jsonschema import validate, ValidationError
-
-import icalendar
+import datetime
 from icalendar import *
+
+from tapp.io.command_line import parse_arguments
+from tapp.io.json_validate import valid_json_file
 
 # Top-level function
 def generate_ICS():
   inData, outFile = parse_arguments()
   outData = render_ICS(inData)
   outFile.write(outData + '\n')
-
-# Defines a valid json input file for argparse
-def valid_json_file(filename):
-  try:
-    infile = open(filename, 'r')
-    inData = json.load(infile)
-  except IOError as e:
-    raise argparse.ArgumentTypeError(e.strerror)
-    sys.exit()
-
-  try:
-    schemaFile = open(os.path.dirname(sys.argv[0])+'/schema.json', 'r') # XXX use os.path.realpath
-  except IOError:
-    print 'Could not load JSON schema file.'
-    sys.exit()
-
-  try:
-    schema = json.load(schemaFile)
-    validate(inData, schema)
-  except ValidationError as e:
-    print 'JSON validation error:\n' + e.message
-    sys.exit()
-
-  return inData
-
-# Parses arguments from command line
-def parse_arguments():
-  parser = argparse.ArgumentParser(description='Generator for talk series iCalendar file',
-                                   epilog='TAPP Library')
-
-  arguments = [
-  ['-i', '--infile', 'inputfile', 'input file name, omit option to read from stdin', valid_json_file, sys.stdin],
-  ['-o', '--outfile', 'outputfile', 'output file name, omit option to write to stdout', argparse.FileType('w'), sys.stdout],
-  ]
-
-  for item in arguments:
-    parser.add_argument(item[0], item[1], metavar=item[2], help=item[3], type=item[4], default=item[5])
-
-  args = parser.parse_args()
-  # Workaround instead of lazy-evaluating default argparse arguments:
-  if args.infile == sys.stdin:
-    args.infile = json.load(sys.stdin)
-  return args.infile, args.outfile
 
 # Converts the data into an ICS
 def render_ICS(data):
