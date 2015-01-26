@@ -55,9 +55,9 @@ def render_SVG(data):
   output += '    .series-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: 40px; font-weight: 700; }\n'
   output += '    .when-and-where { font-family: \'Open Sans\', sans-serif; font-size: 18px; }\n'
   output += '    .website { font-family: \'Open Sans\', sans-serif; font-size: 24px; }\n'
-  output += '    .talk-date { font-family: \'Open Sans\', sans-serif; font-size: %dpx; font-weight: 600; }\n' %(BLOCK_HEIGHT*0.5)
-  output += '    .talk-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: %dpx; font-weight: 700; }\n' %(TITLE_SIZE)
   output += '    .sponsored-by { font-family: \'Open Sans\', sans-serif; font-size: 18px; }\n'
+  output += '    .talk-date { font-family: \'Open Sans\', sans-serif; font-size: %fpx; font-weight: 600; }\n' %(BLOCK_HEIGHT*0.5)
+  output += '    .talk-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: %fpx; font-weight: 700; }\n' %(TITLE_SIZE)
   output += '  </style>\n'
   output += '</defs>\n'
 
@@ -65,7 +65,7 @@ def render_SVG(data):
   DOCUMENT_WIDTH = 1224
   DOCUMENT_HEIGHT = 792
   MARGIN = 72
-  output += '<rect x="0" y="0" width="%d" height="%d" fill="%s" />\n' %(DOCUMENT_WIDTH, DOCUMENT_HEIGHT, pal['bg'])
+  output += '<rect x="0" y="0" width="%f" height="%f" fill="%s" />\n' %(DOCUMENT_WIDTH, DOCUMENT_HEIGHT, pal['bg'])
 
   # CMUCC Logo
   LOGO_WIDTH = 475
@@ -73,7 +73,7 @@ def render_SVG(data):
   LOGO_MARGIN = 20
   LOGO_SCALE = 0.7
   LOGO_FILE = '2013logo_light.svg'
-  output += '<image x="%d" y="%d" width="%d" height="%d" xlink:href="%s"/>\n' %(436-((LOGO_WIDTH-LOGO_MARGIN)*LOGO_SCALE), 360-(LOGO_HEIGHT*LOGO_SCALE), (LOGO_WIDTH*LOGO_SCALE), (LOGO_HEIGHT*LOGO_SCALE), LOGO_FILE)
+  output += '<image x="%f" y="%f" width="%f" height="%f" xlink:href="%s"/>\n' %(436-((LOGO_WIDTH-LOGO_MARGIN)*LOGO_SCALE), 360-(LOGO_HEIGHT*LOGO_SCALE), (LOGO_WIDTH*LOGO_SCALE), (LOGO_HEIGHT*LOGO_SCALE), LOGO_FILE)
 
   # Series Name
   output += '<text x="436" y="396" fill="'+pal['em']+'" class="series-title" text-anchor="end">'
@@ -96,17 +96,17 @@ def render_SVG(data):
   output += '</text>\n'
 
   # Website
-  output += '<text x="%d" y="%d" fill="%s" class="website" text-anchor="end">' %(396, DOCUMENT_HEIGHT - MARGIN - 144, pal['em'])
+  output += '<text x="%f" y="%f" fill="%s" class="website" text-anchor="end">' %(396, DOCUMENT_HEIGHT - MARGIN - 144, pal['em'])
   output += data['url']
   output += '</text>\n'
 
   # Sponsor
   SPONSOR_WIDTH = 144
   SPONSOR_HEIGHT = 108
-  output += '<text x="%d" y="%d" fill="%s" class="sponsored-by" text-anchor="end">' %(396 - SPONSOR_WIDTH, DOCUMENT_HEIGHT - MARGIN - data['sponsor']['logo_svg-gen_height_offset'], pal['reg'])
+  output += '<text x="%f" y="%f" fill="%s" class="sponsored-by" text-anchor="end">' %(396 - SPONSOR_WIDTH, DOCUMENT_HEIGHT - MARGIN - data['sponsor']['logo_svg-gen_height_offset'], pal['reg'])
   output += 'Sponsored by'
   output += '</text>\n'
-  output += '<image x="%d" y="%d" width="%d" height="%d" xlink:href="%s" />\n' %(396 - SPONSOR_WIDTH, DOCUMENT_HEIGHT - MARGIN - SPONSOR_HEIGHT, SPONSOR_WIDTH, SPONSOR_HEIGHT, data['sponsor']['logo'])
+  output += '<image x="%f" y="%f" width="%f" height="%f" xlink:href="%s" />\n' %(396 - SPONSOR_WIDTH, DOCUMENT_HEIGHT - MARGIN - SPONSOR_HEIGHT, SPONSOR_WIDTH, SPONSOR_HEIGHT, data['sponsor']['logo'])
 
   # Lay out schedule
   SCHEDULE_X = 492
