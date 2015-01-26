@@ -41,11 +41,12 @@ def render_SVG(data):
 
   # Font definitions
   if (len(data['talks']) > 10):
-    LINE_HEIGHT = 32
+    BLOCK_HEIGHT = 32
   else:
     # Use a larger size if there are fewer talks
-    LINE_HEIGHT = 40
-  BLOCK_WIDTH = LINE_HEIGHT*2.25
+    BLOCK_HEIGHT = 40
+  BLOCK_WIDTH = BLOCK_HEIGHT*2.25
+  TITLE_SIZE = BLOCK_HEIGHT
 
   output += '<defs>\n'
   output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);</style>\n'
@@ -54,8 +55,8 @@ def render_SVG(data):
   output += '    .series-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: 40px; font-weight: 700; }\n'
   output += '    .when-and-where { font-family: \'Open Sans\', sans-serif; font-size: 18px; }\n'
   output += '    .website { font-family: \'Open Sans\', sans-serif; font-size: 24px; }\n'
-  output += '    .talk-date { font-family: \'Open Sans\', sans-serif; font-size: %dpx; font-weight: 600; }\n' %(LINE_HEIGHT/2)
-  output += '    .talk-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: %dpx; font-weight: 700; }\n' %(LINE_HEIGHT)
+  output += '    .talk-date { font-family: \'Open Sans\', sans-serif; font-size: %dpx; font-weight: 600; }\n' %(BLOCK_HEIGHT*0.5)
+  output += '    .talk-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: %dpx; font-weight: 700; }\n' %(TITLE_SIZE)
   output += '    .sponsored-by { font-family: \'Open Sans\', sans-serif; font-size: 18px; }\n'
   output += '  </style>\n'
   output += '</defs>\n'
@@ -113,17 +114,17 @@ def render_SVG(data):
   SCHEDULE_WIDTH = 648
   SCHEDULE_HEIGHT = DOCUMENT_HEIGHT - (MARGIN * 2)
 
-  heights = disperse_heights(SCHEDULE_Y, SCHEDULE_HEIGHT, len(data['talks']), LINE_HEIGHT)
+  heights = disperse_heights(SCHEDULE_Y, SCHEDULE_HEIGHT, len(data['talks']), BLOCK_HEIGHT)
   dates = disperse_dates(startDate, len(data['talks']))
   for idx in range(0, len(heights)):
     output += '<g>'
     # Date
-    output += '<rect x="%d" y="%d" width="%d" height="%d" fill="%s" />' %(SCHEDULE_X, heights[idx], BLOCK_WIDTH, LINE_HEIGHT, pal['cat'][data['talks'][idx]['cat']])
-    output += '<text x="%d" y="%d" fill="%s" class="talk-date" text-anchor="middle">' %(SCHEDULE_X+(BLOCK_WIDTH/2), heights[idx]+(LINE_HEIGHT/2)+6, pal['blk'])
+    output += '<rect x="%d" y="%d" width="%d" height="%d" fill="%s" />' %(SCHEDULE_X, heights[idx], BLOCK_WIDTH, BLOCK_HEIGHT, pal['cat'][data['talks'][idx]['cat']])
+    output += '<text x="%d" y="%d" fill="%s" class="talk-date" text-anchor="middle">' %(SCHEDULE_X+(BLOCK_WIDTH/2), heights[idx]+(BLOCK_HEIGHT/2)+6, pal['blk'])
     output += dates[idx].strftime("%b %d").upper()
     output += '</text>'
     # Title
-    output += '<text x="%d" y="%d" fill="%s" class="talk-title" text-anchor="start">' %(SCHEDULE_X+BLOCK_WIDTH+26, heights[idx]+(LINE_HEIGHT/2)+12, pal['cat'][data['talks'][idx]['cat']])
+    output += '<text x="%d" y="%d" fill="%s" class="talk-title" text-anchor="start">' %(SCHEDULE_X+BLOCK_WIDTH+26, heights[idx]+(BLOCK_HEIGHT/2)+12, pal['cat'][data['talks'][idx]['cat']])
     output += data['talks'][idx]['title']
     output += '</text>'
     output += '</g>'
