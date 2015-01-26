@@ -117,18 +117,17 @@ def render_SVG(data):
   heights = disperse_heights(SCHEDULE_Y, SCHEDULE_HEIGHT, len(data['talks']), BLOCK_HEIGHT)
   dates = disperse_dates(startDate, len(data['talks']))
   for idx in range(0, len(heights)):
-    output += '<g>'
+    output += '<g>\n'
     # Date
-    output += '<rect x="%d" y="%d" width="%d" height="%d" fill="%s" />' %(SCHEDULE_X, heights[idx], BLOCK_WIDTH, BLOCK_HEIGHT, pal['cat'][data['talks'][idx]['cat']])
-    output += '<text x="%d" y="%d" fill="%s" class="talk-date" text-anchor="middle">' %(SCHEDULE_X+(BLOCK_WIDTH/2), heights[idx]+(BLOCK_HEIGHT/2)+6, pal['blk'])
+    output += '<rect x="%f" y="%f" width="%f" height="%f" fill="%s" />\n' %(SCHEDULE_X, heights[idx], BLOCK_WIDTH, BLOCK_HEIGHT, pal['cat'][data['talks'][idx]['cat']])
+    output += '<text x="%f" y="%f" fill="%s" class="talk-date" text-anchor="middle">' %(SCHEDULE_X+(BLOCK_WIDTH/2), heights[idx]+(BLOCK_HEIGHT/2)+6, pal['blk'])
     output += dates[idx].strftime("%b %d").upper()
-    output += '</text>'
+    output += '</text>\n'
     # Title
-    output += '<text x="%d" y="%d" fill="%s" class="talk-title" text-anchor="start">' %(SCHEDULE_X+BLOCK_WIDTH+26, heights[idx]+(BLOCK_HEIGHT/2)+12, pal['cat'][data['talks'][idx]['cat']])
+    output += '<text x="%f" y="%f" fill="%s" class="talk-title" text-anchor="start">' %(SCHEDULE_X+BLOCK_WIDTH+26, heights[idx]+(BLOCK_HEIGHT/2)+12, pal['cat'][data['talks'][idx]['cat']])
     output += data['talks'][idx]['title']
-    output += '</text>'
-    output += '</g>'
-    output += '\n'
+    output += '</text>\n'
+    output += '</g>\n'
 
   output += '</svg>'
   return output
