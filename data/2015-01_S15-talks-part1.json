@@ -22,7 +22,7 @@
     {
       "title" : "Elliptic Curve Cryptography",
       "cat" : 1,
-      "notes" : "elliptic-curve-crypto.html",
+      "notes" : "ecc.pdf",
       "desc" : "Modern cryptography uses elliptic curves.  What is an elliptic curve, and why is it useful for cryptography?  And what does this have to do with ellipses, anyway?  Come find out."
     },
     {
