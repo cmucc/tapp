@@ -2,7 +2,11 @@
 Totally Automated Propaganda Producer
 
 This package contains scripts to be used to produce marketing materials for the
-CMU Computer Club.
+Carnegie Mellon University Computer Club.
+
+A copy of this repository is available to club members at
+`/afs/club.cc.cmu.edu/projects/tapp`.
+Users can edit the `data` directory and run the scripts as needed.
 
 ## Requirements
 
