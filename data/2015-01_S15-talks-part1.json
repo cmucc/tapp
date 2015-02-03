@@ -47,7 +47,7 @@
       "title" : "Vim as an IDE",
       "cat" : 2,
       "notes" : "vim.html",
-      "desc" : "Vim was designed for the advanced user, and advanced users like complete control over their environment. To fulfill this requirement, Vim comes completely unconfigured--it's a blank slate. The problem is, not everyone's an advanced user! An unconfigured Vim is, all for all purposes, unusable. As it turns out, configuring Vim is very straightforward! In this talk, we'll introduce you to Vim plugins using the plugin manager Vundle. Our goal will be to walk out with a fully configured Vim setup. This includes a pleasant color scheme, fancy status bar indicators, code-aware features, Git integration, and more! Vim has a solution to handle just about anything that a normal IDE would. It's just about knowing where to start."
+      "desc" : "Vim was designed for the advanced user, and advanced users like complete control over their environment. To fulfill this requirement, Vim comes completely unconfigured--it's a blank slate. The problem is, not everyone's an advanced user! An unconfigured Vim is all but unusable. As it turns out, configuring Vim is very straightforward! In this talk, we'll introduce you to Vim plugins using the plugin manager Vundle. Our goal will be to walk out with a fully configured Vim setup. This includes a pleasant color scheme, fancy status bar indicators, code-aware features, Git integration, and more! Vim has a solution to handle just about anything that a normal IDE would. It's just about knowing where to start."
     },
     {
       "title" : "Node.js 101",
