@@ -28,8 +28,8 @@
     {
       "title" : "Introduction to Bitcoin",
       "cat" : 1,
-      "notes" : "bitcoin.html",
-      "desc" : "Bitcoin is the application of cryptography to electronic money.  Come learn how to get started with bitcoin."
+      "notes" : "bitcoin.pdf",
+      "desc" : "Bitcoin is the application of cryptography to money. But how can money exist entirely as files on your computer? And how can you use Bitcoin, and what is it useful for?  In this talk, we will discuss the inner workings of Bitcoin, what it is useful for and where it is going, and how you can get started with Bitcoin."
     },
     {
       "title" : "Docker and Fig 101",
