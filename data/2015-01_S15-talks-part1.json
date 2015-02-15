@@ -38,10 +38,10 @@
       "desc" : "Docker and Fig are cool technologies that allow you to compartmentalize your production workflow in any language.  However, we'll discuss how we can use these technologies to improve your development cycle, as well!  While we'll be \"Dockerizing\" a Node.js application, the lessons are applicable to all of the main web development platforms.  A basic background with webapps is helpful, but not necessary.  No Docker experience needed."
     },
     {
-      "title" : "Coffeescript 101",
+      "title" : "CoffeeScript 101",
       "cat" : 2,
       "notes" : "coffeescript.html",
-      "desc" : "Check out the language sensation sweeping the nation!  Not really, but Coffeescript is a good way to dramatically increase legibility, avoid some Javascript pitfalls, and otherwise make developing on the client and server easier.  We'll open with a discussion of Coffee syntax and set up of the development platform, then run through applying it to the client with JQuery, and on the server with Node.js.  JavaScript syntax background is needed."
+      "desc" : "Check out the language sensation sweeping the nation!  Not really, but CoffeeScript is a good way to dramatically increase legibility, avoid some Javascript pitfalls, and otherwise make developing on the client and server easier.  We'll open with a discussion of Coffee syntax and set up of the development platform, then run through applying it to the client with JQuery, and on the server with Node.js.  JavaScript syntax background is needed."
     },
     {
       "title" : "Vim as an IDE",
