@@ -19,4 +19,4 @@ def parse_arguments():
   if args.infile == sys.stdin:
     args.infile = json.load(sys.stdin)
 
-  return args.infile, args.outfile
+  return args

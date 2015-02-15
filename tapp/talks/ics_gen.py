@@ -13,7 +13,8 @@ from tapp.io.json_validate import valid_json_file
 
 # Top-level function
 def generate_ICS():
-  inData, outFile = parse_arguments()
+  args = parse_arguments()
+  inData, outFile = args.infile, args.outfile
   outData = render_ICS(inData)
   outFile.write(outData + '\n')
 

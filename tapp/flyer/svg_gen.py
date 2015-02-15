@@ -12,7 +12,8 @@ from tapp.io.json_validate import valid_json_file
 
 # Top-level function
 def generate_SVG():
-  inData, outFile = parse_arguments()
+  args = parse_arguments()
+  inData, outFile = args.infile, args.outfile
   outData = render_SVG(inData)
   outFile.write(outData + '\n')
 
