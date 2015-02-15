@@ -12,7 +12,7 @@ from tapp.io.json_validate import valid_json_file
 
 # Top-level function
 def generate_SVG():
-  args = parse_arguments()
+  args = parse_arguments('Overview flyer (SVG) generator')
   inData, outFile = args.infile, args.outfile
   outData = render_SVG(inData)
   outFile.write(outData + '\n')

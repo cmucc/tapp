@@ -12,7 +12,7 @@ from tapp.io.json_validate import valid_json_file
 
 # Top-level function
 def generate_PHP():
-  args = parse_arguments()
+  args = parse_arguments('Talk series webpage (PHP) generator')
   inData, outFile = args.infile, args.outfile
   outData = render_PHP(inData)
   outFile.write(outData + '\n')

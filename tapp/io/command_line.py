@@ -3,8 +3,8 @@ import sys, argparse
 from tapp.io.json_validate import valid_json_file
 
 # Parses arguments from command line
-def parse_arguments():
-  parser = argparse.ArgumentParser(description='TAPP generator', epilog='TAPP Library')
+def parse_arguments(description='TAPP generator'):
+  parser = argparse.ArgumentParser(description=description, epilog='TAPP Library')
 
   arguments = [
     ['-i', '--infile', 'inputfile', 'input file name, omit option to read from stdin', valid_json_file, sys.stdin],

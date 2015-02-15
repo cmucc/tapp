@@ -15,7 +15,7 @@ from tapp.io.json_validate import valid_json_file
 
 # Top-level function
 def generate_SVG():
-  args = parse_arguments()
+  args = parse_arguments('Talk series poster (SVG) generator')
   inData, outFile = args.infile, args.outfile
   outData = render_SVG(inData)
   outFile.write(outData + '\n')

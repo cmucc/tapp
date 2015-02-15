@@ -13,7 +13,7 @@ from tapp.io.json_validate import valid_json_file
 
 # Top-level function
 def generate_ICS():
-  args = parse_arguments()
+  args = parse_arguments('Talk series iCalendar file generator')
   inData, outFile = args.infile, args.outfile
   outData = render_ICS(inData)
   outFile.write(outData + '\n')
