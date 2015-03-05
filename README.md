@@ -26,7 +26,7 @@ Usage:
 
     python -m tapp.talks.svg_gen -i foo.json -o bar.svg
 
-The file `2013logo_light.svg` must be in the same directory as the output file
+The file `2015logo_light.svg` must be in the same directory as the output file
 to display properly.  Additionally, the filename given in the `sponsor_logo`
 field must be relative to the output file.
 
@@ -50,7 +50,7 @@ Usage:
 
     python -m tapp.flyer.svg_gen -i foo.json -o bar.svg
 
-The files `2013logo_light.svg` and `cmucc_qr.svg` must be in the same directory
+The files `2015logo_light.svg` and `cmucc_qr.svg` must be in the same directory
 as the output file to display properly.
 
 ## Printing SVGs

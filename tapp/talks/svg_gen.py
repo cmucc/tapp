@@ -69,10 +69,10 @@ def render_SVG(data):
 
   # CMUCC Logo
   LOGO_WIDTH = 475
-  LOGO_HEIGHT = 100
+  LOGO_HEIGHT = 125
   LOGO_MARGIN = 20
   LOGO_SCALE = 0.7
-  LOGO_FILE = '2013logo_light.svg'
+  LOGO_FILE = '2015logo_light.svg'
   output += '<image x="%f" y="%f" width="%f" height="%f" xlink:href="%s"/>\n' %(436-((LOGO_WIDTH-LOGO_MARGIN)*LOGO_SCALE), 360-(LOGO_HEIGHT*LOGO_SCALE), (LOGO_WIDTH*LOGO_SCALE), (LOGO_HEIGHT*LOGO_SCALE), LOGO_FILE)
 
   # Series Name
