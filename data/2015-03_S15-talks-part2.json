@@ -1,0 +1,66 @@
+{
+  "name" : "Spring 2015",
+  "slug" : "spring15",
+  "first_date" : "2015-03-18",
+  "start_time" : "20:00",
+  "end_time" : "21:00",
+  "location" : "Gates 4301",
+  "ical_desc" : "A series of talks and workshops on some of the most useful tools for advanced users and developers led by the Carnegie Mellon University Computer Club.",
+  "web_desc" : "<p>Want to learn more about practical aspects of computer engineering, ranging from command line usage to webapp deployment? Come to Computer Club's Spring 2015 weekly talk series! This semester, we will discuss topics ranging from command line workflows to Node.js.  <b>More talks will be added soon!</b></p>",
+  "web_suggest" : "<p>If you would like to request, propose, or volunteer a talk, join us on IRC or email your talk idea to operations@club.</p>",
+  "categories" : [
+    "Programming Languages"
+  ],
+  "talks" : [
+    {
+      "title" : "C++: A less bad systems language",
+      "cat" : 4,
+      "notes" : "cplusplus.html",
+      "desc" : "Do you need the performance and control of C but also want convenient features such as type safety, a well-developed standard library, and tools to enable better memory safety? In this talk, we will go over the basics of C++ and discuss design patterns and idioms, such as Resource Acquisition is Initialization, which can be used to develop robust, preferment, and elegant code. We will also cover some of the new features in C++11 such as lambdas and move semantics."
+    },
+    {
+      "title" : "Real-time operating systems",
+      "cat" : 4,
+      "notes" : "realtime-os.html",
+      "desc" : ""
+    },
+    {
+      "title" : "(SigBovik)",
+      "cat" : 0,
+      "notes" : "",
+      "desc" : ""
+    },
+    {
+      "title" : "Haskell: Safe, powerful abstractions",
+      "cat" : 4,
+      "notes" : "haskell.html",
+      "desc" : ""
+    },
+    {
+      "title" : "Sed &amp; awk: &#8217;70s tools still hip today",
+      "cat" : 4,
+      "notes" : "awk-sed.html",
+      "desc" : "Providing much of the meat and bones of shell scripting, sed and awk process line-based data into more useful information.  This talk will convey how to use these classic tools from the early days of UNIX to do what you need, and how they have influenced other languages."
+    },
+    {
+      "title" : "Verilog &amp; FPGAs: Coding hardware",
+      "cat" : 4,
+      "notes" : "verilog.html",
+      "desc" : "Ever hear people talking about Verilog or VHDL, and wonder how on earth you can write code that becomes hardware?  Attend this talk to learn about hardware description languages and how programmable logic works!"
+    },
+    {
+      "title" : "Clojure: An elegant weapon",
+      "cat" : 4,
+      "notes" : "clojure.html",
+      "desc" : ""
+    }
+  ],
+  "url" : "http://www.cmucc.org/talks",
+  "sponsor" : {
+    "name" : "Green Hills Software",
+    "url" : "http://www.ghs.com",
+    "desc" : "Green Hills make the world's highest performing compilers, most secure real-time operating systems, revolutionary debuggers, and virtualization solutions for embedded systems.",
+    "logo" : "logos/sponsors/green-hills/GHS_Logo.svg",
+    "logo_svg-gen_height_offset" : 48
+  }
+}
