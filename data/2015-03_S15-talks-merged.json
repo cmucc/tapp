@@ -1,0 +1,116 @@
+{
+  "name" : "Spring 2015",
+  "slug" : "spring15",
+  "first_date" : "2015-01-21",
+  "start_time" : "20:00",
+  "end_time" : "21:00",
+  "location" : "Gates 4301",
+  "ical_desc" : "A series of talks and workshops on some of the most useful tools for advanced users and developers led by the Carnegie Mellon University Computer Club.",
+  "web_desc" : "<p>Want to learn more about practical aspects of computer engineering, ranging from command line usage to webapp deployment? Come to Computer Club's Spring 2015 weekly talk series! This semester, we will discuss topics ranging from command line workflows to Node.js.  <b>More talks will be added soon!</b></p>",
+  "web_suggest" : "<p>If you would like to request, propose, or volunteer a talk, join us on IRC or email your talk idea to operations@club.</p>",
+  "categories" : [
+    "Hacky Things!",
+    "Web Applications",
+    "Programming Languages"
+  ],
+  "talks" : [
+    {
+      "title" : "Useful Command Line Workflows",
+      "cat" : 1,
+      "notes" : "command-line.html",
+      "desc" : "Use the command line now and then, but find it to be tedious and painful? Just want to sharpen your skills and efficiency with command-line use?  In this talk, we will present several slick workflows which allow you to accomplish tasks quickly and efficiently from the command line, from grabbing videos off of YouTube from easily switching between running, compiling, and testing your code."
+    },
+    {
+      "title" : "Elliptic Curve Cryptography",
+      "cat" : 1,
+      "notes" : "ecc.pdf",
+      "desc" : "Modern cryptography uses elliptic curves.  What is an elliptic curve, and why is it useful for cryptography?  And what does this have to do with ellipses, anyway?  Come find out."
+    },
+    {
+      "title" : "Introduction to Bitcoin",
+      "cat" : 1,
+      "notes" : "bitcoin.pdf",
+      "desc" : "Bitcoin is the application of cryptography to money. But how can money exist entirely as files on your computer? And how can you use Bitcoin, and what is it useful for?  In this talk, we will discuss the inner workings of Bitcoin, what it is useful for and where it is going, and how you can get started with Bitcoin."
+    },
+    {
+      "title" : "Docker and Fig 101",
+      "cat" : 2,
+      "notes" : "docker-and-fig.html",
+      "desc" : "Docker and Fig are cool technologies that allow you to compartmentalize your production workflow in any language.  However, we'll discuss how we can use these technologies to improve your development cycle, as well!  While we'll be \"Dockerizing\" a Node.js application, the lessons are applicable to all of the main web development platforms.  A basic background with webapps is helpful, but not necessary.  No Docker experience needed."
+    },
+    {
+      "title" : "CoffeeScript 101",
+      "cat" : 2,
+      "notes" : "coffeescript.html",
+      "desc" : "Check out the language sensation sweeping the nation!  Not really, but CoffeeScript is a good way to dramatically increase legibility, avoid some Javascript pitfalls, and otherwise make developing on the client and server easier.  We'll open with a discussion of Coffee syntax and set up of the development platform, then run through applying it to the client with JQuery, and on the server with Node.js.  JavaScript syntax background is needed."
+    },
+    {
+      "title" : "Vim as an IDE",
+      "cat" : 2,
+      "notes" : "vim.html",
+      "desc" : "Vim was designed for the advanced user, and advanced users like complete control over their environment. To fulfill this requirement, Vim comes completely unconfigured--it's a blank slate. The problem is, not everyone's an advanced user! An unconfigured Vim is all but unusable. As it turns out, configuring Vim is very straightforward! In this talk, we'll introduce you to Vim plugins using the plugin manager Vundle. Our goal will be to walk out with a fully configured Vim setup. This includes a pleasant color scheme, fancy status bar indicators, code-aware features, Git integration, and more! Vim has a solution to handle just about anything that a normal IDE would. It's just about knowing where to start."
+    },
+    {
+      "title" : "Node.js 101",
+      "cat" : 2,
+      "notes" : "node-js.html",
+      "desc" : "This is an introduction to the hot new server paradigm of Node.js.  We'll briefly go over how Node.js is different from other platforms like Rails and Django (besides using JavaScript) and when it's best to use it.  Then we'll dive in to using Express and Mongo with Jade templating to make a MEN stack application.  When you leave, you should be able to build your own web-apps in Node.js.  Background in JavaScript syntax is helpful, but not necessary.  No web-app experience neeeded."
+    },
+    {
+      "title" : "(Spring Break)",
+      "cat" : 0,
+      "notes" : "",
+      "desc" : ""
+    },
+    {
+      "title" : "C++: A less bad systems language",
+      "cat" : 3,
+      "notes" : "cplusplus.html",
+      "desc" : "Do you need the performance and control of C but also want convenient features such as type safety, a well-developed standard library, and tools to enable better memory safety? In this talk, we will go over the basics of C++ and discuss design patterns and idioms, such as Resource Acquisition is Initialization, which can be used to develop robust, performant, and elegant code. We will also cover some of the new features in C++11 such as lambdas and move semantics."
+    },
+    {
+      "title" : "Real-Time Operating Systems",
+      "cat" : 3,
+      "notes" : "realtime-os.html",
+      "desc" : "Join Mark Wagner, an Engineering Director at Green Hills Software, for an interactive discussion about examples of complex embedded systems, the safety and security interactions of the components in these systems, and the ways real-time operating systems can secure the interactions."
+    },
+    {
+      "title" : "(SigBovik)",
+      "cat" : 0,
+      "notes" : "",
+      "desc" : ""
+    },
+    {
+      "title" : "Haskell: Safe, powerful abstractions",
+      "cat" : 3,
+      "notes" : "haskell.html",
+      "desc" : ""
+    },
+    {
+      "title" : "sed &amp; awk: &#8217;70s tools still hip today",
+      "cat" : 3,
+      "notes" : "sed-awk.html",
+      "desc" : "Providing much of the meat and bones of shell scripting, sed and awk process line-based data into more useful information.  This talk will convey how to use these classic tools from the early days of UNIX to do what you need, and how they have influenced other languages."
+    },
+    {
+      "title" : "Verilog &amp; FPGAs: Coding hardware",
+      "cat" : 3,
+      "notes" : "verilog.html",
+      "desc" : "Ever hear people talking about Verilog or VHDL, and wonder how on earth you can write code that becomes hardware?  Attend this talk to learn about hardware description languages and how programmable logic works!"
+    },
+    {
+      "title" : "Clojure: An elegant weapon",
+      "cat" : 3,
+      "notes" : "clojure.html",
+      "desc" : ""
+    }
+  ],
+  "url" : "http://www.cmucc.org/talks",
+  "sponsor" : {
+    "name" : "Green Hills Software",
+    "url" : "http://www.ghs.com",
+    "desc" : "Green Hills make the world's highest performing compilers, most secure real-time operating systems, revolutionary debuggers, and virtualization solutions for embedded systems.",
+    "logo" : "logos/sponsors/green-hills/GHS_Logo.svg",
+    "logo_svg-gen_height_offset" : 48
+  }
+}
