@@ -65,7 +65,7 @@
     {
       "title" : "C++: A less bad systems language",
       "cat" : 3,
-      "notes" : "cplusplus.html",
+      "notes" : "cplusplus.pdf",
       "desc" : "Do you need the performance and control of C but also want convenient features such as type safety, a well-developed standard library, and tools to enable better memory safety? In this talk, we will go over the basics of C++ and discuss design patterns and idioms, such as Resource Acquisition is Initialization, which can be used to develop robust, performant, and elegant code. We will also cover some of the new features in C++11 such as lambdas and move semantics."
     },
     {
