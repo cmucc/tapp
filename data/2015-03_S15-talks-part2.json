@@ -34,7 +34,7 @@
       "title" : "Haskell: Safe, powerful abstractions",
       "cat" : 4,
       "notes" : "haskell.html",
-      "desc" : ""
+      "desc" : "Haskell is a functional programming language designed to make it quick and easy to write correct high-level code.  In this talk, we will discuss some common misconceptions about Haskell, introduce basic syntax and semantics, and give a brief, practically-oriented introduction to monads."
     },
     {
       "title" : "sed &amp; awk: &#8217;70s tools still hip today",
