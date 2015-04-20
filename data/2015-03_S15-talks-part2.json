@@ -52,7 +52,7 @@
       "title" : "Clojure: An elegant weapon",
       "cat" : 4,
       "notes" : "clojure.html",
-      "desc" : ""
+      "desc" : "Clojure is a functional programming language designed for concurrency.  It is a dialect of Lisp, and it runs on the JVM.  It has an awesome REPL-driven workflow.  It makes it trivially easy to use Java libraries and programs in a language that doesn't suck.  It is the most popular alternative to using Java on the JVM.  It is basically the best thing ever.  Want to learn more?  Come to this talk."
     }
   ],
   "url" : "http://www.cmucc.org/talks",
