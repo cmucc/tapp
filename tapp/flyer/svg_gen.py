@@ -42,6 +42,7 @@ def render_SVG(data):
   output += '<defs>\n'
   output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);</style>\n'
   output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);</style>\n'
+  output += '  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Inconsolata:700);</style>\n'
   output += '  <style type="text/css">\n'
   output += '    .subtitle { font-family: \'Open Sans\', sans-serif; fill: %s; font-size: 16px; font-weight: 300; }\n' %(pal['white'])
   output += '    .meetings { font-family: \'Open Sans Condensed\', sans-serif; fill: %s; font-size: 13px; font-weight: 700; }\n' %(pal['white'])
@@ -49,7 +50,7 @@ def render_SVG(data):
   output += '    .body { font-family: \'Open Sans\', sans-serif; fill: %s; font-size: 16px; font-weight: 400; letter-spacing: -0.5px; }\n' %(pal['black'])
   output += '    .bold-body { font-family: \'Open Sans\', sans-serif; fill: %s; font-size: 16px; font-weight: 700; letter-spacing: -0.5px; }\n' %(pal['black'])
   output += '    .bracket {font-family: \'Open Sans Condensed\', sans-serif; fill: %s; font-size: 20px; font-weight: 700; }\n' %(pal['gray'])
-  output += '    .link { font-family: \'Open Sans Condensed\', sans-serif; fill: %s; font-size: 26px; font-weight: 700; }\n' %(pal['gray'])
+  output += '    .link { font-family: \'Inconsolata\', sans-serif; fill: %s; font-size: 26px; font-weight: 700; }\n' %(pal['gray'])
   output += '  </style>\n'
   output += '</defs>\n'
 
