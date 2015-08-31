@@ -57,7 +57,7 @@ def render_SVG(data):
   output += '<g>\n'
   output += '<rect x="%d" y="%d" width="%d" height="%d" fill="%s" />\n' \
     %(MARGIN, MARGIN, DOCUMENT_WIDTH-(MARGIN*2), 108, pal['red'])
-  LOGO_FILE = '2015logo_light.svg'
+  LOGO_FILE = 'assets/cmucc_logo_2015_light.svg'
   output += '<image x="%d" y="%d" width="%d" height="%d" xlink:href="%s" />\n' \
     %(MARGIN+12, MARGIN+12, 342, 90, LOGO_FILE)
 
@@ -144,7 +144,7 @@ def render_SVG(data):
     output += '</text>\n'
 
   # QR
-  QR_FILE = 'cmucc_qr.svg'
+  QR_FILE = 'assets/cmucc_qr.svg'
   output += '<image x="%d" y="%d" width="%d" height="%d" xlink:href="%s" />\n' \
     %(DOCUMENT_WIDTH-MARGIN-144, DOCUMENT_HEIGHT-MARGIN-144, 144, 144, QR_FILE)
 
