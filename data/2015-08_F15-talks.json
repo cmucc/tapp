@@ -1,0 +1,118 @@
+{
+  "name" : "Fall 2015",
+  "slug" : "fall15",
+  "first_date" : "2015-09-02",
+  "start_time" : "20:00",
+  "end_time" : "21:00",
+  "location" : "Wean Hall 5415",
+  "ical_desc" : "A series of talks and workshops on some of the most useful tools for advanced users and developers led by the Carnegie Mellon University Computer Club.",
+  "web_desc" : "<p>DEVOPS!  Hippest of buzzwords, earner of thousands!  Learn to harness the immense power of devops for yourself, by coming to the Fall 2015 Computer Club Workshop/Talk Series.  We will tell you the tricks that will allow you to transcend the annoyances of administration and offenses of operations, and return to the elegant, pure simplicity of raw code!</p>",
+  "web_suggest" : "<p>If you would like to request, propose, or volunteer a talk, join us on IRC or email your talk idea to talks@club.</p>",
+  "categories" : [
+    "Power Tools",
+    "Retro",
+    "Dev Tools",
+    "Security",
+    "Languages"
+  ],
+  "talks" : [
+    {
+      "title" : "Power Computing at CMU",
+      "cat" : 1,
+      "notes" : "power-computing.html",
+      "desc" : "CMU is the top computer science university in the world. So obviously there are some useful software tools here, available to you! Learn what they are and how to use them to get your work done faster and more efficiently."
+    },
+    {
+      "title" : "Source Version Control with Git",
+      "cat" : 1,
+      "notes" : "power-git.html",
+      "desc" : "Do you like having undo and redo available in your editor? Then you're sure to like having undo and redo available on the command line! In this talk, you'll learn about the ideas behind the source version control system Git, and how to use its immense power for your own aims."
+    },
+    {
+      "title" : "Power Vim",
+      "cat" : 1,
+      "notes" : "power-vim.html",
+      "desc" : "Attend this talk to learn how to efficiently use the most powerful editor on earth! Even if you use an inferior editor, come to this talk! You might find you'd prefer this one!"
+    },
+    {
+      "title" : "Power Emacs",
+      "cat" : 1,
+      "notes" : "power-emacs.html",
+      "desc" : "Attend this talk to learn how to efficiently use the most powerful editor on earth! Even if you use an inferior editor, come to this talk! You might find you'd prefer this one!"
+    },
+    {
+      "title" : "(TOC Week)",
+      "cat" : 0,
+      "notes" : "",
+      "desc" : ""
+    },
+    {
+      "title" : "Early Home Computers and Video Games",
+      "cat" : 2,
+      "notes" : "early-games.html",
+      "desc" : "Did people use computers before Windows? They sure did.  Was there life on the Internet before Facebook and YouTube?  Certainly.  Did people play video games before Nintendo?  Absolutely.  From the machine room and arcade to the living room, attend this talk to learn about home computers and video games that your parents grew up with."
+    },
+    {
+      "title" : "History of Video Games: Nintendo",
+      "cat" : 2,
+      "notes" : "nintendo.html",
+      "desc" : "Nintendo dominated the video game business in the 1980s and early 1990s.  Come learn about the history of the Nintendo Entertainment System and Super Nintendo, as well as the technology behind these consoles."
+    },
+    {
+      "title" : "History of Video Games: Sega",
+      "cat" : 2,
+      "notes" : "sega.html",
+      "desc" : "Before becoming a third-party software publisher, Sega was once a thriving hardware company with a 60% market share and some of the most innovative designs on the market. Come learn about Sega's past, their cool consoles, and some games you might not have heard of."
+    },
+    {
+      "title" : "Your Talk Here! talks@club.cc.cmu.edu",
+      "cat" : 0,
+      "notes" : "",
+      "desc" : ""
+    },
+    {
+      "title" : "Thermonuclear Emacs",
+      "cat" : 3,
+      "notes" : "thermonuclear-emacs.html",
+      "desc" : "People jokingly call Emacs an operating system, but it's funny because it's true. At this talk we will explore several powerful features of Emacs that will make your life easier and let you unbind C-x C-c forever. We will cover shells, file searching, Git, themes, auto-completion, and more."
+    },
+    {
+      "title" : "OpenSSL",
+      "cat" : 4,
+      "notes" : "openssl.html",
+      "desc" : "What actually happens when you visit a web site with https?  Come find out about the technology behind SSL/TLS."
+    },
+    {
+      "title" : "Wireless Networking",
+      "cat" : 4,
+      "notes" : "wireless-networking.html",
+      "desc" : "802.11 wireless networking is widely used.  Come find out how this works, and how it is (or sometimes isn't) secured."
+    },
+    {
+      "title" : "(Thanksgiving)",
+      "cat" : 0,
+      "notes" : "",
+      "desc" : ""
+    },
+    {
+      "title" : "Memory Safety in Rust",
+      "cat" : 5,
+      "notes" : "rust.html",
+      "desc" : "Rust, a new systems programming language from Mozilla, uses novel concepts of ownership, borrowing, and lifetimes to ensure static memory safety with no runtime overhead.  Learn how the compiler can replace the garbage collector with the imposition of new language semantics."
+    },
+    {
+      "title" : "Your Talk Here! talks@club.cc.cmu.edu",
+      "cat" : 0,
+      "notes" : "",
+      "desc" : ""
+    }
+  ],
+  "url" : "http://www.cmucc.org/talks",
+  "sponsor" : {
+    "name" : "Green Hills Software",
+    "url" : "http://www.ghs.com",
+    "desc" : "Green Hills make the world's highest performing compilers, most secure real-time operating systems, revolutionary debuggers, and virtualization solutions for embedded systems.",
+    "logo" : "assets/ghs_logo.svg",
+    "logo_svg-gen_height_offset" : 48
+  }
+}
