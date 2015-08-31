@@ -14,6 +14,7 @@ talks_poster:	assets
 talks_web:
 	python -m tapp.talks.ics_gen -i ${TALKS_DATA} -o ${OUTPUT_DIR}/ccst.ics
 	python -m tapp.talks.php_gen -i ${TALKS_DATA} -o ${OUTPUT_DIR}/index.php
+	chmod +x ${OUTPUT_DIR}/index.php
 
 flyer:	assets
 	python -m tapp.flyer.svg_gen -i ${FLYER_DATA} -o ${OUTPUT_DIR}/flyer.svg
@@ -22,7 +23,7 @@ flyer:	assets
 # Publish to web
 publish:	all
 	mkdir -p ${WEB_DIR}
-	cp -a ${OUTPUT_DIR} ${WEB_DIR}
+	rsync -rpE ${OUTPUT_DIR}/ ${WEB_DIR}/
 
 
 # Assets such as logos and images
