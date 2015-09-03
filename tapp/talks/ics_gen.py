@@ -89,12 +89,18 @@ def render_ICS(data):
     for idx in range(0, len(dates)):
         if not data['talks'][idx]['cat'] == 0:
             event = Event()
+            # Override location if necessary
+            if 'location' in data['talks'][idx]:
+                event_location = data['talks'][idx]['location']
+                data['talks'][idx]['desc'] += '\n\nPlease note that this talk will be held in ' + event_location + '.'
+            else:
+                event_location = data['location']
             event_settings = [
                 ['uid', 'talks-series-' + dates[idx].strftime("%Y-%m-%d") + '@club.cc.cmu.edu'],
                 ['dtstart', datetime.datetime.combine(dates[idx], startTime)],
                 ['dtend', datetime.datetime.combine(dates[idx], endTime)],
                 ['summary', 'CMUCC Talk: ' + data['talks'][idx]['title']],
-                ['location', data['location']],
+                ['location', event_location],
                 ['description',
                         data['talks'][idx]['desc'] + '\n\n' +
                         'Part of the CMU Computer Club ' + data['name'] + ' Talks Series\n' +

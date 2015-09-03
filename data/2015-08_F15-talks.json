@@ -26,6 +26,7 @@
       "title" : "Source Version Control with Git",
       "cat" : 1,
       "notes" : "power-git.html",
+      "location" : "Wean 5409",
       "desc" : "Do you like having undo and redo available in your editor? Then you're sure to like having undo and redo available on the command line! In this talk, you'll learn about the ideas behind the source version control system Git, and how to use its immense power for your own aims."
     },
     {

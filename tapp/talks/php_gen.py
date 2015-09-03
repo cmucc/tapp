@@ -76,8 +76,11 @@ def render_PHP(data):
         '      <time datetime="' + dates[idx].strftime('%Y-%m-%d') + 'T' + startTime.time().strftime('%H:%M:%S%z') + '">' + dates[idx].strftime("%b %d") + '</time>\n'
         '    </div>\n'
         '    <h1>' + notes_link_call(data['talks'][idx]['title'], data['talks'][idx]['notes']) + '</h1>\n'
-        '    <p>' + data['talks'][idx]['desc'] + '</p>\n'
       )
+      output += '    <p>' + data['talks'][idx]['desc'] + '</p>\n'
+      # Override location if necessary
+      if 'location' in data['talks'][idx]:
+        output += '    <p><b>Please note that this talk will be held in ' + data['talks'][idx]['location'] + '.</b></p>\n'
 
   # Postamble
   output += (

@@ -31,7 +31,8 @@
             "type": "integer",
             "minimum": 0
            },
-          "desc": { "type": "string" }
+          "desc": { "type": "string" },
+          "location": { "type": "string" }
         }
       }
     },
