@@ -17,22 +17,33 @@ from tapp.io.json_validate import valid_json_file
 def generate_SVG():
   parser = CliParser('Talk series poster (SVG) generator')
   parser.requireFileIO()
+  parser.option('-g', '--grayscale', dest='grayscale', help='specifies color palette suitable for grayscale printing', action='store_true', default=False)
 
   args = parser.parse()
   inData, outFile = args.infile, args.outfile
-  outData = render_SVG(inData)
+  grayscale = args.grayscale
+  outData = render_SVG(inData, grayscale)
   outFile.write(outData + '\n')
 
 # Converts the data into an SVG
-def render_SVG(data):
+def render_SVG(data, grayscale):
   # Color palette
-  pal = { 'bg':  '#3f3a3c',
-          'em':  '#ffea7f',
-          'reg': '#a5afa4',
-          'blk': '#1f1f1f',
-          'cat': ['#a5afa4', '#fec24d', '#f598ab', '#70ceec', '#a5ce43', '#fe824d']
-          # (grey), yellow, pink, blue, green, orange
-  }
+  if not grayscale:
+    pal = { 'bg':  '#3f3a3c',
+            'em':  '#ffea7f',
+            'reg': '#a5afa4',
+            'blk': '#1f1f1f',
+            'cat': ['#a5afa4', '#fec24d', '#f598ab', '#70ceec', '#a5ce43', '#fe824d']
+            # (gray), yellow, pink, blue, green, orange
+    }
+  else:
+    pal = { 'bg':  '#ffffff',
+            'em':  '#1f1f1f',
+            'reg': '#8a8a8a',
+            'blk': '#ececec',
+            'cat': ['#8a8a8a', '#1f1f1f', '#1f1f1f', '#1f1f1f', '#1f1f1f', '#1f1f1f']
+            # (gray), all dark gray...
+    }
 
   # Manufacture start date object
   startDate = datetime.datetime.strptime(data['first_date'], '%Y-%m-%d')
@@ -62,6 +73,8 @@ def render_SVG(data):
   output += '    .sponsored-by { font-family: \'Open Sans\', sans-serif; font-size: 18px; }\n'
   output += '    .talk-date { font-family: \'Open Sans\', sans-serif; font-size: %fpx; font-weight: 600; }\n' %(BLOCK_HEIGHT*0.5)
   output += '    .talk-title { font-family: \'Open Sans Condensed\', sans-serif; font-size: %fpx; font-weight: 700; }\n' %(TITLE_SIZE)
+  if grayscale:
+    output += '    .logo { filter: grayscale(100%); -webkit-filter: grayscale(100%); }\n'
   output += '  </style>\n'
   output += '</defs>\n'
 
@@ -76,8 +89,11 @@ def render_SVG(data):
   LOGO_HEIGHT = 125
   LOGO_MARGIN = 20
   LOGO_SCALE = 0.7
-  LOGO_FILE = 'assets/cmucc_logo_2015_light.svg'
-  output += '<image x="%f" y="%f" width="%f" height="%f" xlink:href="%s"/>\n' %(436-((LOGO_WIDTH-LOGO_MARGIN)*LOGO_SCALE), 360-(LOGO_HEIGHT*LOGO_SCALE), (LOGO_WIDTH*LOGO_SCALE), (LOGO_HEIGHT*LOGO_SCALE), LOGO_FILE)
+  if not grayscale:
+    LOGO_FILE = 'assets/cmucc_logo_2015_light.svg'
+  else:
+    LOGO_FILE = 'assets/cmucc_logo_2015_dark.svg'
+  output += '<image x="%f" y="%f" width="%f" height="%f" class="logo" xlink:href="%s"/>\n' %(436-((LOGO_WIDTH-LOGO_MARGIN)*LOGO_SCALE), 360-(LOGO_HEIGHT*LOGO_SCALE), (LOGO_WIDTH*LOGO_SCALE), (LOGO_HEIGHT*LOGO_SCALE), LOGO_FILE)
 
   # Series Name
   output += '<text x="436" y="396" fill="'+pal['em']+'" class="series-title" text-anchor="end">'
@@ -110,7 +126,7 @@ def render_SVG(data):
   output += '<text x="%f" y="%f" fill="%s" class="sponsored-by" text-anchor="end">' %(396 - SPONSOR_WIDTH, DOCUMENT_HEIGHT - MARGIN - data['sponsor']['logo_svg-gen_height_offset'], pal['reg'])
   output += 'Sponsored by'
   output += '</text>\n'
-  output += '<image x="%f" y="%f" width="%f" height="%f" xlink:href="%s" />\n' %(396 - SPONSOR_WIDTH, DOCUMENT_HEIGHT - MARGIN - SPONSOR_HEIGHT, SPONSOR_WIDTH, SPONSOR_HEIGHT, data['sponsor']['logo'])
+  output += '<image x="%f" y="%f" width="%f" height="%f" class="logo" xlink:href="%s" />\n' %(396 - SPONSOR_WIDTH, DOCUMENT_HEIGHT - MARGIN - SPONSOR_HEIGHT, SPONSOR_WIDTH, SPONSOR_HEIGHT, data['sponsor']['logo'])
 
   # Lay out schedule
   SCHEDULE_X = 492

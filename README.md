@@ -39,11 +39,14 @@ Use 0 as the `cat` value for weeks without a talk due to holidays, etc.
 
 Usage:
 
-    python -m tapp.talks.svg_gen -i foo.json -o bar.svg
+    python -m tapp.talks.svg_gen -i foo.json -o bar.svg [-g]
 
 The file `2015logo_light.svg` must be in the same directory as the output file
 to display properly.  Additionally, the filename given in the `sponsor_logo`
 field must be relative to the output file.
+
+Use `-g` to generate a grayscale version more suitable for mass printing
+than the full-color version.  In some browsers, logos may remain in color.
 
 ### iCalendar File
 

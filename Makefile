@@ -11,6 +11,7 @@ all:	talks flyer ${OUTPUT_DIR}
 talks:	talks_poster talks_web
 talks_poster:	assets
 	python -m tapp.talks.svg_gen -i ${TALKS_DATA} -o ${OUTPUT_DIR}/talks-poster.svg
+	python -m tapp.talks.svg_gen -i ${TALKS_DATA} -o ${OUTPUT_DIR}/talks-poster-grayscale.svg -g
 talks_web:
 	python -m tapp.talks.ics_gen -i ${TALKS_DATA} -o ${OUTPUT_DIR}/ccst.ics
 	python -m tapp.talks.php_gen -i ${TALKS_DATA} -o ${OUTPUT_DIR}/index.php
