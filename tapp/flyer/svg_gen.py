@@ -7,12 +7,15 @@
 
 import datetime
 
-from tapp.io.command_line import parse_arguments
+from tapp.io.command_line import CliParser
 from tapp.io.json_validate import valid_json_file
 
 # Top-level function
 def generate_SVG():
-  args = parse_arguments('Overview flyer (SVG) generator')
+  parser = CliParser('Overview flyer (SVG) generator')
+  parser.requireFileIO()
+
+  args = parser.parse()
   inData, outFile = args.infile, args.outfile
   outData = render_SVG(inData)
   outFile.write(outData + '\n')

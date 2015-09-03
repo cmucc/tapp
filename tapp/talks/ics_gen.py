@@ -8,12 +8,15 @@
 import datetime
 from icalendar import *
 
-from tapp.io.command_line import parse_arguments
+from tapp.io.command_line import CliParser
 from tapp.io.json_validate import valid_json_file
 
 # Top-level function
 def generate_ICS():
-  args = parse_arguments('Talk series iCalendar file generator')
+  parser = CliParser('Talk series iCalendar file generator')
+  parser.requireFileIO()
+
+  args = parser.parse()
   inData, outFile = args.infile, args.outfile
   outData = render_ICS(inData)
   outFile.write(outData + '\n')

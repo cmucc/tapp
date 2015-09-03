@@ -2,21 +2,25 @@ import sys, argparse
 
 from tapp.io.json_validate import valid_json_file
 
-# Parses arguments from command line
-def parse_arguments(description='TAPP generator'):
-  parser = argparse.ArgumentParser(description=description, epilog='TAPP Library')
+class CliParser():
+  parser = argparse.ArgumentParser()
 
-  arguments = [
-    ['-i', '--infile', 'inputfile', 'input file name, omit option to read from stdin', valid_json_file, sys.stdin],
-    ['-o', '--outfile', 'outputfile', 'output file name, omit option to write to stdout', argparse.FileType('w'), sys.stdout],
-  ]
+  def __init__(self, description):
+    self.parser = argparse.ArgumentParser(description=description)
 
-  for item in arguments:
-    parser.add_argument(item[0], item[1], metavar=item[2], help=item[3], type=item[4], default=item[5])
+  def requireFileIO(self):
+    self.parser.add_argument('-i', '--infile', dest='infile', metavar='inputfile', help='input file name, omit option to read from stdin', type=valid_json_file, default=sys.stdin, required=True)
+    self.parser.add_argument('-o', '--outfile', dest='outfile', metavar='outputfile', help='output file name, omit option to write to stdout', type=argparse.FileType('w'), default=sys.stdout, required=True)
 
-  args = parser.parse_args()
-  # Workaround instead of lazy-evaluating default argparse arguments:
-  if args.infile == sys.stdin:
-    args.infile = json.load(sys.stdin)
+  def option(self, *args, **kwargs):
+    self.parser.add_argument(*args, **kwargs)
 
-  return args
+  def parse(self):
+    args = self.parser.parse_args()
+
+    # Workaround instead of lazy-evaluating default argparse arguments:
+    if args.infile == sys.stdin:
+      args.infile = json.load(sys.stdin)
+
+    return args
+
