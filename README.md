@@ -15,9 +15,24 @@ a Python package manager.  Then, to install all of the necessary modules on your
 
     pip install --user -r requirements.txt
 
+## Produce All the Propaganda!
+
+To produce all of the propaganda for a semester,
+check the variables at the top of the `Makefile` and run:
+
+    make
+
+With the proper AFS permissions, the files can be published to the web using:
+
+    make publish
+
+----
+
+# Generating Individual Files
+
 ## Talk Series
 
-See data files such as `data/2014-01_S14-talks.json` for input reference.
+See data files such as `data/2015-08_F15-talks.json` for input reference.
 Use 0 as the `cat` value for weeks without a talk due to holidays, etc.
 
 ### Posters
@@ -44,7 +59,7 @@ Usage:
 
 ## Club Overview Flyers
 
-See data files such as `data/2014-01_S14-flyer.json` for input reference.
+See data files such as `data/2015-08_F15-flyer.json` for input reference.
 
 Usage:
 
@@ -53,7 +68,9 @@ Usage:
 The files `2015logo_light.svg` and `cmucc_qr.svg` must be in the same directory
 as the output file to display properly.
 
-## Printing SVGs
+----
+
+# Printing SVGs
 
 Generated SVGs are intended to be viewed and printed from [Google
 Chrome](https://www.google.com/chrome/browser/).  Talk Series posters are best

@@ -70,7 +70,7 @@ def render_PHP(data):
       # List the event.
       output += (
         '    <div class="' + date_style_call(dates[idx]) + '">\n'
-        '      <time datetime="' + dates[idx].strftime('%Y-%m-%d') + 'T' + startTime.time().strftime('%H:%M:%S') + '">' + dates[idx].strftime("%b %d") + '</time>\n'
+        '      <time datetime="' + dates[idx].strftime('%Y-%m-%d') + 'T' + startTime.time().strftime('%H:%M:%S%z') + '">' + dates[idx].strftime("%b %d") + '</time>\n'
         '    </div>\n'
         '    <h1>' + notes_link_call(data['talks'][idx]['title'], data['talks'][idx]['notes']) + '</h1>\n'
         '    <p>' + data['talks'][idx]['desc'] + '</p>\n'
