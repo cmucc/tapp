@@ -66,10 +66,10 @@
       "desc" : "Before becoming a third-party software publisher, Sega was once a thriving hardware company with a 60% market share and some of the most innovative designs on the market. Come learn about Sega's past, their cool consoles, and some games you might not have heard of."
     },
     {
-      "title" : "Your Talk Here! talks@club.cc.cmu.edu",
-      "cat" : 0,
-      "notes" : "",
-      "desc" : ""
+      "title" : "Embedded Systems and Microcontrollers",
+      "cat" : 3,
+      "notes" : "embedded.html",
+      "desc" : "There are computers all around us in today's technology, but they aren't what most people think of as computers. Welcome to the world of embedded computing and microcontrollers! A brief overview from the popular 8-bit Arduino up to the 32-bit x86 Intel Edison."
     },
     {
       "title" : "Thermonuclear Emacs",
@@ -102,10 +102,10 @@
       "desc" : "Rust, a new systems programming language from Mozilla, uses novel concepts of ownership, borrowing, and lifetimes to ensure static memory safety with no runtime overhead.  Learn how the compiler can replace the garbage collector with the imposition of new language semantics."
     },
     {
-      "title" : "Your Talk Here! talks@club.cc.cmu.edu",
-      "cat" : 0,
-      "notes" : "",
-      "desc" : ""
+      "title" : "Firewalling with OpenBSD's PF packet filter",
+      "cat" : 5,
+      "notes" : "firewalling-pf.html",
+      "desc" : "OpenBSD is a UNIX-like operating system descended from Berkeley Software Distribution (BSD), a Research Unix derivative developed at the University of California, Berkeley. It was forked from NetBSD by project leader Theo de Raadt in late 1995.  PF is a BSD licensed stateful packet filter developed for OpenBSD as a replacement for Darren Reed's IPFilter.  In this short presentation we will do a hands on OpenBSD installation and basic configuration of PF software which will enable us to identify and block network traffic which we do not want to let into our local network or let out to the world outside."
     }
   ],
   "url" : "http://www.cmucc.org/talks",
