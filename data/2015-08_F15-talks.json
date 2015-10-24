@@ -11,9 +11,8 @@
   "categories" : [
     "Power Tools",
     "Retro",
-    "Dev Tools",
-    "Security",
-    "Languages"
+    "Development",
+    "Security"
   ],
   "talks" : [
     {
@@ -97,13 +96,13 @@
     },
     {
       "title" : "Memory Safety in Rust",
-      "cat" : 5,
+      "cat" : 4,
       "notes" : "rust.html",
       "desc" : "Rust, a new systems programming language from Mozilla, uses novel concepts of ownership, borrowing, and lifetimes to ensure static memory safety with no runtime overhead.  Learn how the compiler can replace the garbage collector with the imposition of new language semantics."
     },
     {
       "title" : "Firewalling with OpenBSD's PF packet filter",
-      "cat" : 5,
+      "cat" : 4,
       "notes" : "firewalling-pf.html",
       "desc" : "OpenBSD is a UNIX-like operating system descended from Berkeley Software Distribution (BSD), a Research Unix derivative developed at the University of California, Berkeley. It was forked from NetBSD by project leader Theo de Raadt in late 1995.  PF is a BSD licensed stateful packet filter developed for OpenBSD as a replacement for Darren Reed's IPFilter.  In this short presentation we will do a hands on OpenBSD installation and basic configuration of PF software which will enable us to identify and block network traffic which we do not want to let into our local network or let out to the world outside."
     }
