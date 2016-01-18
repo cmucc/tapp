@@ -33,15 +33,15 @@ def render_SVG(data, grayscale):
             'em':  '#ffea7f',
             'reg': '#a5afa4',
             'blk': '#1f1f1f',
-            'cat': ['#a5afa4', '#fec24d', '#f598ab', '#70ceec', '#a5ce43', '#fe824d']
-            # (gray), yellow, pink, blue, green, orange
+            'cat': ['#a5afa4', '#fec24d', '#f598ab', '#70ceec', '#fe824d', '#a5ce43', '#fec24d']
+            # (gray), yellow, pink, blue, orange, green, yellow (again)
     }
   else:
     pal = { 'bg':  '#ffffff',
             'em':  '#1f1f1f',
             'reg': '#8a8a8a',
             'blk': '#ececec',
-            'cat': ['#8a8a8a', '#1f1f1f', '#1f1f1f', '#1f1f1f', '#1f1f1f', '#1f1f1f']
+            'cat': ['#8a8a8a', '#1f1f1f', '#1f1f1f', '#1f1f1f', '#1f1f1f', '#1f1f1f', '#1f1f1f']
             # (gray), all dark gray...
     }
 
