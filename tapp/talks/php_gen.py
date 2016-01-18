@@ -124,7 +124,7 @@ def render_PHP(data):
     '\n'
     '<?php\n'
     '  function notesLink($title, $path) {\n'
-    '    if (file_exists($path)) {\n'
+    '    if (preg_match("|https?://|",$path) || file_exists($path)) {\n'
     '      return "<a href=\\"".$path."\\">".$title."</a>";\n'
     '    }\n'
     '    else {\n'
