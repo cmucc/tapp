@@ -67,25 +67,25 @@
     {
       "title" : "Embedded Systems and Microcontrollers",
       "cat" : 3,
-      "notes" : "embedded.html",
+      "notes" : "embedded.pdf",
       "desc" : "There are computers all around us in today's technology, but they aren't what most people think of as computers. Welcome to the world of embedded computing and microcontrollers! A brief overview from the popular 8-bit Arduino up to the 32-bit x86 Intel Edison."
     },
     {
       "title" : "Thermonuclear Emacs",
       "cat" : 3,
-      "notes" : "thermonuclear-emacs.html",
+      "notes" : "https://github.com/willcrichton/emacs-config",
       "desc" : "People jokingly call Emacs an operating system, but it's funny because it's true. At this talk we will explore several powerful features of Emacs that will make your life easier and let you unbind C-x C-c forever. We will cover shells, file searching, Git, themes, auto-completion, and more."
     },
     {
       "title" : "OpenSSL",
       "cat" : 4,
-      "notes" : "openssl.html",
+      "notes" : "ssltls.pdf",
       "desc" : "What actually happens when you visit a web site with https?  Come find out about the technology behind SSL/TLS."
     },
     {
       "title" : "Wireless Networking",
       "cat" : 4,
-      "notes" : "wireless-networking.html",
+      "notes" : "wifi.pdf",
       "desc" : "802.11 wireless networking is widely used.  Come find out how this works, and how it is (or sometimes isn't) secured."
     },
     {
