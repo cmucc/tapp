@@ -148,7 +148,7 @@ def date_style_call(date):
   return '<?php echo dateStyle("' + date.strftime("%Y-%m-%d") + '"); ?>'
 
 def notes_link_call(title, path):
-  return '<?php echo notesLink("' + title + '", "' + path + '"); ?>'
+  return '<?php echo notesLink("' + title.replace('"', '\\"') + '", "' + path + '"); ?>'
 
 # Invoke top-level function
 if __name__ == '__main__':
