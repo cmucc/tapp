@@ -1,0 +1,119 @@
+{
+  "name" : "Spring 2016",
+  "slug" : "spring16",
+  "first_date" : "2016-01-20",
+  "start_time" : "20:00",
+  "end_time" : "21:00",
+  "location" : "Wean 5421",
+  "ical_desc" : "A series of talks and workshops on some of the most useful tools for advanced users and developers led by the Carnegie Mellon University Computer Club.",
+  "web_desc" : "<p>Have you ever wondered how fast inverse square root works, wanted to learn a bit of computing history, or craved the thrill of learning a new language again, but didn't know where to start looking? Look no further! Whether you're a hacking veteran or a newfound computer lover, there's something for you in Computer Club's Spring 2016 weekly talk series, so swing on by!</p>",
+  "web_suggest" : "<p>If you would like to request, propose, or volunteer a talk, join us on IRC or email your talk idea to talks@club.</p>",
+  "categories" : [
+    "Computing Basics",
+    "Computing History",
+    "Privacy and Security",
+    "Creative Computing",
+    "Languages",
+    "Awesome Hackery"
+  ],
+  "talks" : [
+    {
+      "title" : "Useful Command Line Workflows",
+      "cat" : 1,
+      "notes" : "command-line.html",
+      "desc" : ""
+    },
+    {
+      "title" : "The Dot Com Bubble",
+      "cat" : 2,
+      "notes" : "dot-com-bubble.html",
+      "desc" : ""
+    },
+    {
+      "title" : "Introducing the X68000: Japan's 16-bit Beast",
+      "cat" : 2,
+      "notes" : "x68000.html",
+      "desc" : ""
+    },
+    {
+      "title" : "PGP and Public Key Cryptography",
+      "cat" : 3,
+      "notes" : "pgp.html",
+      "desc" : ""
+    },
+    {
+      "title" : "Privacy Technology and You",
+      "cat" : 3,
+      "notes" : "privacy-tech.html",
+      "desc" : ""
+    },
+    {
+      "title" : "Authoring Text Adventures",
+      "cat" : 4,
+      "notes" : "text-adventures.html",
+      "desc" : ""
+    },
+    {
+      "title" : "What is AI and Why Should I Care?",
+      "cat" : 4,
+      "notes" : "ai-intro.html",
+      "desc" : ""
+    },
+    {
+      "title" : "(Spring Break)",
+      "cat" : 0,
+      "notes" : "",
+      "desc" : ""
+    },
+    {
+      "title" : "Haskell for SML Programmers",
+      "cat" : 5,
+      "notes" : "haskell.html",
+      "desc" : ""
+    },
+    {
+      "title" : "COBOL: 57 Years Old and Still Punching (Cards)",
+      "cat" : 5,
+      "notes" : "cobol.html",
+      "desc" : ""
+    },
+    {
+      "title" : "Customization and Programming in Emacs Lisp",
+      "cat" : 5,
+      "notes" : "emacs-lisp.html",
+      "desc" : ""
+    },
+    {
+      "title" : "Build a JIT Compiler in 60 Minutes",
+      "cat" : 5,
+      "notes" : "jit-compiler.html",
+      "desc" : ""
+    },
+    {
+      "title" : "Introduction to Linux Kernel Hacking",
+      "cat" : 6,
+      "notes" : "kernel-hacking.html",
+      "desc" : ""
+    },
+    {
+      "title" : "CoffeeScript => WebGL Solar Systems!",
+      "cat" : 6,
+      "notes" : "coffeescript.html",
+      "desc" : ""
+    },
+    {
+      "title" : "\"What the 0x5f3759df?!\" Float Hacking",
+      "cat" : 6,
+      "notes" : "float-hacking.html",
+      "desc" : ""
+    }
+  ],
+  "url" : "http://www.cmucc.org/talks",
+  "sponsor" : {
+    "name" : "Green Hills Software",
+    "url" : "http://www.ghs.com",
+    "desc" : "Green Hills make the world's highest performing compilers, most secure real-time operating systems, revolutionary debuggers, and virtualization solutions for embedded systems.",
+    "logo" : "assets/ghs_logo.svg",
+    "logo_svg-gen_height_offset" : 48
+  }
+}

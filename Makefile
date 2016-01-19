@@ -1,8 +1,8 @@
-TALKS_DATA=data/2015-08_F15-talks.json
-FLYER_DATA=data/2015-08_F15-flyer.json
+TALKS_DATA=data/2016-01_S16-talks.json
+FLYER_DATA=data/2016-01_S16-flyer.json
 
-OUTPUT_DIR=output/fall15
-WEB_DIR=/afs/club.cc.cmu.edu/www/talks/fall15
+OUTPUT_DIR=output/spring16
+WEB_DIR=/afs/club.cc.cmu.edu/www/talks/spring16
 # When publishing, ensure .htaccess redirects the main talks directory to here
 
 
