@@ -21,43 +21,43 @@
       "title" : "Useful Command Line Workflows",
       "cat" : 1,
       "notes" : "command-line.html",
-      "desc" : ""
+      "desc" : "Use the command line now and then, but find it to be tedious and painful? Just want to sharpen your skills and efficiency with command-line use? In this talk, we will present several slick workflows which allow you to accomplish tasks quickly and efficiently from the command line, from grabbing videos off of YouTube to easily switching between running, compiling, and testing your code."
     },
     {
       "title" : "The Dot Com Bubble",
       "cat" : 2,
       "notes" : "dot-com-bubble.html",
-      "desc" : ""
+      "desc" : "In the late 1990s, the Internet appeared to be a never-ending sea of free money.  Tech stocks were all the rage, and anything with \".com\" in the name was a guaranteed moneymaker.  But it was not to last.  Many entrepeneurs lost their fortunes overnight, and \".com\" went from being a buzzword to a swear word.  In this talk we'll discuss the Internet bubble, and how you can avoid making some of the same mistakes."
     },
     {
       "title" : "Introducing the X68000: Japan's 16-bit Beast",
       "cat" : 2,
       "notes" : "x68000.html",
-      "desc" : ""
+      "desc" : "In 1987, Sharp released the most powerful 16-bit home computer of all time: the X68000. Powerful hardware and great developer support made it a gamer's dream machine all the way into the mid-1990s. Join us to explore the story of this incredible piece of hardware that sadly never made it out of Japan."
     },
     {
       "title" : "PGP and Public Key Cryptography",
       "cat" : 3,
       "notes" : "pgp.html",
-      "desc" : ""
+      "desc" : "PGP was the first widely used application of public key cryptography.  Come learn about the history of PGP, how it works, and what it's used for today."
     },
     {
       "title" : "Privacy Technology and You",
       "cat" : 3,
       "notes" : "privacy-tech.html",
-      "desc" : ""
+      "desc" : "Governments and corporations alike stake their livelihoods on systematic invasion of computer users' informational privacy. Fortunately, multiple tools for blocking behavioral tracking and protecting the contents of your communications exist. Learn about tools for your desktop and mobile devices that help protect users from prying eyes."
     },
     {
       "title" : "Authoring Text Adventures",
       "cat" : 4,
       "notes" : "text-adventures.html",
-      "desc" : ""
+      "desc" : "Text adventures range from humorous Infocom tiltes to sophisticated works of Interactive Fiction. In this workshop, you will learn both how to program in TADS 3 (a language specifically for writing Interactive Fiction), and how to use this unique format to write compelling adventures."
     },
     {
       "title" : "What is AI and Why Should I Care?",
       "cat" : 4,
       "notes" : "ai-intro.html",
-      "desc" : ""
+      "desc" : "You may have heard that artificial intelligence is the new big buzzword in computer science, but what is it, really? Come and get an overview of AI, from popular methods to innovative applications (IBM Watson, anyone?) to what it looks like when things go wrong."
     },
     {
       "title" : "(Spring Break)",
@@ -69,43 +69,43 @@
       "title" : "Haskell for SML Programmers",
       "cat" : 5,
       "notes" : "haskell.html",
-      "desc" : ""
+      "desc" : "Haskell is a strongly typed, lazy, purely functional language.  We'll dispell some myths about Haskell, explain all the buzzwords, and introduce (and hopefully demystify) the dread Monad."
     },
     {
       "title" : "COBOL: 57 Years Old and Still Punching (Cards)",
       "cat" : 5,
       "notes" : "cobol.html",
-      "desc" : ""
+      "desc" : "In the 1950s, languages such as COBOL and FORTRAN were a refreshing change from everything being written in assembler.  Today they're seen as scary old junk, but that \"old junk\" still keeps a lot of the world running.  (Yes, this talk is intended to be at least partially humorous... Come on, it's a talk about COBOL in 2016.)"
     },
     {
       "title" : "Customization and Programming in Emacs Lisp",
       "cat" : 5,
       "notes" : "emacs-lisp.html",
-      "desc" : ""
+      "desc" : "Do you use Emacs, but don't know anything about Emacs Lisp, the language that Emacs is written in and customized with? Then come to this workshop; we'll write a few useful snippets and extensions from scratch, and you'll see how absolutely trivial it is to add powerful functionality with Emacs Lisp."
     },
     {
       "title" : "Build a JIT Compiler in 60 Minutes",
       "cat" : 5,
       "notes" : "jit-compiler.html",
-      "desc" : ""
+      "desc" : "Compilers: not as hard as you think! This interactive workshop will teach you the architecture of modern compilers and have you write one of your own. Experience with SML or OCaml is recommended."
     },
     {
       "title" : "Introduction to Linux Kernel Hacking",
       "cat" : 6,
       "notes" : "kernel-hacking.html",
-      "desc" : ""
+      "desc" : "Want to investigate being a kernel hacker, but don't know how to get started? Well, maybe you should read the documentation! But barring that, you can come to this workshop! We'll go over all the basics and get you started on the next steps to learn more. Please make sure to have root access to a virtual machine running Linux before attending, so you can build and boot your own kernel! Or, if you're especially hardcore, bring along some hardware and hack on that!"
     },
     {
       "title" : "CoffeeScript => WebGL Solar Systems!",
       "cat" : 6,
       "notes" : "coffeescript.html",
-      "desc" : ""
+      "desc" : "CoffeeScript is a nifty little language which can be used to write simultaneously more clear and more complicated code. In this workshop, we will examine some of the more interesting consequences of using CoffeeScript with existing JavaScript frameworks."
     },
     {
       "title" : "\"What the 0x5f3759df?!\" Float Hacking",
       "cat" : 6,
       "notes" : "float-hacking.html",
-      "desc" : ""
+      "desc" : "Legends tell of a mysterious C function capable of approximating a floating point inverse square root with merely a few integer operations and the fabled \"magic constant.\" Come to this talk to discover this confounding secret of old and witness quite a few fun coding hacks along the way!"
     }
   ],
   "url" : "http://www.cmucc.org/talks",
