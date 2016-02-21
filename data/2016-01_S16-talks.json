@@ -38,13 +38,13 @@
     {
       "title" : "PGP and Public Key Cryptography",
       "cat" : 3,
-      "notes" : "pgp.html",
+      "notes" : "pgp.pdf",
       "desc" : "PGP was the first widely used application of public key cryptography.  Come learn about the history of PGP, how it works, and what it's used for today."
     },
     {
       "title" : "Privacy Technology and You",
       "cat" : 3,
-      "notes" : "privacy-tech.html",
+      "notes" : "privacy-tech.pdf",
       "desc" : "Governments and corporations alike stake their livelihoods on systematic invasion of computer users' informational privacy. Fortunately, multiple tools for blocking behavioral tracking and protecting the contents of your communications exist. Learn about tools for your desktop and mobile devices that help protect users from prying eyes."
     },
     {
