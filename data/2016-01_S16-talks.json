@@ -50,7 +50,7 @@
     {
       "title" : "Authoring Text Adventures",
       "cat" : 4,
-      "notes" : "text-adventures.html",
+      "notes" : "http://bescott.org/if/talk/",
       "desc" : "Text adventures range from humorous Infocom titles to sophisticated works of Interactive Fiction. In this workshop, you will learn both how to program in TADS 3 (a language specifically for writing Interactive Fiction), and how to use this unique format to write compelling adventures."
     },
     {
