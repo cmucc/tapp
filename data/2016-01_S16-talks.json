@@ -78,10 +78,10 @@
       "desc" : "In the 1950s, languages such as COBOL and FORTRAN were a refreshing change from everything being written in assembler.  Today they're seen as scary old junk, but that \"old junk\" still keeps a lot of the world running.  (Yes, this talk is intended to be at least partially humorous... Come on, it's a talk about COBOL in 2016.)"
     },
     {
-      "title" : "Customization and Programming in Emacs Lisp",
+      "title" : "Verilog & FPGAs: Programming Hardware",
       "cat" : 5,
-      "notes" : "emacs-lisp.html",
-      "desc" : "Do you use Emacs, but don't know anything about Emacs Lisp, the language that Emacs is written in and customized with? Then come to this workshop; we'll write a few useful snippets and extensions from scratch, and you'll see how absolutely trivial it is to add powerful functionality with Emacs Lisp."
+      "notes" : "verilog.html",
+      "desc" : "Hardware description languages let you design digital logic as easily as writing a program.  FPGAs allow you to see that design in a real chip without spending millions on custom silicon.  Attend this talk to learn about hardware description languages (HDLs) and how programmable logic works."
     },
     {
       "title" : "Build a JIT Compiler in 60 Minutes",
@@ -90,10 +90,10 @@
       "desc" : "Compilers: not as hard as you think! This interactive workshop will teach you the architecture of modern compilers and have you write one of your own. Experience with SML or OCaml is recommended."
     },
     {
-      "title" : "Introduction to Linux Kernel Hacking",
+      "title" : "Apple 1985-1997: The Jobless Years",
       "cat" : 6,
-      "notes" : "kernel-hacking.html",
-      "desc" : "Want to investigate being a kernel hacker, but don't know how to get started? Well, maybe you should read the documentation! But barring that, you can come to this workshop! We'll go over all the basics and get you started on the next steps to learn more. Please make sure to have root access to a virtual machine running Linux before attending, so you can build and boot your own kernel! Or, if you're especially hardcore, bring along some hardware and hack on that!"
+      "notes" : "apple.html",
+      "desc" : "Apple is a company whose history is well-documented. However, emphasis tends to be put on the company's time under the leadership of Steve Jobs. In this talk we'll be discussing Apple under the tenure of CEOs John Sculley, Michael Spindler, and Gil Amelio, and the causes of its decline in the 1990s."
     },
     {
       "title" : "CoffeeScript => WebGL Solar Systems!",
