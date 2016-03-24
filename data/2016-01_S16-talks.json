@@ -102,10 +102,10 @@
       "desc" : "CoffeeScript is a nifty little language which can be used to write simultaneously more clear and more complicated code. In this workshop, we will examine some of the more interesting consequences of using CoffeeScript with existing JavaScript frameworks."
     },
     {
-      "title" : "\"What the 0x5f3759df?!\" Float Hacking",
+      "title" : "Real-Time 3D Graphics from the Ground Up",
       "cat" : 6,
-      "notes" : "float-hacking.html",
-      "desc" : "Legends tell of a mysterious C function capable of approximating a floating point inverse square root with merely a few integer operations and the fabled \"magic constant.\" Come to this talk to discover this confounding secret of old and witness quite a few fun coding hacks along the way!"
+      "notes" : "3d-graphics.html",
+      "desc" : "Ray-tracers can draw beautiful, detailed computer-generated scenes, but they can take hours (or days!) to draw one frame. So how do video games draw 3D scenes when they have less than 30 milliseconds to output a frame? This talk draws back the curtain on systems like OpenGL and DirectX, to show you how they work under the hood."
     }
   ],
   "url" : "http://www.cmucc.org/talks",
