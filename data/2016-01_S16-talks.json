@@ -68,13 +68,13 @@
     {
       "title" : "Haskell for SML Programmers",
       "cat" : 5,
-      "notes" : "haskell.html",
+      "notes" : "haskell.odp",
       "desc" : "Haskell is a strongly typed, lazy, purely functional language.  We'll dispell some myths about Haskell, explain all the buzzwords, and introduce (and hopefully demystify) the dread Monad."
     },
     {
       "title" : "COBOL: 57 Years Old and Still Punching (Cards)",
       "cat" : 5,
-      "notes" : "cobol.html",
+      "notes" : "cobol/",
       "desc" : "In the 1950s, languages such as COBOL and FORTRAN were a refreshing change from everything being written in assembler.  Today they're seen as scary old junk, but that \"old junk\" still keeps a lot of the world running.  (Yes, this talk is intended to be at least partially humorous... Come on, it's a talk about COBOL in 2016.)"
     },
     {
