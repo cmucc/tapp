@@ -9,6 +9,7 @@
 # Tim Parenti <tparenti@club.cc.cmu.edu>
 
 import datetime
+from xml.sax.saxutils import escape
 
 from tapp.io.command_line import CliParser
 from tapp.io.json_validate import valid_json_file
@@ -145,7 +146,7 @@ def render_SVG(data, grayscale):
     output += '</text>\n'
     # Title
     output += '<text x="%f" y="%f" fill="%s" class="talk-title" text-anchor="start">' %(SCHEDULE_X+BLOCK_WIDTH+26, heights[idx]+(BLOCK_HEIGHT/2)+12, pal['cat'][data['talks'][idx]['cat']])
-    output += data['talks'][idx]['title']
+    output += escape(data['talks'][idx]['title'])
     output += '</text>\n'
     output += '</g>\n'
 
