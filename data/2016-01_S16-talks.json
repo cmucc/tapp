@@ -80,7 +80,7 @@
     {
       "title" : "Verilog & FPGAs: Programming Hardware",
       "cat" : 5,
-      "notes" : "verilog.html",
+      "notes" : "verilog.pdf",
       "desc" : "Hardware description languages let you design digital logic as easily as writing a program.  FPGAs allow you to see that design in a real chip without spending millions on custom silicon.  Attend this talk to learn about hardware description languages (HDLs) and how programmable logic works."
     },
     {
