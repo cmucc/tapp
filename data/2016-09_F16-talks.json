@@ -1,0 +1,105 @@
+{
+  "name" : "Fall 2016",
+  "slug" : "fall16",
+  "first_date" : "2016-09-07",
+  "start_time" : "20:00",
+  "end_time" : "21:00",
+  "location" : "Wean 5415",
+  "ical_desc" : "A series of talks and workshops on some of the most useful tools for advanced users and developers led by the Carnegie Mellon University Computer Club.",
+  "web_desc" : "<p>DEVOPS! Hippest of buzzwords, earner of thousands! Learn to harness the immense power of devops for yourself, by coming to the Fall 2016 Computer Club Workshop/Talk Series. We will tell you the tricks that will allow you to transcend the annoyances of administration and offenses of operations, and return to the elegant, pure simplicity of raw code!</p>",
+  "web_suggest" : "<p>If you would like to request, propose, or volunteer a talk, join us on IRC or email your talk idea to talks@club.</p>",
+  "talks" : [
+    {
+      "title" : "Power Computing at CMU",
+      "cat" : 1,
+      "notes" : "power-computing.html",
+      "desc" : "CMU is the top computer science university in the world. So obviously there are some useful software tools here, available to you! Learn what they are and how to use them to get your work done faster and more efficiently."
+    },
+    {
+      "title" : "Choosing a Text Editor That's Right for You",
+      "cat" : 1,
+      "notes" : "editors.html",
+      "desc" : "Attend this talk to learn how to use the most powerful editor on earth, as well as two more that are slightly inferior! (Which is which is up to you!) Learn about modal, chordal, and graphical ways of efficiently editing text with Vim, Emacs, and Sublime."
+    },
+    {
+      "title" : "Computer Graphics Demo Screenings",
+      "cat" : 2,
+      "notes" : "demo-screenings.html",
+      "desc" : "Help us select computer graphic demos to screen at Demosplash, our annual demoparty that's the largest on the east coast!"
+    },
+    {
+      "title" : "Source Version Control with Git",
+      "cat" : 1,
+      "notes" : "git.html",
+      "desc" : "Do you like having undo and redo available in your editor? Then you're sure to like having undo and redo available on the command line! In this talk, you'll learn about the ideas behind the source version control system Git, and how to use its immense power for your own aims."
+    },
+    {
+      "title" : "\"Professors and Pizza\"",
+      "cat" : 3,
+      "notes" : "profs-and-pizza-1.html",
+      "desc" : "TBD."
+    },
+    {
+      "title" : "How Deep Learning Works",
+      "cat" : 4,
+      "notes" : "deep-learning.pdf",
+      "desc" : "Computers have been using logic since they were first invented... but now they seem to be \"thinking\" intuitively. The technology behind computers playing games of Go, recognizing objects, and stylizing photographs is \"Deep Learning\". This branch of Machine Learning uses Artificial Neural Networks for many tasks, so let's take a look at how they work."
+    },
+    {
+      "title" : "The Math of RSA Public-Key Crypto",
+      "cat" : 4,
+      "notes" : "rsa.pdf",
+      "desc" : "RSA is widely used to secure communications on the Internet. Join us for some history about Rivest, Shamir, and Aldeman, the company they founded, and an explanation of the math behind this form of public-key cryptography."
+    },
+    {
+      "title" : "Early Home Computers and Video Games",
+      "cat" : 4,
+      "notes" : "early-home-computing.pdf",
+      "desc" : "Did people use computers before Windows? They sure did. Was there life on the Internet before Facebook and YouTube? Certainly. Did people play video games before Nintendo? Absolutely. From the machine room and arcade to the living room, attend this talk to learn about home computers and video games that your parents grew up with."
+    },
+    {
+      "title" : "\"Professors and Pizza\"",
+      "cat" : 3,
+      "notes" : "profs-and-pizza-2.html",
+      "desc" : "TBD."
+    },
+    {
+      "title" : "iOS Development for the Frightened",
+      "cat" : 5,
+      "notes" : "ios-dev.pdf",
+      "desc" : "Want to begin developing for iOS? This workshop will cover the basics of iOS development including using Xcode, Swift, the Interface builder as well as the many other developer tools available to you. No experience in iOS or Swift is required."
+    },
+    {
+      "title" : "The Dot Com Bubble",
+      "cat" : 5,
+      "notes" : "dot-com.pdf",
+      "desc" : "In the late 1990s, the Internet appeared to be a never-ending sea of free money. Tech stocks were all the rage, and anything with \".com\" in the name was a guaranteed moneymaker. But it was not to last. Many entrepreneurs lost their fortunes overnight, and \".com\" went from being a buzzword to a swear word. In this talk we'll discuss the Internet bubble, and how you can avoid making some of the same mistakes."
+    },
+    {
+      "title" : "(Thanksgiving)",
+      "cat" : 0,
+      "notes" : "",
+      "desc" : ""
+    },
+    {
+      "title" : "How Super are Supercomputers?",
+      "cat" : 5,
+      "notes" : "supercomputing.pdf",
+      "desc" : "In the early 2000s, computers stopped getting faster. Today, computer processors improve mainly by adding more cores, while each one runs at the same speed. Developing efficient software in this new phase of Moore's Law requires different techniques... but supercomputers have had hundreds and thousands of processors for many decades now, so how did they work?"
+    },
+    {
+      "title" : "\"Professors and Pizza\"",
+      "cat" : 3,
+      "notes" : "profs-and-pizza-3.html",
+      "desc" : "TBD."
+    }
+  ],
+  "url" : "http://www.cmucc.org/talks",
+  "sponsor" : {
+    "name" : "Green Hills Software",
+    "url" : "http://www.ghs.com",
+    "desc" : "Green Hills make the world's highest performing compilers, most secure real-time operating systems, revolutionary debuggers, and virtualization solutions for embedded systems.",
+    "logo" : "assets/ghs_logo.svg",
+    "logo_svg-gen_height_offset" : 48
+  }
+}
