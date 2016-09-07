@@ -34,16 +34,28 @@ def render_SVG(data, grayscale):
             'em':  '#ffea7f',
             'reg': '#a5afa4',
             'blk': '#1f1f1f',
-            'cat': ['#a5afa4', '#fec24d', '#f598ab', '#70ceec', '#fe824d', '#a5ce43', '#fec24d']
-            # (gray), yellow, pink, blue, orange, green, yellow (again)
+            'cat': ['#a5afa4', # (gray)
+                    '#a5ce43', # green
+                    '#fe824d', # orange
+                    '#fec24d', # yellow
+                    '#f598ab', # pink
+                    '#70ceec', # blue
+                    '#a5ce43'  # green (again)
+                   ]
     }
   else:
     pal = { 'bg':  '#ffffff',
             'em':  '#1f1f1f',
             'reg': '#8a8a8a',
             'blk': '#ececec',
-            'cat': ['#8a8a8a', '#1f1f1f', '#1f1f1f', '#1f1f1f', '#1f1f1f', '#1f1f1f', '#1f1f1f']
-            # (gray), all dark gray...
+            'cat': ['#8a8a8a', # (gray)
+                    '#1f1f1f', # all dark gray...
+                    '#1f1f1f',
+                    '#1f1f1f',
+                    '#1f1f1f',
+                    '#1f1f1f',
+                    '#1f1f1f'
+                   ]
     }
 
   # Manufacture start date object
