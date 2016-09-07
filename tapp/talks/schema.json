@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "required": [ "name", "slug", "first_date", "start_time", "end_time", "location",
-    "ical_desc", "web_desc", "web_suggest", "categories", "talks", "url", "sponsor" ],
+    "ical_desc", "web_desc", "web_suggest", "talks", "url", "sponsor" ],
   "properties": {
     "name": { "type": "string" },
     "slug": { "type": "string" },

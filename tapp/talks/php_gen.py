@@ -50,21 +50,29 @@ def render_PHP(data):
     # Leave the .cbox div open, to be closed by category generator.
   )
 
-  # Create categories and events
-  categories = data['categories']
+  # Create categories and events, unless the categories aren't real
   dates = disperse_dates(startDate, len(data['talks']))
+
+  if 'categories' in data:
+    categories = data['categories']
+    catNums = [ data['talks'][idx]['cat'] for idx in range(0, len(dates)) ]
+  else:
+    categories = ["Schedule"]
+    catNums = [ 1 if data['talks'][idx]['cat'] != 0 else 0 for idx in range(0, len(dates)) ]
+
   previousCat = -1
   for idx in range(0, len(dates)):
-    cat = data['talks'][idx]['cat']
+    cat = catNums[idx]
     if not cat == 0:
       # Create a new section if the category has changed.
-      # NOTE: It's possible to use talk categories out-of-order. TODO: Avoid this.
+      # NOTE: It's possible to use talk categories out-of-order;
+	  #       avoid this unless the categories aren't real.
       if not cat == previousCat:
         output += (
           '  </div>\n' # Close previous .cbox div
           '  <div class="narrowpad"></div>\n'
           '  <div class="cbox">\n'
-          '    <div class="section-tag">' + data['categories'][cat-1].upper() + '</div>\n'
+          '    <div class="section-tag">' + categories[cat-1].upper() + '</div>\n'
         )
         previousCat = cat
       # Otherwise, just separate this from the one above.

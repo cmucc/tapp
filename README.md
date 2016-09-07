@@ -35,6 +35,10 @@ With the proper AFS permissions, the files can be published to the web using:
 See data files such as `data/2015-08_F15-talks.json` for input reference.
 Use 0 as the `cat` value for weeks without a talk due to holidays, etc.
 
+A `cat` value for each talk is required and relates to how it is colored on the posters;
+however, the `categories` array is optional and relates to how the schedule is rendered on the web.
+If the `cat` values are not logically contiguous (see Fall 2016 as an example), it is best to dispense with the categories.
+
 ### Posters
 
 Usage:
