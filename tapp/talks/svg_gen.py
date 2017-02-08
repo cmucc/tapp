@@ -65,7 +65,8 @@ def render_SVG(data, grayscale):
 
   # Preamble
   output = '<?xml version="1.0"?>\n'
-  output += '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1224 792">\n'
+  output += '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1224 792" width="1584" height="1008">\n'
+  # viewBox is 1224x792 (17"x11" at 72dpi); width/height are 1584x1008 (16.5"x10.5" at 96dpi)
 
   # Font definitions
   if (len(data['talks']) > 10):
