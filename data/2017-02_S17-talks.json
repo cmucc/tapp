@@ -1,0 +1,99 @@
+{
+ "name" : "Spring 2017",
+ "slug" : "spring2017",
+ "first_date" : "2017-02-08",
+ "start_time" : "20:00",
+ "end_time" : "21:00",
+ "location" : "Wean 5403",
+ "ical_desc" : "A series of talks and workshops on some of the most useful tools for advanced users and developers led by the Carnegie Mellon University Computer Club.",
+ "web_desc" : "<p>DEVOPS! Hippest of buzzwords, earner of thousands! Learn to harness the immense power of devops for yourself, by coming to the Spring 2017 Computer Club Workshop/Talk Series. We will tell you the tricks that will allow you to transcend the annoyances of administration and offenses of operations, and return to the elegant, pure simplicity of raw code!</p>",
+ "web_suggest" : "<p>If you would like to request, propose, or volunteer a talk, join us on IRC or email your talk idea to talks@club.</p>",
+ "talks" : [
+  {
+   "title" : "Debugging with GDB",
+   "cat" : 1,
+   "notes" : "gdb.html",
+   "desc" : "Tired of spending hours staring at your code while trying to diagnose mysterious segfaults? This talk will teach you how to use GDB, a powerful debugging tool with the ability to help you find out exactly what's wrong with your code."
+  },
+  {
+   "title" : "sed & awk: '70s tools still hip today",
+   "cat" : 1,
+   "notes" : "sed-and-awk.html",
+   "desc" : "Providing much of the meat and bones of shell scripting, sed and awk process line-based data into more useful information. This talk will convey how to use these classic tools from the early days of UNIX to do what you need, and how they have influenced other languages."
+  },
+  {
+   "title" : "Using Windows at CMU",
+   "cat" : 1,
+   "notes" : "windows.html",
+   "desc" : "Microsoft Windows is a very common OS platform. However, computer science at CMU is taught almost entirely in UNIX. Learn about a few tools you can use to interface with Linux. Learn about ways to program for portability and their limitations. Also learn some Windows shortcuts."
+  },
+  {
+   "title" : "Burroughs MCP (not the evil one from Tron)",
+   "cat" : 2,
+   "notes" : "burroughs-mcp.html",
+   "desc" : "The Burroughs large systems and their operating sytstem (MCP) pioneered many features that we take for granted including virtual memory, multitasking, the NX-bit, and an OS written in a higher level language ... all back in the 1960s! They also had many features which modern systems lack, such as hardware enforced type safety and immunity to buffer overflows. This talk will explain all the above and more."
+  },
+  {
+   "title" : "Programming in Rust: Speed meets safety",
+   "cat" : 3,
+   "notes" : "rust.html",
+   "desc" : "Writing software is dangerous work. Race conditions, buffer overflows, and memory corruption can all compromise the functionality and security of programs that you write. Some languages eliminate these errors at the cost of performance, but is there a way to get the best of both worlds? Rust brings together the speed of C, the usability of Python, and the provable safety of Haskell, in one well-engineered programming language."
+  },
+  {
+   "title" : "(Spring Break)",
+   "cat" : 0,
+   "notes" : "",
+   "desc" : ""
+  },
+  {
+   "title" : "An introduction to LaTeX",
+   "cat" : 3,
+   "notes" : "latex.html",
+   "desc" : "LaTeX is a convenient, customizable, and Turing-complete (!) way to typeset technical documents, homework, and more. This talk is intended to be a basic primer on setting up and making use of the basic features of LaTeX."
+  },
+  {
+   "title" : "Escaping reality: VR from sci-fi to practice",
+   "cat" : 4,
+   "notes" : "vr.html",
+   "desc" : "Virtual Reality was once a wild dream, existing only in science fiction novels. Now it has become more than real. From Ivan Sutherland's \"Sword of Damocles\" to the HTC Vive, this talk will cover a brief history of VR, some of the more fascinating aspects of the rendering pipeline involved, and an overview of the current trends in the industry."
+  },
+  {
+   "title" : "Strange and quirky CPU architectures",
+   "cat" : 4,
+   "notes" : "arch-quirks.html",
+   "desc" : "Throughout history, engineers have explored a variety of novel CPU designs in a quest for better performance. This talk will explore some of the more interesting attempts at processor architecture."
+  },
+  {
+   "title" : "Modern CPU architectures and instruction sets",
+   "cat" : 4,
+   "notes" : "arch-modern.html",
+   "desc" : "Modern computing devices use a variety of CPU architectures, including x86, ARM, and MIPS. This talk explains the origins and differences in the design and instruction sets of the processors found in modern desktops, laptops, phones, and embedded systems."
+  },
+  {
+   "title" : "(Carnival Eve)",
+   "cat" : 0,
+   "notes" : "",
+   "desc" : ""
+  },
+  {
+   "title" : "Attack of the Clones: Apple II's many imitators",
+   "cat" : 5,
+   "notes" : "apple-ii-clones.html",
+   "desc" : "The massive popularity of the Apple II inspired scores of imitations abroad, from Australia to Brazil to the USSR. Apple did not take kindly to the knockoffs. This talk explores the most interesting of the clones, Apple's response, and what happened to manufacturers who made legally-questionable tributes to the famous machine."
+  },
+  {
+   "title" : "NeXTStep: Mac OS X's CMU connection",
+   "cat" : 5,
+   "notes" : "nextstep.html",
+   "desc" : "In 1998, Apple Computer acquired NeXT, a near-bankrupt former workstation vendor. Why would they do this? Simple, Apple needed a better OS and NeXT had it. This talk explores the history of OS X and NeXTStep, and its basis in research developed at CMU."
+  }
+ ],
+ "url" : "http://www.cmucc.org/talks",
+ "sponsor" : {
+  "name" : "Green Hills Software",
+  "url" : "http://www.ghs.com",
+  "desc" : "Green Hills make the world's highest performing compilers, most secure real-time operating systems, revolutionary debuggers, and virtualization solutions for embedded systems.",
+  "logo" : "assets/ghs_logo.svg",
+  "logo_svg-gen_height_offset" : 48
+ }
+}
