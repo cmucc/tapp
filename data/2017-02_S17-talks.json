@@ -12,7 +12,7 @@
   {
    "title" : "Debugging with GDB",
    "cat" : 1,
-   "notes" : "gdb.html",
+   "notes" : "gdb.tar.gz",
    "desc" : "Tired of spending hours staring at your code while trying to diagnose mysterious segfaults? This talk will teach you how to use GDB, a powerful debugging tool with the ability to help you find out exactly what's wrong with your code."
   },
   {
