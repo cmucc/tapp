@@ -1,0 +1,93 @@
+{
+ "name" : "Spring 2018",
+ "slug" : "spring18",
+ "first_date" : "2018-02-07",
+ "start_time" : "20:00",
+ "end_time" : "21:00",
+ "location" : "Wean 5415",
+ "ical_desc" : "A series of talks and workshops on some of the most useful tools for advanced users and developers led by the Carnegie Mellon University Computer Club.",
+ "web_desc" : "<p>DEVOPS! Hippest of buzzwords, earner of thousands! Learn to harness the immense power of devops for yourself, by coming to the Spring 2018 Computer Club Workshop/Talk Series. We will tell you the tricks that will allow you to transcend the annoyances of administration and offenses of operations, and return to the elegant, pure simplicity of raw code!</p>",
+ "web_suggest" : "<p>If you would like to request, propose, or volunteer a talk, join us on IRC or email your talk idea to talks@club.</p>",
+ "talks" : [
+  {
+   "title" : "Virtualization in Theory",
+   "cat" : 1,
+   "notes" : "virt-theory.html",
+   "desc" : "Virtual Machines are an increasingly popular way to divide up physical machines, but what's really going on under the hood? We'll take a look at the history of virtualization, different strategies, as well as the hardware that makes efficient virtualization possible."
+  },
+  {
+   "title" : "",
+   "cat" : 0,
+   "notes" : "",
+   "desc" : ""
+  },
+  {
+   "title" : "Virtualization in Practice",
+   "cat" : 1,
+   "notes" : "virt-practice.html",
+   "desc" : "Okay, so you actually want to know how we do virtualization in the real world. This talk will explore some common pieces of software for virtualizing physical machines, and explain some of the benefits and drawbacks of the different options available."
+  },
+  {
+   "title" : "",
+   "cat" : 0,
+   "notes" : "",
+   "desc" : ""
+  },
+  {
+   "title" : "Cryptocurrency",
+   "cat" : 2,
+   "notes" : "cryptocurrency.html",
+   "desc" : "With cryptocurrencies making mainstream news, you might be wondering how it all works. We'll be covering what cryptocurrencies are, how they work, and what has been keeping them in the headlines for the last few months."
+  },
+  {
+   "title" : "",
+   "cat" : 0,
+   "notes" : "",
+   "desc" : ""
+  },
+  {
+   "title" : "GPGPU Programming",
+   "cat" : 2,
+   "notes" : "gpgpu.html",
+   "desc" : "FPGAs are revolutionizing the computing industry by allowing logic designers to reconfigure circuitry on the fly, allowing for rapid development of new hardware where an ASIC would be prohibitively costly or impractical. But how does it all work? Can software-like code be used to design hardware?"
+  },
+  {
+   "title" : "Reconfigurable Logic",
+   "cat" : 2,
+   "notes" : "reconfigurable-logic.html",
+   "desc" : "GPUs are becoming an increasingly popular target for programmers looking to squeeze extra power out of their computers. Attend this talk to see how GPGPU (General-Purpose Computing on Graphics Processing Units) programming allows computationally heavy tasks to be mapped onto hardware originally designed for drawing triangles."
+  },
+  {
+   "title" : "Meltdown, Spectre, and Microarchitecture",
+   "cat" : 3,
+   "notes" : "meltdown-spectre.html",
+   "desc" : "Early this year, two massive hardware vulnerabilities shook the world of computer security. This talk will explore the modern microarchitectural quirks that allowed these attacks to work, as well as the various workarounds and mitigations for these attacks (and any others that might occur between the time of printing of this poster and the talk)."
+  },
+  {
+   "title" : "",
+   "cat" : 0,
+   "notes" : "",
+   "desc" : ""
+  },
+  {
+   "title" : "",
+   "cat" : 0,
+   "notes" : "",
+   "desc" : ""
+  },
+  {
+   "title" : "Esoteric Programming Languages",
+   "cat" : 3,
+   "notes" : "esoteric.html",
+   "desc" : "Brainf**k, Whitespace, and Malbolge are just three of the many esoteric programming languages people have designed in an ever-increasing struggle to create the most obtuse, user-unfriendly language possible. We'll showcase a few of these intentionally confusing languages, and share some advice for actually writing code in them."
+  }
+ ],
+ "url" : "http://www.cmucc.org/talks",
+ "sponsor" : {
+  "name" : "Green Hills Software",
+  "url" : "http://www.ghs.com",
+  "desc" : "Green Hills make the world's highest performing compilers, most secure real-time operating systems, revolutionary debuggers, and virtualization solutions for embedded systems.",
+  "logo" : "assets/ghs_logo.svg",
+  "logo_svg-gen_height_offset" : 48
+ }
+}

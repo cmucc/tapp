@@ -36,10 +36,10 @@ def render_SVG(data, grayscale):
             'blk': '#1f1f1f',
             'cat': ['#a5afa4', # (gray)
                     '#a5ce43', # green
-                    '#fe824d', # orange
-                    '#fec24d', # yellow
-                    '#f598ab', # pink
                     '#70ceec', # blue
+                    '#fec24d', # yellow
+                    '#fe824d', # orange
+                    '#f598ab', # pink
                     '#a5ce43'  # green (again)
                    ]
     }
