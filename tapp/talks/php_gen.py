@@ -38,7 +38,7 @@ def render_PHP(data):
     '  <div class="section-tag">' + data['name'].upper() + ' TALK SERIES</div>\n'
     '    ' + data['web_desc'] + '\n'
     '    <p>\n'
-    '      These talks will take place every <b>' + startDate.strftime('%A') + '</b> starting at <b>' + startTime.time().strftime('%I:%M %p').lstrip('0') + '</b> in <b>' + data['location'] + '</b> throughout the semester.\n'
+    '      These talks will take place on <b>' + startDate.strftime('%A') + 's</b> starting at <b>' + startTime.time().strftime('%I:%M %p').lstrip('0') + '</b> in <b>' + data['location'] + '</b> throughout the semester.\n'
     '    </p>\n'
     '    <p>\n'
     '    This schedule is also available as an <a href="ccst.ics">iCalendar file</a> which is compatible with all calendaring software.\n'
