@@ -64,10 +64,10 @@
    "desc" : "Early this year, two massive hardware vulnerabilities shook the world of computer security. This talk will explore the modern microarchitectural quirks that allowed these attacks to work, as well as the various workarounds and mitigations for these attacks (and any others that might occur between the time of printing of this poster and the talk)."
   },
   {
-   "title" : "",
-   "cat" : 0,
-   "notes" : "",
-   "desc" : ""
+   "title" : "Designing Safety and Security into Life-Critical Systems",
+   "cat" : 3,
+   "notes" : "life-critical.html",
+   "desc" : "What do you get when you combine a car with a computer? A computer that can cause life-threatening problems! Modern vehicles are massively complex computing platforms, with nearly one hundred processors and over a million lines of code. The complexity is only growing, especially as car manufacturers rush to add \"app stores\" to their dashboards and allow the owner to download potentially buggy software from the internet!  How do you design a system to protect the people inside (and outside) from harm while still allowing user-downloaded content? It starts with designing a Real-Time Operating System (RTOS) that can guarantee separation of important safety-critical code from code that cannot be verified or trusted.  In this tech talk, we'll discuss dealing with the complexity of mixed-criticality systems through strict separation of execution time, memory-space, and resources."
   },
   {
    "title" : "",
