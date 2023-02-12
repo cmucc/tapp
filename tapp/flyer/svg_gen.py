@@ -151,6 +151,16 @@ def render_SVG(data):
   QR_FILE = 'assets/cmucc_qr.svg'
   output += '<image x="%d" y="%d" width="%d" height="%d" xlink:href="%s" />\n' \
     %(DOCUMENT_WIDTH-MARGIN-144, DOCUMENT_HEIGHT-MARGIN-144, 144, 144, QR_FILE)
+  # QR_WIDTH = 144
+  # QR_HEIGHT = 144
+  # QR_X = DOCUMENT_WIDTH-MARGIN-QR_WIDTH
+  # QR_Y = DOCUMENT_HEIGHT-MARGIN-QR_HEIGHT
+  # output += f'<foreignObject x="{QR_X}" y="{QR_Y}" width="{QR_WIDTH}" height="{QR_HEIGHT}">\n'
+  # output += f'  <body>\n'
+  # output += f'    <img src={QR_FILE}\n'
+  # output += f'     type="image/svg+xml" width="{QR_WIDTH}px" height="{QR_HEIGHT}px">'
+  # output += f'  </body>\n'
+  # output += f'</foreignObject>'
 
   # Links
   output += '<g>\n'

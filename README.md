@@ -10,7 +10,7 @@ Users can edit the `data` directory and run the scripts as needed.
 
 ## Requirements
 
-Before running these scripts, you must [install `pip`](https://pip.pypa.io/en/latest/installing.html),
+Before running these scripts, you must [install `pip`](https://pip.pypa.io/en/latest/installation/),
 a Python package manager.  Then, to install all of the necessary modules on your system, run:
 
     pip install --user -r requirements.txt
@@ -43,7 +43,7 @@ If the `cat` values are not logically contiguous (see Fall 2016 as an example), 
 
 Usage:
 
-    python -m tapp.talks.svg_gen -i foo.json -o bar.svg [-g]
+    python3 -m tapp.talks.svg_gen -i foo.json -o bar.svg [-g]
 
 The file `2015logo_light.svg` must be in the same directory as the output file
 to display properly.  Additionally, the filename given in the `sponsor_logo`
@@ -56,13 +56,13 @@ than the full-color version.  In some browsers, logos may remain in color.
 
 Usage:
 
-    python -m tapp.talks.ics_gen -i foo.json -o bar.ics
+    python3 -m tapp.talks.ics_gen -i foo.json -o bar.ics
 
 ### Webpage
 
 Usage:
 
-    python -m tapp.talks.php_gen -i foo.json -o bar.php
+    python3 -m tapp.talks.php_gen -i foo.json -o bar.php
 
 ## Club Overview Flyers
 
@@ -70,7 +70,7 @@ See data files such as `data/2015-08_F15-flyer.json` for input reference.
 
 Usage:
 
-    python -m tapp.flyer.svg_gen -i foo.json -o bar.svg
+    python3 -m tapp.flyer.svg_gen -i foo.json -o bar.svg
 
 The files `2015logo_light.svg` and `cmucc_qr.svg` must be in the same directory
 as the output file to display properly.
