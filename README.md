@@ -11,9 +11,24 @@ Users can edit the `data` directory and run the scripts as needed.
 ## Requirements
 
 Before running these scripts, you must [install `pip`](https://pip.pypa.io/en/latest/installation/),
-a Python package manager.  Then, to install all of the necessary modules on your system, run:
+a Python package manager.  If you'd like to keep TAPP's dependencies in their
+own virtual environment (or "venv"), separate from the rest of your Python
+toolchain, you'll also want the [`python3-venv`
+package](https://packages.debian.org/python3-venv) for your operating system.
 
-    pip install --user -r requirements.txt
+Then, to create a venv and install all of the necessary modules on your system,
+run:
+
+    python3 -m venv .venv/ --prompt tapp
+    source .venv/bin/activate
+    pip3 install -r requirements.txt
+
+**If you use a venv, make sure to activate it before running any of TAPP's
+generators.**
+
+Alternatively, if you don't mind polluting your local user environment:
+
+    pip3 install --user -r requirements.txt
 
 ## Produce All the Propaganda!
 
