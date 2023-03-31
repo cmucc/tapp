@@ -14,14 +14,14 @@ def valid_json_file(filename):
     # XXX use os.path.realpath
     schemaFile = open(os.path.dirname(sys.argv[0])+'/schema.json', 'r')
   except IOError:
-    print 'Could not load JSON schema file.'
+    print('Could not load JSON schema file.')
     sys.exit()
 
   try:
     schema = json.load(schemaFile)
     validate(inData, schema)
   except ValidationError as e:
-    print 'JSON validation error:\n' + e.message
+    print('JSON validation error:\n' + e.message)
     sys.exit()
 
   return inData

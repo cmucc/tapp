@@ -10,15 +10,15 @@ all:	talks flyer ${OUTPUT_DIR}
 
 talks:	talks_poster talks_web
 talks_poster:	assets
-	python -m tapp.talks.svg_gen -i ${TALKS_DATA} -o ${OUTPUT_DIR}/talks-poster.svg
-	python -m tapp.talks.svg_gen -i ${TALKS_DATA} -o ${OUTPUT_DIR}/talks-poster-grayscale.svg -g
+	python3 -m tapp.talks.svg_gen -i ${TALKS_DATA} -o ${OUTPUT_DIR}/talks-poster.svg
+	python3 -m tapp.talks.svg_gen -i ${TALKS_DATA} -o ${OUTPUT_DIR}/talks-poster-grayscale.svg -g
 talks_web:
-	python -m tapp.talks.ics_gen -i ${TALKS_DATA} -o ${OUTPUT_DIR}/ccst.ics
-	python -m tapp.talks.php_gen -i ${TALKS_DATA} -o ${OUTPUT_DIR}/index.php
+	python3 -m tapp.talks.ics_gen -i ${TALKS_DATA} -o ${OUTPUT_DIR}/ccst.ics
+	python3 -m tapp.talks.php_gen -i ${TALKS_DATA} -o ${OUTPUT_DIR}/index.php
 	chmod +x ${OUTPUT_DIR}/index.php
 
 flyer:	assets
-	python -m tapp.flyer.svg_gen -i ${FLYER_DATA} -o ${OUTPUT_DIR}/flyer.svg
+	python3 -m tapp.flyer.svg_gen -i ${FLYER_DATA} -o ${OUTPUT_DIR}/flyer.svg
 
 
 # Publish to web

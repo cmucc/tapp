@@ -19,7 +19,7 @@ def generate_ICS():
   args = parser.parse()
   inData, outFile = args.infile, args.outfile
   outData = render_ICS(inData)
-  outFile.write(outData + '\n')
+  outFile.write(outData.decode()+'\n')
 
 # Converts the data into an ICS
 def render_ICS(data):
